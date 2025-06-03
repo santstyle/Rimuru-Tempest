@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //SLIDER
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
     const slider = document.querySelector('.slider');
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('next-slide');
     const dotsContainer = document.querySelector('.slider-dots');
     
-    // State variables
     let currentIndex = 0;
     let slideInterval;
     const slideCount = slides.length;
@@ -66,9 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let prevTranslate = 0;
     let animationID;
 
-    // Initialize slider
     function initSlider() {
-        // Create navigation dots
         slides.forEach((_, index) => {
             const dot = document.createElement('button');
             dot.className = 'slider-dot';
@@ -77,24 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
             dotsContainer.appendChild(dot);
         });
         
-        // Set initial active dot
         updateDots();
         
-        // Set up touch events for mobile
         setupTouchEvents();
         
-        // Start autoplay
         startAutoplay();
     }
 
-    // Update slide position
     function updateSliderPosition() {
         slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    // Go to specific slide
     function goToSlide(index) {
-        // Don't animate if already on this slide
         if (index === currentIndex) return;
         
         currentIndex = index;
@@ -102,18 +92,15 @@ document.addEventListener('DOMContentLoaded', function() {
         updateActiveSlide();
         updateDots();
         
-        // Reset autoplay timer when manually navigating
         resetAutoplay();
     }
 
-    // Update active slide
     function updateActiveSlide() {
         slides.forEach((slide, index) => {
             slide.classList.toggle('active', index === currentIndex);
         });
     }
 
-    // Update navigation dots
     function updateDots() {
         const dots = document.querySelectorAll('.slider-dot');
         dots.forEach((dot, index) => {
@@ -121,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Navigation functions
     function nextSlide() {
         const nextIndex = (currentIndex + 1) % slideCount;
         goToSlide(nextIndex);
@@ -132,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
         goToSlide(prevIndex);
     }
 
-    // Autoplay control
     function startAutoplay() {
         slideInterval = setInterval(nextSlide, slideDuration);
     }
@@ -146,20 +131,17 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(slideInterval);
     }
 
-    // Touch event setup
     function setupTouchEvents() {
         slidesContainer.addEventListener('touchstart', touchStart, { passive: true });
         slidesContainer.addEventListener('touchend', touchEnd, { passive: true });
         slidesContainer.addEventListener('touchmove', touchMove, { passive: true });
-        
-        // Mouse events for desktop
+
         slidesContainer.addEventListener('mousedown', mouseStart);
         slidesContainer.addEventListener('mouseup', mouseEnd);
         slidesContainer.addEventListener('mouseleave', mouseEnd);
         slidesContainer.addEventListener('mousemove', mouseMove);
     }
 
-    // Touch handlers
     function touchStart(e) {
         startPos = e.touches[0].clientX;
         isDragging = true;
@@ -187,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
         currentTranslate = prevTranslate + currentPosition - startPos;
     }
 
-    // Mouse handlers
     function mouseStart(e) {
         startPos = e.clientX;
         isDragging = true;
@@ -216,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
         currentTranslate = prevTranslate + currentPosition - startPos;
     }
 
-    // Event listeners
     nextBtn.addEventListener('click', () => {
         nextSlide();
     });
@@ -225,17 +205,14 @@ document.addEventListener('DOMContentLoaded', function() {
         prevSlide();
     });
 
-    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight') nextSlide();
         if (e.key === 'ArrowLeft') prevSlide();
     });
 
-    // Pause on hover
     slider.addEventListener('mouseenter', pauseAutoplay);
     slider.addEventListener('mouseleave', startAutoplay);
 
-    // Initialize the slider
     initSlider();
 });
 //FOOTER
