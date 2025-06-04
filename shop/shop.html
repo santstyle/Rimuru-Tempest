@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
+    <title>Shop - Rimuru Fanbase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="shop.css">
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo and Site Title -->
+            <div class="branding">
+                <img src="/asset/icon/rimuru icon.png" alt="Rimuru's Sanctuary Logo" class="site-logo">
+                <h1 class="site-title">Rimuru Fanbase</h1>
+            </div>
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/rimuru.html" class="nav-link">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about/about.html" class="nav-link">
+                            <i class="fas fa-scroll nav-icon"></i>
+                            <span class="nav-text">About Rimuru</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/gallery/gallery.html" class="nav-link">
+                            <i class="fas fa-images nav-icon"></i>
+                            <span class="nav-text">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/komunitas/komunitas.html" class="nav-link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <span class="nav-text">Community</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/event/event.html" class="nav-link">
+                            <i class="fas fa-calendar nav-icon"></i>
+                            <span class="nav-text">Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/shop/shop.html" class="nav-link active">
+                            <i class="fas fa-shopping-bag nav-icon"></i>
+                            <span class="nav-text">Shop</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Utility Navigation -->
+            <div class="utility-nav">
+                <button class="search-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="cart-btn" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </button>
+                <a href="/login" class="login-btn">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+    
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search in Rimuru's Sanctuary..." aria-label="Search">
+                <button type="submit" class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main class="shop-container">
+        <!-- Shop Hero Banner -->
+        <div class="shop-hero">
+            <div class="promo-badge">LIMITED TIME OFFER</div>
+            <h2>Official Rimuru Tempest Merchandise</h2>
+            <p>Discover exclusive collectibles, apparel, and accessories from the world of Tensei Shitara Slime Datta Ken</p>
+            <button class="add-to-cart">
+                <i class="fas fa-arrow-down"></i> Shop Now
+            </button>
+        </div>
+
+        <!-- Product Categories -->
+        <div class="category-filters">
+            <button class="category-filter active" data-category="all">All Products</button>
+            <button class="category-filter" data-category="clothing">Clothing</button>
+            <button class="category-filter" data-category="posters">Posters & Art</button>
+            <button class="category-filter" data-category="accessories">Accessories</button>
+            <button class="category-filter" data-category="collectibles">Collectibles</button>
+            <button class="category-filter" data-category="home">Home Goods</button>
+        </div>
+
+        <!-- Featured Products -->
+        <div class="featured-section">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="clothing">
+                    <div class="product-badge">-20%</div>
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/ce/7c/4f/ce7c4f26992bf10f6d428722bd2a90b4.jpg" alt="Rimuru T-Shirt" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Clothing</span>
+                        <h3 class="product-title">Rimuru Tempest Graphic T-Shirt</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(128)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 199,000</span>
+                            <span class="original-price">IDR 249,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card" data-category="collectibles">
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/f6/77/16/f6771629686c040abe9b8020e59e8713.jpg" alt="Rimuru Figure" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Collectibles</span>
+                        <h3 class="product-title">Rimuru Tempest 15cm Figure</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(64)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 599,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card" data-category="posters">
+                    <div class="product-badge">NEW</div>
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/07/4c/30/074c30be8cc5d813b1a465bfb6715ff1.jpg" alt="Tempest Poster" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Posters & Art</span>
+                        <h3 class="product-title">Jura Tempest Federation Poster Set (3)</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(42)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 149,000</span>
+                            <span class="original-price">IDR 179,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/7e/2d/8e/7e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg" alt="Slime Keychain" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Accessories</span>
+                        <h3 class="product-title">Rimuru Slime Form Keychain</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(87)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 49,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/8e/2d/8e/8e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg" alt="Slime Pillow" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Home Goods</span>
+                        <h3 class="product-title">Rimuru Plush Pillow (40cm)</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(35)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 249,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card" data-category="collectibles">
+                    <div class="product-badge">PRE-ORDER</div>
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/ce/7c/4f/ce7c4f26992bf10f6d428722bd2a90b4.jpg" alt="Artbook" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Collectibles</span>
+                        <h3 class="product-title">Tensei Slime Official Artbook</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(28)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 799,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Pre-order
+                            </button>
+                            <button class="wishlist-btn active">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Arrivals -->
+        <div class="featured-section">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="products-grid">
+                <!-- Product 7 -->
+                <div class="product-card" data-category="clothing">
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/f6/77/16/f6771629686c040abe9b8020e59e8713.jpg" alt="Hoodie" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Clothing</span>
+                        <h3 class="product-title">Tempest Nation Hoodie</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(19)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 349,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image-container">
+                        <img src="https://i.pinimg.com/736x/07/4c/30/074c30be8cc5d813b1a465bfb6715ff1.jpg" alt="Phone Case" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Accessories</span>
+                        <h3 class="product-title">Rimuru Phone Case (Various Models)</h3>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(31)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">IDR 129,000</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter-section">
+            <h3 class="newsletter-title">Join Our Slime Club!</h3>
+            <p class="newsletter-desc">
+                Subscribe to our newsletter for exclusive discounts, early access to new products, and updates on all things Rimuru!
+            </p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                <button type="submit" class="newsletter-submit">Subscribe</button>
+            </form>
+        </div>
+    </main>
+    <script src="shop.js"></script>
+</body>
+</html>
