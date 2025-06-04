@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
+    <link rel="stylesheet" href="/event/event.css"></link>
+    <title>Events & Activities - Rimuru Fanbase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo and Site Title -->
+            <div class="branding">
+                <img src="/asset/icon/rimuru icon.png" alt="Rimuru's Sanctuary Logo" class="site-logo">
+                <h1 class="site-title">Rimuru Fanbase</h1>
+            </div>
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/rimuru.html" class="nav-link">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about/about.html" class="nav-link">
+                            <i class="fas fa-scroll nav-icon"></i>
+                            <span class="nav-text">About Rimuru</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/gallery/gallery.html" class="nav-link">
+                            <i class="fas fa-images nav-icon"></i>
+                            <span class="nav-text">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/komunitas/komunitas.html" class="nav-link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <span class="nav-text">Community</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/event/event.html" class="nav-link active">
+                            <i class="fas fa-calendar nav-icon"></i>
+                            <span class="nav-text">Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/shop/shop.html" class="nav-link">
+                            <i class="fas fa-shopping-bag nav-icon"></i>
+                            <span class="nav-text">Shop</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Utility Navigation -->
+            <div class="utility-nav">
+                <button class="search-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="/login" class="login-btn">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search in Rimuru's Sanctuary..." aria-label="Search">
+                <button type="submit" class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main class="events-container">
+        <div class="events-header">
+            <h1 class="events-title">Events & Activities</h1>
+            <div class="view-toggle">
+                <button class="view-btn active" id="calendar-view-btn">
+                    <i class="fas fa-calendar-alt"></i> Calendar
+                </button>
+                <button class="view-btn" id="list-view-btn">
+                    <i class="fas fa-list"></i> List
+                </button>
+            </div>
+        </div>
+
+        <!-- Event Categories Filter -->
+        <div class="event-categories">
+            <h2 class="section-title">Filter by Category</h2>
+            <div class="category-filters">
+                <button class="category-filter active" data-category="all">All Events</button>
+                <button class="category-filter" data-category="fanart">Fanart Contests</button>
+                <button class="category-filter" data-category="cosplay">Cosplay Events</button>
+                <button class="category-filter" data-category="giveaway">Giveaways</button>
+                <button class="category-filter" data-category="watch">Watch Parties</button>
+                <button class="category-filter" data-category="game">Game Tournaments</button>
+            </div>
+        </div>
+
+        <!-- Calendar View -->
+        <div class="calendar-view" id="calendar-view">
+            <div class="calendar-header">
+                <div class="month-nav">
+                    <button class="nav-btn" id="prev-month">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h3 class="month-title" id="current-month">November 2023</h3>
+                    <button class="nav-btn" id="next-month">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <button class="event-btn" id="add-event-btn">
+                    <i class="fas fa-plus"></i> Propose Event
+                </button>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="day-header">Sun</div>
+                <div class="day-header">Mon</div>
+                <div class="day-header">Tue</div>
+                <div class="day-header">Wed</div>
+                <div class="day-header">Thu</div>
+                <div class="day-header">Fri</div>
+                <div class="day-header">Sat</div>
+
+                <!-- Calendar days will be populated by JavaScript -->
+                <div class="calendar-day" id="calendar-days"></div>
+            </div>
+        </div>
+
+        <!-- List View -->
+        <div class="list-view" id="list-view">
+            <div class="events-list">
+                <!-- Event 1 -->
+                <div class="event-card" data-category="fanart">
+                    <img src="https://i.pinimg.com/736x/ce/7c/4f/ce7c4f26992bf10f6d428722bd2a90b4.jpg"
+                        alt="Slime Art Showcase" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">Nov 15-30, 2023</div>
+                        <h3 class="event-title">Slime Art Showcase: Fanart Contest</h3>
+                        <span class="event-type">Fanart Contest</span>
+                        <p class="event-description">
+                            Showcase your artistic skills by creating fanart of Rimuru or any character from Tempest.
+                            Winners get exclusive merchandise!
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> 12 days left
+                            </div>
+                            <button class="event-btn">Join Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card" data-category="cosplay">
+                    <img src="https://i.pinimg.com/736x/f6/77/16/f6771629686c040abe9b8020e59e8713.jpg"
+                        alt="Rimuru Cosplay Challenge" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">Dec 1-15, 2023</div>
+                        <h3 class="event-title">Rimuru's Transformation Cosplay Challenge</h3>
+                        <span class="event-type">Cosplay Event</span>
+                        <p class="event-description">
+                            Dress up as Rimuru in any of his forms or any Tempest character. Best cosplay wins a prize
+                            package!
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> Coming soon
+                            </div>
+                            <button class="event-btn" disabled>Notify Me</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card" data-category="giveaway">
+                    <img src="https://i.pinimg.com/736x/07/4c/30/074c30be8cc5d813b1a465bfb6715ff1.jpg"
+                        alt="Milim's Treasure Hunt" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">Nov 20, 2023</div>
+                        <h3 class="event-title">Milim's Treasure Hunt Giveaway</h3>
+                        <span class="event-type">Giveaway</span>
+                        <p class="event-description">
+                            Participate in our treasure hunt quiz for a chance to win exclusive Tensura merchandise and
+                            game codes!
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> 7 days left
+                            </div>
+                            <button class="event-btn">Enter Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="event-card" data-category="watch">
+                    <img src="https://i.pinimg.com/736x/7e/2d/8e/7e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg"
+                        alt="Tempest Watch Party" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">Dec 10, 2023</div>
+                        <h3 class="event-title">Tempest Night: Season 2 Watch Party</h3>
+                        <span class="event-type">Watch Party</span>
+                        <p class="event-description">
+                            Join us for a live watch party of Season 2's best episodes with special trivia and prizes!
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> Coming soon
+                            </div>
+                            <button class="event-btn" disabled>RSVP</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="event-card" data-category="game">
+                    <img src="https://i.pinimg.com/736x/8e/2d/8e/8e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg"
+                        alt="Tempest Showdown" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">Jan 5-7, 2024</div>
+                        <h3 class="event-title">Tempest Showdown: Game Tournament</h3>
+                        <span class="event-type">Game Tournament</span>
+                        <p class="event-description">
+                            Compete in our Slime Isekai Memories tournament for exclusive in-game items and real-world
+                            prizes!
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> Coming soon
+                            </div>
+                            <button class="event-btn" disabled>Register Interest</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Past Events Section -->
+        <div class="past-events">
+            <h2 class="section-title">Past Events Highlights</h2>
+
+            <!-- Past Event 1 -->
+            <div class="past-event-card">
+                <div class="past-event-header">
+                    <h3 class="past-event-title">Summer 2023 Fanart Contest</h3>
+                    <div class="past-event-date">August 15-30, 2023</div>
+                </div>
+                <p>Our biggest fanart contest yet with over 200 entries showcasing amazing artwork of Rimuru and the
+                    Tempest crew.</p>
+
+                <div class="winners-section">
+                    <h4 class="winners-title">Winners:</h4>
+                    <div class="winner-list">
+                        <div class="winner-card">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Winner"
+                                class="winner-avatar">
+                            <div class="winner-info">
+                                <span class="winner-name">SlimeArtist99</span>
+                                <span class="winner-prize">1st Prize - Figure Set</span>
+                            </div>
+                        </div>
+                        <div class="winner-card">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Winner"
+                                class="winner-avatar">
+                            <div class="winner-info">
+                                <span class="winner-name">TempestPainter</span>
+                                <span class="winner-prize">2nd Prize - Art Supplies</span>
+                            </div>
+                        </div>
+                        <div class="winner-card">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Winner"
+                                class="winner-avatar">
+                            <div class="winner-info">
+                                <span class="winner-name">RimuruFanArt</span>
+                                <span class="winner-prize">3rd Prize - Poster Set</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="past-event-gallery">
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/ce/7c/4f/ce7c4f26992bf10f6d428722bd2a90b4.jpg" alt="Fanart"
+                            class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/f6/77/16/f6771629686c040abe9b8020e59e8713.jpg" alt="Fanart"
+                            class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/07/4c/30/074c30be8cc5d813b1a465bfb6715ff1.jpg" alt="Fanart"
+                            class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/7e/2d/8e/7e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg" alt="Fanart"
+                            class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/8e/2d/8e/8e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg" alt="Fanart"
+                            class="gallery-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Event 2 -->
+            <div class="past-event-card">
+                <div class="past-event-header">
+                    <h3 class="past-event-title">Season 3 Announcement Watch Party</h3>
+                    <div class="past-event-date">October 5, 2023</div>
+                </div>
+                <p>Celebrated the Season 3 announcement with over 500 fans in our biggest watch party yet, featuring
+                    special guests and trivia games.</p>
+
+                <div class="past-event-gallery">
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/8e/2d/8e/8e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg"
+                            alt="Watch Party" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/7e/2d/8e/7e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg"
+                            alt="Watch Party" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/ce/7c/4f/ce7c4f26992bf10f6d428722bd2a90b4.jpg"
+                            alt="Watch Party" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/event/event.js"></script>
+</body>
+
+</html>
