@@ -1,7 +1,7 @@
 // Set current year in footer
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
-// Random visitor count (for demo purposes)
+// Random visitor 
 setInterval(() => {
     const baseCount = 1245;
     const randomFactor = Math.floor(Math.random() * 50);
@@ -22,7 +22,7 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Check for saved theme preference
+
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
