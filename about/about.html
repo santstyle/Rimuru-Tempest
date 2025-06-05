@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Rimuru - Rimuru Fanbase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
     <title>About Rimuru - Rimuru Fanbase</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../rimuru.css" />
-    <link rel="stylesheet" href="about.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
     <header class="site-header">
         <div class="header-container">
+            <!-- Logo and Site Title -->
             <div class="branding">
-                <a href="../rimuru.html">
-                    <img src="../asset/icon/rimuru icon.png" alt="Rimuru's Sanctuary Logo" class="site-logo" />
-                </a>
+                <img src="/asset/icon/rimuru icon.png" alt="Rimuru's Sanctuary Logo" class="site-logo">
                 <h1 class="site-title">Rimuru Fanbase</h1>
             </div>
+            <!-- Navigation -->
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -40,15 +39,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/komunitas/komunitas.html" class="
-            nav-link">
+                        <a href="/komunitas/komunitas.html" class="nav-link">
                             <i class="fas fa-users nav-icon"></i>
                             <span class="nav-text">Community</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="/event/event.html" class="nav-link">
-                                <i class="fas fa-calendar nav-icon"></i>
+                            <i class="fas fa-calendar nav-icon"></i>
                             <span class="nav-text">Events</span>
                         </a>
                     </li>
@@ -60,6 +58,7 @@
                     </li>
                 </ul>
             </nav>
+            <!-- Utility Navigation -->
             <div class="utility-nav">
                 <button class="search-btn" aria-label="Search">
                     <i class="fas fa-search"></i>
@@ -67,95 +66,272 @@
                 <button class="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="fas fa-moon"></i>
                 </button>
-                <a href="../login.html" class="login-btn">
+                <a href="/login" class="login-btn">
                     <i class="fas fa-user-circle"></i>
                     <span>Login</span>
                 </a>
             </div>
+    
+            <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+    
+        <!-- Search Bar (Hidden by default) -->
         <div class="search-container">
             <form class="search-form">
-                <input type="text" placeholder="Search in Rimuru Fanbase..." aria-label="Search" />
+                <input type="text" placeholder="Search in Rimuru's Sanctuary..." aria-label="Search">
                 <button type="submit" class="search-submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
         </div>
     </header>
-    <main class="about-main">
-        <section class="about-section">
-            <h2>Tentang Rimuru</h2>
-            <article class="profile-article">
-                <h3>Profil Lengkap Rimuru Tempest</h3>
-                <div class="content-with-image">
-                    <div class="text-content">
-                        <p>Rimuru Tempest adalah protagonis utama dalam serial <em>Tensei Shitara Slime Datta Ken</em>. Berawal dari seorang manusia bernama Satoru Mikami yang bereinkarnasi menjadi slime setelah kematiannya, Rimuru memulai petualangan baru di dunia fantasi yang penuh dengan sihir, monster, dan politik.</p>
-                        <ul>
-                            <li><strong>Nama Asli:</strong> Satoru Mikami (dalam kehidupan sebelumnya).</li>
-                            <li><strong>Spesies:</strong> Slime (kemudian berevolusi menjadi Demon Slime dan Lord).</li>
-                            <li><strong>Judul:</strong> Raja Tempest, Demon Lord, dan Pendiri Federasi Jura Tempest.</li>
-                            <li><strong>Kekuatan Utama:</strong></li>
-                            <ul>
-                                <li>Predator: Kemampuan untuk menyerap dan mempelajari kekuatan serta karakteristik dari makhluk atau objek yang dimakan.</li>
-                                <li>Great Sage: Sebuah entitas AI dalam pikirannya yang memberikan saran, kalkulasi, dan analisis taktis.</li>
-                                <li>Evolusi Demon Lord: Memberikan kekuatan luar biasa yang menempatkannya di antara makhluk terkuat di dunia.</li>
-                            </ul>
-                        </ul>
-                        <p>Rimuru dikenal sebagai pemimpin yang bijaksana, adil, dan penuh kasih sayang kepada teman-teman dan rakyatnya. Ia memainkan peran penting dalam membangun perdamaian antara manusia, monster, dan berbagai ras lainnya di dunia Jura Tempest. Sebagai seorang slime, ia sering menunjukkan humor, kecerdasan, dan kecenderungan untuk merangkul setiap tantangan yang dihadapinya.</p>
+
+    <main class="about-container">
+        <!-- Hero Section -->
+        <div class="about-hero">
+            <h1>About Rimuru Tempest</h1>
+            <p>The extraordinary journey of a slime who became a Demon Lord and changed the world</p>
+        </div>
+
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <h2 class="section-title">Profile of Rimuru Tempest</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Origin Story</h3>
+                <p>Rimuru Tempest was originally a human named Satoru Mikami, a 37-year-old corporate worker in Tokyo who lived an ordinary life. His life took a dramatic turn when he was stabbed while trying to protect his colleague from an attacker. As he lay dying, he heard a mysterious voice that led to his reincarnation in a fantasy world as a slime.</p>
+                
+                <div class="highlight-box">
+                    <p>Upon awakening in this new world, Rimuru discovered unique abilities including "Predator" which allows absorption of creatures and objects, and "Great Sage" (later evolving into "Raphael"), an advanced analytical skill that provides guidance and problem-solving capabilities.</p>
+                </div>
+                
+                <p>His first encounter in this new world was with Veldora Tempest, the "Storm Dragon," who became his first true friend. Rimuru named Veldora after the dragon named him "Rimuru Tempest," marking the beginning of their deep bond.</p>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Transformation and Growth</h3>
+                <p>After absorbing Veldora (to free him from imprisonment while maintaining their connection), Rimuru gained tremendous power and set out to explore the world. His journey led him to the Jura Forest where he encountered goblins being attacked by direwolves. This encounter marked the beginning of his role as a leader and protector.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Early Days</div>
+                            <p>Reincarnated as a slime and befriends Veldora Tempest</p>
+                        </div>
                     </div>
-                    <div class="image-content">
-                        <img src="https://i.pinimg.com/736x/07/82/c1/0782c1e256f08583752abde14d0e4488.jpg" alt="Rimuru Tempest Profile" />
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">First Steps</div>
+                            <p>Leaves the cave and begins exploring the world</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Goblin Village</div>
+                            <p>Saves a goblin village and begins forming alliances</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Ogre Transformation</div>
+                            <p>Meets the ogres and helps them evolve into Kijin</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Tempest Founding</div>
+                            <p>Establishes the Jura Tempest Federation</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Demon Lord</div>
+                            <p>Awakens as a True Demon Lord after the Harvest Festival</p>
+                        </div>
                     </div>
                 </div>
-            </article>
-            <article class="history-article">
-                <h3>Sejarah Tempest dan Karakternya</h3>
-                <div class="content-with-image">
-                    <div class="text-content">
-                        <h4>Awal Berdirinya Tempest</h4>
-                        <p>Tempest, yang secara resmi dikenal sebagai Federasi Jura Tempest, didirikan oleh Rimuru setelah ia bertemu dengan berbagai monster di Hutan Jura. Rimuru memulai misinya dengan membangun komunitas monster yang harmonis, di mana semua ras dapat hidup berdampingan. Dengan karisma dan kekuatannya, Rimuru berhasil menyatukan berbagai klan monster, termasuk goblin, ogre, lizardman, dan bahkan demon.</p>
-                        <ul>
-                            <li><strong>Nama Federasi:</strong> Jura Tempest Federation.</li>
-                            <li><strong>Lokasi:</strong> Hutan Besar Jura.</li>
-                            <li><strong>Tujuan:</strong> Menciptakan dunia di mana monster dan manusia dapat hidup damai bersama.</li>
-                        </ul>
-                        <h4>Karakter Utama di Tempest</h4>
-                        <ul>
-                            <li><strong>Benimaru:</strong> Seorang ogre yang menjadi komandan militer Tempest. Ia setia dan sangat berbakat dalam strategi perang.</li>
-                            <li><strong>Shion:</strong> Ogre lainnya yang menjadi pengawal pribadi Rimuru. Ia memiliki kekuatan besar, meskipun sering bertindak ceroboh.</li>
-                            <li><strong>Souei:</strong> Ahli mata-mata dan pengintai yang juga berasal dari ras ogre. Dikenal karena kecepatan dan kecerdasannya.</li>
-                            <li><strong>Ranga:</strong> Serigala Tempest yang menjadi pendamping setia Rimuru. Ia mampu menggunakan sihir bayangan dan selalu melindungi Rimuru.</li>
-                            <li><strong>Milim Nava:</strong> Seorang Demon Lord yang menjadi sekutu Rimuru. Ia memiliki kekuatan destruktif yang luar biasa tetapi memiliki kepribadian ceria dan sedikit kekanak-kanakan.</li>
-                        </ul>
-                        <h4>Pertumbuhan Tempest</h4>
-                        <p>Di bawah kepemimpinan Rimuru, Tempest berkembang pesat, dari sebuah komunitas kecil menjadi sebuah kerajaan monster yang dihormati. Kota utama Tempest memiliki teknologi dan infrastruktur yang setara bahkan lebih maju daripada kota-kota manusia. Hubungan diplomatik dengan kerajaan manusia juga semakin kuat, menjadikan Tempest pusat dari perdagangan, politik, dan kekuatan magis.</p>
-                        <h4>Konflik dan Diplomasi</h4>
-                        <p>Meskipun bertujuan damai, Tempest sering menghadapi konflik dengan bangsa lain yang menganggap monster sebagai ancaman. Namun, berkat kepemimpinan Rimuru, banyak masalah diselesaikan melalui diplomasi cerdas atau kekuatan militer yang menentukan. Hal ini memperkuat posisi Tempest sebagai negara yang dihormati dan ditakuti.</p>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Key Abilities</h3>
+                <div class="abilities-grid">
+                    <div class="ability-card">
+                        <div class="ability-title">Predator</div>
+                        <p>Allows Rimuru to absorb creatures, objects, and even skills to analyze and reproduce them.</p>
                     </div>
-                    <div class="image-content">
-                        <img src="https://i.pinimg.com/736x/de/8b/3c/de8b3c763ec4295c20060dfe7c0a4836.jpg" alt="Tempest History" />
+                    <div class="ability-card">
+                        <div class="ability-title">Great Sage/Raphael</div>
+                        <p>An advanced AI-like skill that provides analysis, advice, and even autonomous control.</p>
+                    </div>
+                    <div class="ability-card">
+                        <div class="ability-title">Gluttony/Beelzebub</div>
+                        <p>Advanced version of Predator that can consume anything, even space itself.</p>
+                    </div>
+                    <div class="ability-card">
+                        <div class="ability-title">Shape Shifting</div>
+                        <p>Can take any humanoid form, most commonly resembling his human self with blue hair.</p>
+                    </div>
+                    <div class="ability-card">
+                        <div class="ability-title">Dimensional Storage</div>
+                        <p>An extradimensional space to store items, weapons, and even living beings.</p>
+                    </div>
+                    <div class="ability-card">
+                        <div class="ability-title">Mimicry</div>
+                        <p>Can perfectly copy voices, appearances, and even magical signatures of others.</p>
                     </div>
                 </div>
-            </article>
-            <section class="gallery-section">
-                <h3>Galeri Gambar Rimuru Tempest</h3>
-                <div class="image-gallery">
-                    <img src="https://pbs.twimg.com/media/Gc-93XMakAAUUkl?format=jpg&name=large" alt="Rimuru Image 1" />
-                    <img src="https://pbs.twimg.com/media/Gc-93XMbgAAq5T4?format=jpg&name=large" alt="Rimuru Image 2" />
-                    <img src="https://pbs.twimg.com/media/Gc-93XPaIAA7We-?format=jpg&name=large" alt="Rimuru Image 3" />
-                    <img src="https://pbs.twimg.com/media/Gc-93XNakAA6uzH?format=jpg&name=large" alt="Rimuru Image 4" />
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Role in the Story</h3>
+                <p>As the protagonist of "That Time I Got Reincarnated as a Slime," Rimuru serves as both the central character and the driving force behind most of the world's changes. His actions as the leader of the Jura Tempest Federation have reshaped the political landscape of the world, creating a nation where all races can coexist peacefully.</p>
+                
+                <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d8rWV88FWFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <!-- Tempest Section -->
+        <section class="tempest-section">
+            <h2 class="section-title">Jura Tempest Federation</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Foundation of Tempest</h3>
+                <p>The Jura Tempest Federation began as a small village of goblins that Rimuru protected from direwolves. Through his leadership and the alliances he formed with various monster races (ogres, direwolves, lizardmen, and others), it grew into a prosperous nation recognized by human kingdoms and other world powers.</p>
+                
+                <div class="highlight-box">
+                    <p>Tempest stands as a beacon of hope in a world where monsters and humans traditionally feared and fought each other. Under Rimuru's rule, it has become a center of commerce, culture, and technological advancement unlike anything the world had seen before.</p>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Key Characters</h3>
+                <div class="characters-grid">
+                    <div class="character-card">
+                        <img src="https://i.pinimg.com/736x/a1/87/4f/a1874f4920b7caf69dbece17a3d379cb.jpg" alt="Benimaru" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Benimaru</div>
+                            <div class="character-role">Ogre, Military Commander</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <img src="https://i.pinimg.com/736x/df/14/38/df143811efa6768f9e4b11334c11147b.jpg" alt="Shuna" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Shuna</div>
+                            <div class="character-role">Ogre, Cultural Minister</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <img src= "https://i.pinimg.com/736x/b2/94/34/b29434b69ba73d8f680d36c2aab33237.jpg" alt="Shion" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Shion</div>
+                            <div class="character-role">Ogre, Secretary</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <img src="https://i.pinimg.com/736x/d8/99/3d/d8993d5c0ded6a443b690f2587a3b144.jpg" alt="Souei" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Souei</div>
+                            <div class="character-role">Ogre, Intelligence Head</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <img src="https://pbs.twimg.com/media/Grtdg5oW8AAMTUb?format=jpg&name=large" alt="Milim" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Milim Nava</div>
+                            <div class="character-role">Destroyer, Ally</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <img src=https://i.pinimg.com/736x/a4/de/35/a4de3526fca4619a7fb8aa79798417ff.jpg alt="Veldora" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Veldora Tempest</div>
+                            <div class="character-role">Storm Dragon, Best Friend</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <img src="https://i.pinimg.com/736x/a5/53/ee/a553ee3d6fb474855971eb668984a88e.jpg" alt="Diablo" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Diablo</div>
+                            <div class="character-role">Primordial Demon, Devotee</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <img src="https://i.pinimg.com/736x/0f/d2/75/0fd275334c9a8e778cf34d458f83556a.jpg" alt="Ranga" class="character-image">
+                        <div class="character-info">
+                            <div class="character-name">Ranga</div>
+                            <div class="character-role">Direwolf, Steed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Mission and Values</h3>
+                <p>The Jura Tempest Federation operates on several core principles established by Rimuru:</p>
+                <ul>
+                    <li><strong>Equality:</strong> All races are treated with equal respect and dignity</li>
+                    <li><strong>Innovation:</strong> Combining magic and technology to improve lives</li>
+                    <li><strong>Peaceful Coexistence:</strong> Diplomacy over conflict whenever possible</li>
+                    <li><strong>Mutual Growth:</strong> Helping all citizens reach their potential</li>
+                    <li><strong>Protection:</strong> Defending the weak and innocent</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <h2 class="section-title">Philosophy and Personality</h2>
+            
+            <div class="quote-section">
+                <div class="quote">"I won't abandon those I've decided to protect. That's my way of life."</div>
+                <div class="quote-author">- Rimuru Tempest</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Core Beliefs</h3>
+                <p>Rimuru's philosophy is shaped by his human memories and his experiences in the new world:</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Justice:</strong> Rimuru believes in fair treatment for all, regardless of race or status. He opposes oppression and discrimination in all forms.</p>
+                    <p><strong>Freedom:</strong> While providing structure and protection, Rimuru values personal freedom and self-determination for his citizens.</p>
+                    <p><strong>Growth:</strong> He encourages continuous improvement, both for individuals and society as a whole.</p>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Relationships</h3>
+                <p>Rimuru's approach to relationships defines much of his character:</p>
+                
+                <p><strong>With Friends and Allies:</strong> Rimuru is fiercely loyal and protective. He goes to great lengths to ensure their safety and happiness, often putting their needs before his own. His relationships with characters like Veldora and the ogres show his capacity for deep friendship.</p>
+                
+                <p><strong>With Enemies:</strong> Rimuru prefers peaceful resolutions but won't hesitate to eliminate genuine threats. He's surprisingly forgiving to those who show remorse, often giving former enemies chances to redeem themselves.</p>
+                
+                <p><strong>With Subjects:</strong> As a leader, Rimuru sees himself as responsible for his people's wellbeing. He works tirelessly to improve their lives while respecting their autonomy.</p>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Leadership Style</h3>
+                <p>Rimuru's leadership combines pragmatism with idealism:</p>
+                <ul>
+                    <li><strong>Delegation:</strong> Trusts capable subordinates with significant responsibilities</li>
+                    <li><strong>Visionary:</strong> Plans for long-term prosperity rather than short-term gains</li>
+                    <li><strong>Adaptable:</strong> Willing to change approaches when circumstances demand</li>
+                    <li><strong>Inclusive:</strong> Values diverse perspectives in decision-making</li>
+                    <li><strong>Protective:</strong> Willing to bear heavy burdens to shield others</li>
+                </ul>
+                
+                <div class="quote-section">
+                    <div class="quote">"Power isn't meant for destruction. It's meant to protect what's important."</div>
+                    <div class="quote-author">- Rimuru Tempest</div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer-container">
-            <p>© 2024 Rimuru Fanbase. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="../rimuru.js"></script>
+<script src="about.js"></script>
 </body>
 </html>
