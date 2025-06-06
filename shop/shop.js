@@ -96,5 +96,5 @@ addToCartBtns.forEach(btn => {
 const cartBtn = document.querySelector('.cart-btn');
 
 cartBtn.addEventListener('click', () => {
-    alert('Cart page would open here!');
+    alert('Maaf ya sayang... bagian ini lagi maintenance');
 });

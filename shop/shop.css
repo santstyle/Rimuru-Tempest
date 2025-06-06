@@ -222,6 +222,7 @@ body.dark-mode {
     border-radius: 0 30px 30px 0;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .search-submit:hover {
@@ -272,10 +273,10 @@ body.dark-mode .shop-title {
 
 /* Hero Banner */
 .shop-hero {
-    background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), 
-                url('https://i.pinimg.com/736x/8e/2d/8e/8e2d8e2a3a3c5b1b3e3e3b3e3e3b3e3e.jpg');
+    background:
+    url('/asset/Banner\ Market.png');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     height: 300px;
     border-radius: 10px;
     display: flex;
@@ -286,6 +287,16 @@ body.dark-mode .shop-title {
     color: white;
     margin-bottom: 2rem;
     padding: 2rem;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .shop-hero > .add-to-cart {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        bottom: 0.8rem;
+        right: 0.8rem;
+    }
 }
 
 .shop-hero h2 {
