@@ -1,14 +1,17 @@
 :root {
     --rimuru-blue: #3AA8F6;
     --rimuru-dark-blue: #1E3A8A;
+    --rimuru-light-blue: #A5D8FF;
     --light-bg: #f8f9fa;
-    --dark-bg: #1a1a1a;
+    --dark-bg: #121212;
     --text-light: #333;
     --text-dark: #f0f0f0;
     --card-bg: #fff;
-    --card-dark: #2d2d2d;
+    --card-dark: #1e1e1e;
     --border-color: #e0e0e0;
     --border-dark: #444;
+    --surface-dark: #2d2d2d;
+    --surface-darker: #252525;
 }
 
 body {
@@ -23,6 +26,91 @@ body {
 body.dark-mode {
     background-color: var(--dark-bg);
     color: var(--text-dark);
+}
+
+/* Dark mode specific styles */
+body.dark-mode .section-title {
+    color: var(--rimuru-light-blue);
+}
+
+body.dark-mode .section-title::after {
+    background: var(--rimuru-blue);
+}
+
+body.dark-mode .about-text,
+body.dark-mode .character-desc,
+body.dark-mode .event-desc,
+body.dark-mode .stat-label,
+body.dark-mode .character-role {
+    color: #b0b0b0;
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .character-card,
+body.dark-mode .event-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .gallery-item {
+    background-color: var(--card-dark);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .stat-card:hover,
+body.dark-mode .character-card:hover,
+body.dark-mode .event-card:hover,
+body.dark-mode .testimonial-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .character-name,
+body.dark-mode .event-title,
+body.dark-mode .about-title {
+    color: var(--rimuru-light-blue);
+}
+
+body.dark-mode .stats-grid,
+body.dark-mode .characters-section,
+body.dark-mode .gallery-section {
+    background: linear-gradient(135deg, var(--surface-darker) 0%, var(--dark-bg) 100%);
+}
+
+body.dark-mode .community-stat {
+    background-color: var(--surface-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode .community-stat-label {
+    color: #b0b0b0;
+}
+
+body.dark-mode .footer {
+    background: #0A0F1F;
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-description,
+body.dark-mode .contact-text,
+body.dark-mode .copyright-bar p,
+body.dark-mode .legal-links a {
+    color: #d0d0d0;
+}
+
+body.dark-mode .footer-links a:hover,
+body.dark-mode .legal-links a:hover {
+    color: var(--rimuru-blue);
+}
+
+body.dark-mode .visitor-counter {
+    background: rgba(58, 168, 246, 0.3);
+    color: var(--rimuru-light-blue);
+}
+
+body.dark-mode .search-form input {
+    background-color: var(--surface-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode .theme-toggle {
+    color: var(--rimuru-light-blue);
 }
 
 /* Header Styles */
@@ -383,12 +471,30 @@ body.dark-mode {
     background: var(--rimuru-blue);
     color: white;
     border: 2px solid var(--rimuru-blue);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: var(--rimuru-blue);
+    border: 2px solid var(--rimuru-blue);
+    box-shadow: 0 4px 12px rgba(58, 168, 246, 0.5);
+    transform: scale(1.05);
 }
 
 .btn-secondary {
     background: transparent;
     color: white;
     border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--rimuru-blue);
+    border: 2px solid white;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
 }
 
 /* Tablet View */

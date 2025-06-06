@@ -28,14 +28,6 @@ if (localStorage.getItem('theme') === 'dark') {
     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
 
-// Search toggle
-const searchBtn = document.querySelector('.search-btn');
-const searchContainer = document.querySelector('.search-container');
-
-searchBtn.addEventListener('click', () => {
-    searchContainer.classList.toggle('active');
-});
-
 
 // Animate stats on scroll
 const animateStats = () => {
