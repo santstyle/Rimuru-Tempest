@@ -49,7 +49,7 @@ const animateStats = () => {
     });
 };
 
-// Check if stats are in view
+// Check stats view
 const statsSection = document.querySelector('.stats-grid');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -63,3 +63,28 @@ const observer = new IntersectionObserver((entries) => {
 if (statsSection) {
     observer.observe(statsSection);
 }
+
+// Popup 
+document.addEventListener('DOMContentLoaded', function() {
+    const popupBubble = document.getElementById('popupBubble');
+    const disclaimerModal = document.getElementById('disclaimerModal');
+    const closeModal = document.getElementById('closeModal');
+
+    popupBubble.style.display = 'flex';
+
+    // Open bubble 
+    popupBubble.addEventListener('click', function() {
+        disclaimerModal.style.display = 'flex';
+        popupBubble.style.display = 'none';
+    });
+
+    // Close
+    closeModal.addEventListener('click', function() {
+        disclaimerModal.style.display = 'none';
+    });
+    disclaimerModal.addEventListener('click', function(event) {
+        if (event.target === disclaimerModal) {
+            disclaimerModal.style.display = 'none';
+        }
+    });
+});

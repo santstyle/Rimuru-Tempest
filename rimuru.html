@@ -8,8 +8,77 @@
     <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="rimuru.css">
+    <link rel="stylesheet" href="bubble.css">
 
 <body>
+        <!-- Popup Bubble -->
+        <div class="popup-bubble" id="popupBubble">
+            <i class="fas fa-info-circle"></i>
+        </div>
+    
+        <!-- Modal for Disclaimer -->
+        <div class="modal" id="disclaimerModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <h2>Disclaimer & Permintaan Maaf</h2>
+                <p>Selamat datang di Rimuru Tempest Fanbase. Kami sangat mengapresiasi kunjungan Anda ke platform ini dan berharap website ini dapat menjadi ruang yang menyenangkan serta inspiratif bagi para penggemar Tensei Shitara Slime Datta Ken.</p>
+                <p>Namun, demi transparansi dan menghormati berbagai pihak yang terlibat dalam karya ini, kami merasa perlu untuk memberikan penjelasan secara rinci mengenai penggunaan konten, tujuan website, serta permintaan maaf atas kekurangan yang mungkin terjadi.</p>
+                
+                <h3>Tujuan Website</h3>
+                <p>Website ini dirancang sebagai bentuk penghormatan dan apresiasi kami terhadap karya luar biasa Tensei Shitara Slime Datta Ken. Tujuan utama kami adalah:</p>
+                <ul>
+                    <li>Menyediakan ruang interaksi bagi komunitas penggemar Rimuru dan dunia Tempest.</li>
+                    <li>Mendukung kreativitas dengan menampilkan karya seni, diskusi teori, dan informasi terkini terkait karya ini.</li>
+                    <li>Menghubungkan komunitas global melalui berbagai fitur interaktif.</li>
+                </ul>
+                <p>Kami ingin menegaskan bahwa website ini:</p>
+                <ul>
+                    <li>Tidak berafiliasi secara resmi dengan pencipta, penerbit, studio produksi, atau pihak lain yang memiliki hak cipta atas karya ini.</li>
+                    <li>Non-komersial dan semata-mata dibuat untuk tujuan hiburan dan komunitas.</li>
+                </ul>
+    
+                <h3>Penggunaan Konten Eksternal</h3>
+                <p>Kami menyadari bahwa beberapa elemen di website ini, seperti gambar, fanart, artikel, atau tautan streaming, mungkin berasal dari sumber eksternal. Untuk menjaga integritas platform ini, kami telah melakukan langkah-langkah berikut:</p>
+                
+                <h4>Sumber Kredit</h4>
+                <p>Kami selalu berusaha mencantumkan sumber asli untuk setiap konten yang kami gunakan. Sumber ini biasanya dicantumkan dalam bentuk deskripsi, tautan langsung, atau catatan pada konten terkait.</p>
+                <p>Namun, kami mengakui bahwa kemungkinan terjadi kekeliruan atau kelalaian dalam mencantumkan sumber secara lengkap.</p>
+                
+                <h4>Hak Cipta dan Lisensi</h4>
+                <p>Semua hak cipta atas konten di website ini tetap dimiliki oleh pencipta atau pemegang lisensi asli. Kami tidak mengklaim kepemilikan atas konten tersebut.</p>
+                <p>Jika Anda adalah pemilik hak cipta atas salah satu konten di website ini dan merasa keberatan atas penggunaannya, kami siap untuk segera menghapus atau memperbaiki penggunaan konten tersebut. Silakan hubungi kami melalui formulir kontak.</p>
+                
+                <h4>Tautan Streaming Resmi</h4>
+                <p>Untuk mendukung konsumsi konten secara legal, kami menyertakan tautan ke platform resmi seperti YouTube Muse Indonesia. Kami menghimbau pengunjung untuk selalu mengakses konten melalui saluran resmi.</p>
+    
+                <h3>Permintaan Maaf yang Tulus</h3>
+                <p>Kami dengan rendah hati ingin menyampaikan permintaan maaf yang tulus atas:</p>
+                <ul>
+                    <li>Segala kekurangan dalam pengelolaan website ini, terutama terkait penggunaan konten eksternal yang mungkin belum mendapatkan izin langsung.</li>
+                    <li>Ketidaksempurnaan dalam menyampaikan sumber asli, yang bukan merupakan niat kami untuk melanggar hak cipta atau merugikan pihak manapun.</li>
+                </ul>
+                <p>Kami berkomitmen untuk terus belajar, memperbaiki, dan beradaptasi agar dapat mengelola platform ini dengan lebih baik serta menghormati seluruh pihak yang terlibat.</p>
+    
+                <h3>Tahap Pengembangan Website</h3>
+                <p>Saat ini, website ini masih berada dalam tahap perbaikan dan pengembangan. Beberapa fitur mungkin belum berfungsi sepenuhnya atau memiliki keterbatasan teknis. Kami memohon pengertian dari pengunjung atas kekurangan ini, dan kami berjanji untuk terus meningkatkan kualitas platform kami di masa mendatang.</p>
+    
+                <h3>Komitmen Kami</h3>
+                <p>Kami berkomitmen untuk:</p>
+                <ul>
+                    <li>Mengelola website ini sesuai dengan prinsip keterbukaan, penghormatan hak cipta, dan dukungan terhadap kreator asli.</li>
+                    <li>Menjadikan platform ini ruang aman dan ramah untuk komunitas penggemar.</li>
+                    <li>Mengutamakan pengalaman pengunjung sambil tetap menghormati semua pihak yang berkontribusi pada karya Tensei Shitara Slime Datta Ken.</li>
+                </ul>
+    
+                <h3>Hubungi Kami</h3>
+                <p>Jika ada hal yang ingin disampaikan terkait pelanggaran hak cipta, saran, kritik, atau masukan lainnya, jangan ragu untuk menghubungi kami melalui:</p>
+                <ul>
+                    <li>Formulir kontak yang tersedia di website ini.</li>
+                </ul>
+                <p>Terima kasih atas dukungan, pengertian, dan partisipasi Anda dalam komunitas ini.</p>
+                <p><strong>SantStyle (Developer Website)</strong></p>
+            </div>
+        </div>
     <!-- Header Section -->
     <header class="site-header">
         <div class="header-container">
@@ -178,7 +247,7 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
     <!-- Characters Section -->
     <section class="section characters-section">
         <div class="container">
-            <h2 class="section-title">Karakter Populer</h2>
+            <h2 class="section-title">Karakter Favorit Owner</h2>
             <div class="characters-container">
                 <!-- Character 1 -->
                 <div class="character-card">
