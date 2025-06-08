@@ -49,7 +49,7 @@ const episodesData = {
 function getCurrentEpisodeFromURL() {
     const path = window.location.pathname;
     const file = path.substring(path.lastIndexOf('/') + 1);
-    return file || '1.html'; // default to 1.html if no file found
+    return file || '1.html'; 
 }
 
 function renderEpisodes(season) {
@@ -112,7 +112,7 @@ const statusIndicator = document.querySelector('.status-indicator');
 // server sources for each episode and server
 const serverSources = {
     server1: {
-        '1.html': 'https://www.youtube.com/embed/Lys5vkiv0RA?si=e1X_0-ICc2aftavk',
+        '1.html': 'https://www.youtube.com/embed/Lys5vkiv0RA?',
         '2.html': 'https://www.youtube.com/embed/R6JuMf5XkQc',
         '3.html': 'https://www.youtube.com/embed/LGD1DVe8BAo',
         '4.html': 'https://www.youtube.com/embed/KGRK1GE1IG8',
@@ -129,7 +129,7 @@ const serverSources = {
         '15.html': 'https://www.youtube.com/embed/lEevvSAlpAA'
     },
     server2: {
-        '1.html': '', // Add server 2 URLs here
+        '1.html': '', // server 2 URLs
         '2.html': '',
         '3.html': '',
         '4.html': '',
@@ -173,7 +173,6 @@ serverBtns.forEach(btn => {
     });
 });
 
-// Initialize
 const currentEpisode = getCurrentEpisodeFromURL();
 let currentSeason = 'Season 1';
 for (const season in episodesData) {
