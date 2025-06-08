@@ -103,6 +103,76 @@ seasonBtns.forEach(btn => {
     });
 });
 
+// Server Switching 
+const serverBtns = document.querySelectorAll('.server-btn');
+const videoPlayer = document.getElementById('video-player');
+const serverStatus = document.querySelector('.server-status');
+const statusIndicator = document.querySelector('.status-indicator');
+
+// server sources for each episode and server
+const serverSources = {
+    server1: {
+        '1.html': 'https://www.youtube.com/embed/Lys5vkiv0RA?si=e1X_0-ICc2aftavk',
+        '2.html': 'https://www.youtube.com/embed/R6JuMf5XkQc',
+        '3.html': 'https://www.youtube.com/embed/LGD1DVe8BAo',
+        '4.html': 'https://www.youtube.com/embed/KGRK1GE1IG8',
+        '5.html': 'https://www.youtube.com/embed/N6Wix6v4oa4',
+        '6.html': 'https://www.youtube.com/embed/SrLj-eSbJbo',
+        '7.html': 'https://www.youtube.com/embed/Kzz9-_b5ebw',
+        '8.html': 'https://www.youtube.com/embed/RvWhoeXXeZg',
+        '9.html': 'https://www.youtube.com/embed/HZTj6j6Iaqk',
+        '10.html': 'https://www.youtube.com/embed/QhQl9H9RlPc',
+        '11.html': 'https://www.youtube.com/embed/AgOs5zAli0E',
+        '12.html': 'https://www.youtube.com/embed/PebLJymSvvU',
+        '13.html': 'https://www.youtube.com/embed/4VhKfsaExLg',
+        '14.html': 'https://www.youtube.com/embed/-FF9jQHKwiI',
+        '15.html': 'https://www.youtube.com/embed/lEevvSAlpAA'
+    },
+    server2: {
+        '1.html': '', // Add server 2 URLs here
+        '2.html': '',
+        '3.html': '',
+        '4.html': '',
+        '5.html': '',
+        '6.html': '',
+        '7.html': '',
+        '8.html': '',
+        '9.html': '',
+        '10.html': '',
+        '11.html': '',
+        '12.html': '',
+        '13.html': '',
+        '14.html': '',
+        '15.html': ''
+    }
+};
+
+let currentServer = 'server1';
+
+serverBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const server = btn.dataset.server;
+
+        if (serverSources[server]) {
+            serverBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentServer = server;
+
+            const currentEpisode = getCurrentEpisodeFromURL();
+            const newSrc = serverSources[server][currentEpisode] || '';
+
+            if (newSrc) {
+                videoPlayer.src = newSrc;
+                serverStatus.querySelector('span:last-child').textContent = `Server aktif: ${btn.textContent.trim()}`;
+                statusIndicator.classList.remove('error');
+            } else {
+                statusIndicator.classList.add('error');
+                serverStatus.querySelector('span:last-child').textContent = 'Server sedang gangguan';
+            }
+        }
+    });
+});
+
 // Initialize
 const currentEpisode = getCurrentEpisodeFromURL();
 let currentSeason = 'Season 1';
@@ -117,4 +187,10 @@ const activeSeasonBtn = Array.from(seasonBtns).find(b => b.textContent.trim() ==
 if (activeSeasonBtn) activeSeasonBtn.classList.add('active');
 
 renderEpisodes(currentSeason);
+
+// Load video for current episode and server
+const initialSrc = serverSources[currentServer][currentEpisode] || '';
+if (initialSrc) {
+    videoPlayer.src = initialSrc;
+}
 loadCurrentEpisodeVideo();
