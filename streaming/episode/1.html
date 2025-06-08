@@ -419,46 +419,66 @@
             border-color: var(--rimuru-blue);
         }
 
-        .episode-list {
-            max-height: 600px;
-            overflow-y: auto;
-        }
+                .episode-list {
+                    max-height: 600px;
+                    overflow-y: auto;
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                }
 
-        .episode-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.8rem;
-            border-radius: 5px;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+                .episode-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 0.5rem 0.8rem;
+                    border-radius: 5px;
+                    margin-bottom: 0.5rem;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                }
 
-        .episode-item:hover {
-            background-color: var(--rimuru-light-blue);
-        }
+                .episode-item:hover {
+                    background-color: var(--rimuru-light-blue);
+                    border-color: var(--rimuru-blue);
+                }
 
-        .episode-item.active {
-            background-color: var(--rimuru-blue);
-            color: white;
-        }
+                .episode-item.active {
+                    background-color: var(--rimuru-blue);
+                    color: white;
+                    border-color: var(--rimuru-blue);
+                }
 
-        .episode-thumb {
-            width: 80px;
-            height: 45px;
-            border-radius: 5px;
-            object-fit: cover;
-        }
+                .episode-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    text-decoration: none;
+                    color: inherit;
+                    width: 100%;
+                }
 
-        .episode-info {
-            flex: 1;
-        }
+                .episode-link:hover {
+                    text-decoration: none;
+                }
 
-        .episode-name {
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
+                .episode-thumb {
+                    width: 80px;
+                    height: 45px;
+                    border-radius: 5px;
+                    object-fit: cover;
+                    flex-shrink: 0;
+                }
+
+                .episode-info {
+                    flex: 1;
+                }
+
+                .episode-name {
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                }
 
         .episode-duration {
             font-size: 0.8rem;
@@ -1126,195 +1146,7 @@
         </footer>
     
         <!-- Font Awesome -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-        <script>
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mainNav = document.querySelector('.main-nav');
-
-            mobileMenuBtn.addEventListener('click', () => {
-                mainNav.classList.toggle('active');
-            });
-
-            // Search toggle
-            const searchBtn = document.querySelector('.search-btn');
-            const searchContainer = document.querySelector('.search-container');
-
-            searchBtn.addEventListener('click', () => {
-                searchContainer.classList.toggle('active');
-            });
-
-            // Season selector functionality
-            const seasonBtns = document.querySelectorAll('.season-btn');
-            const episodeListContainer = document.querySelector('.episode-list');
-
-            // Episode List Data
-            const episodesData = {
-                'Season 1': [
-                    { title: 'Episode 1 - Reinkarnasi Sang Slime', thumb: 'https://i.ytimg.com/vi/Lys5vkiv0RA/hqdefault.jpg' },
-                    { title: 'Episode 2 - Pertemuan dengan Veldora', thumb: 'https://i.ytimg.com/vi/R6JuMf5XkQc/hq720.jpg' },
-                    { title: 'Episode 3 - Goblin dan Sang Pemimpin', thumb: 'https://i.ytimg.com/vi/LGD1DVe8BAo/hqdefault.jpg' },
-                    { title: 'Episode 4 - Di Kerajaan Dwarf Dwargonl', thumb: 'https://i.ytimg.com/vi/KGRK1GE1IG8/hqdefault.jpg' },
-                    { title: 'Episode 5 - Pertemuan dengan Raja Dwarf', thumb: 'https://i.ytimg.com/vi/N6Wix6v4oa4/hqdefault.jpg' },
-                    { title: 'Episode 6 - Shizu dan Masa Lalu', thumb: 'https://i.ytimg.com/vi/SrLj-eSbJbo/hqdefault.jpg' },
-                    { title: 'Episode 7 - Penakluk Api', thumb: 'https://i.ytimg.com/vi/Kzz9-_b5ebw/hqdefault.jpg' },
-                    { title: 'Episode 8 - Warisan Shizu', thumb: 'https://i.ytimg.com/vi/RvWhoeXXeZg/hqdefault.jpg' },
-                    { title: 'Episode 9 - Serangan Ras Ogre', thumb: 'https://i.ytimg.com/vi/HZTj6j6Iaqk/hqdefault.jpg' },
-                    { title: 'Episode 10 - Pertempuran Memutuskan Nasib', thumb: 'https://i.ytimg.com/vi/QhQl9H9RlPc/hqdefault.jpg' },
-                    { title: 'Episode 11 - Aliansi Badai Besar', thumb: 'https://i.ytimg.com/vi/AgOs5zAli0E/hqdefault.jpg' },
-                    { title: 'Episode 12 - Pengepungan Badai', thumb: 'https://i.ytimg.com/vi/PebLJymSvvU/hqdefault.jpg' },
-                    { title: 'Episode 13 - Pertempuran Tempest', thumb: 'https://i.ytimg.com/vi/4VhKfsaExLg/hqdefault.jpg' },
-                    { title: 'Episode 14 - Ancaman Baru Muncul', thumb: 'https://i.ytimg.com/vi/-FF9jQHKwiI/hqdefault.jpg' },
-                    { title: 'Episode 15 - Penguasa Badai', thumb: 'https://i.ytimg.com/vi/lEevvSAlpAA/hqdefault.jpg' }
-                ],
-                'Season 2': [
-                    { title: 'Episode 1 - ', thumb: '' },
-                    { title: 'Episode 2 - ', thumb: '' }
-                ],
-                'Season 3': [
-                    { title: 'Episode 1 - ', thumb: '' },
-                    { title: 'Episode 2 - ', thumb: '' }
-                ]
-            };
-
-            function renderEpisodes(season) {
-                const episodes = episodesData[season];
-                episodeListContainer.innerHTML = '';
-                episodes.forEach((ep, index) => {
-                    const episodeItem = document.createElement('div');
-                    episodeItem.classList.add('episode-item');
-                    if (index === 0) episodeItem.classList.add('active');
-                    episodeItem.innerHTML = `
-                    <img src="${ep.thumb}" alt="${ep.title}" class="episode-thumb" />
-                    <div class="episode-info">
-                        <div class="episode-name">${ep.title}</div>
-                    </div>
-                `;
-                    episodeListContainer.appendChild(episodeItem);
-
-                    episodeItem.addEventListener('click', () => {
-                        document.querySelectorAll('.episode-item').forEach(i => i.classList.remove('active'));
-                        episodeItem.classList.add('active');
-                        // Here you can add code to change the video src based on episode selected
-                    });
-                });
-            }
-
-            seasonBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    seasonBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    renderEpisodes(btn.textContent.trim());
-                });
-            });
-            renderEpisodes('Season 1');
-
-            // Server Switching 
-            const serverBtns = document.querySelectorAll('.server-btn');
-            const videoPlayer = document.getElementById('video-player');
-            const serverStatus = document.querySelector('.server-status');
-            const statusIndicator = document.querySelector('.status-indicator');
-
-            // server sources
-            const serverSources = {
-                server1: 'https://www.youtube.com/embed/Lys5vkiv0RA?si=e1X_0-ICc2aftavk',
-                server2: '', 
-            };
-
-            // server status 
-            const serverStatuses = {
-                server1: true,
-                server2: true,
-            };
-
-            serverBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const server = btn.dataset.server;
-
-                    if (serverStatuses[server]) {
-                        serverBtns.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-
-                        videoPlayer.src = serverSources[server];
-
-                        serverStatus.querySelector('span:last-child').textContent = `Server aktif: ${btn.textContent.trim()}`;
-                        statusIndicator.classList.remove('error');
-                    } else {
-                        statusIndicator.classList.add('error');
-                        serverStatus.querySelector('span:last-child').textContent = 'Server sedang gangguan';
-                    }
-                });
-            });
-
-            // Comment Form Submission
-            const commentForm = document.querySelector('.comment-form');
-            const commentInput = document.querySelector('.comment-input');
-            const commentsList = document.querySelector('.comments-list');
-
-            commentForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const commentText = commentInput.value.trim();
-                if (commentText) {
-                    // Create new comment
-                    const newComment = document.createElement('div');
-                    newComment.className = 'comment';
-                    newComment.innerHTML = `
-                    <div class="comment-avatar">Y</div>
-                    <div class="comment-content">
-                        <div class="comment-header">
-                            <span class="comment-author">You</span>
-                            <span class="comment-time">Baru saja</span>
-                        </div>
-                        <p class="comment-text">${commentText}</p>
-                        <div class="comment-actions">
-                            <button class="comment-action">
-                                <i class="fas fa-thumbs-up"></i> 0
-                            </button>
-                            <button class="comment-action">
-                                <i class="fas fa-thumbs-down"></i> 0
-                            </button>
-                            <button class="comment-action">
-                                <i class="fas fa-reply"></i> Balas
-                            </button>
-                        </div>
-                    </div>
-                `;
-
-                    // Add to top of comments list
-                    commentsList.prepend(newComment);
-
-                    // Clear input
-                    commentInput.value = '';
-
-                    // Update comment count
-                    const commentCount = document.querySelector('.section-title');
-                    const currentCount = parseInt(commentCount.textContent.match(/\d+/)[0]);
-                    commentCount.textContent = commentCount.textContent.replace(/\d+/, currentCount + 1);
-                }
-            });
-
-            // Comment action handlers
-            document.addEventListener('click', (e) => {
-                if (e.target.closest('.comment-action')) {
-                    const action = e.target.closest('.comment-action');
-                    const countSpan = action.querySelector('span') || action.nextElementSibling;
-                    let count = parseInt(action.textContent.match(/\d+/) ? action.textContent.match(/\d+/)[0] : 0);
-
-                    // Simple toggle - in real app you'd track user votes
-                    if (action.classList.contains('active')) {
-                        action.classList.remove('active');
-                        action.innerHTML = action.innerHTML.replace(`${count}`, `${count - 1}`);
-                    } else {
-                        action.classList.add('active');
-                        action.innerHTML = action.innerHTML.replace(`${count}`, `${count + 1}`);
-                    }
-                }
-            });
-
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        </script>
+        <script src="episode.js"></script>
 </body>
 
 </html>
