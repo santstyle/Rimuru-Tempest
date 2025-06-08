@@ -7,6 +7,7 @@
     <title>Tensura Episode 1 - Rimuru Fanbase</title>
     <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/footer.css">
     <style>
         /* Global Styles */
         :root {
@@ -323,32 +324,58 @@
             border: none;
         }
 
-        .video-actions {
+        /* Server Switch Styles */
+        .server-switcher {
             display: flex;
-            justify-content: space-between;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: rgba(58, 168, 246, 0.1);
+            border-radius: 8px;
             align-items: center;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
         }
 
-        .action-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--rimuru-light-blue);
-            color: var(--rimuru-dark-blue);
-            border: none;
+        .server-btn {
             padding: 0.5rem 1rem;
+            background-color: var(--rimuru-light-blue);
+            border: none;
             border-radius: 5px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white
         }
 
-        .action-btn:hover {
+        .server-btn.active {
             background-color: var(--rimuru-blue);
             color: white;
+        }
+
+        .server-btn:hover:not(.active) {
+            background-color: var(--rimuru-light-blue);
+            transform: translateY(-2px);
+        }
+
+        .server-status {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+        }
+
+        .status-indicator.error {
+            background-color: #f44336;
         }
 
         /* Episode List Sidebar */
@@ -473,6 +500,126 @@
             line-height: 1.6;
         }
 
+        /* Comment Section Styles */
+        .comments-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+        }
+
+        .comment-submit {
+            align-self: flex-end;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--rimuru-blue);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .comment-submit:hover {
+            background-color: var(--rimuru-dark-blue);
+            transform: translateY(-2px);
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .comment {
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: var(--rimuru-light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rimuru-dark-blue);
+            font-weight: bold;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--rimuru-dark-blue);
+        }
+
+        .comment-time {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .comment-text {
+            line-height: 1.5;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        .comment-action {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: none;
+            border: none;
+        }
+
+        .comment-action:hover {
+            color: var(--rimuru-blue);
+        }
+
         /* Recommendations Section */
         .recommendations {
             margin-top: 2rem;
@@ -503,11 +650,13 @@
         }
 
         .recommendation-card {
+            position: relative;
             background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .recommendation-card:hover {
@@ -517,346 +666,36 @@
 
         .recommendation-thumb {
             width: 100%;
-            height: 120px;
+            height: 300px;
             object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.3s ease;
+        }
+
+        .recommendation-card:hover .recommendation-thumb {
+            transform: scale(1.05);
         }
 
         .recommendation-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             padding: 1rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            border-radius: 0 0 10px 10px;
         }
 
         .recommendation-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
         }
 
         .recommendation-meta {
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        /* Footer Styles */
-        .footer {
-            background: #0A1F44;
-            color: #FFFFFF;
-            padding: 3rem 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(135deg, var(--rimuru-blue) 0%, var(--rimuru-dark-blue) 100%);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-column {
-            padding: 0 15px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .slime-icon {
-            font-size: 2rem;
-            margin-right: 10px;
-            animation: pulse 2s infinite;
-        }
-
-        .footer-title {
-            font-family: 'Righteous', cursive;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--rimuru-light-blue);
-            position: relative;
-            display: inline-block;
-        }
-
-        .footer-title::after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--rimuru-blue);
-            border-radius: 3px;
-        }
-
-        .footer-description {
             font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: #F0F9FF;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon {
-            color: #FFFFFF;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: none;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .social-icon:hover {
-            background: var(--rimuru-blue);
-            transform: translateY(-3px);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #F0F9FF;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        .footer-links a::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--rimuru-blue);
-        }
-
-        .footer-links a:hover {
-            color: var(--rimuru-blue);
-            padding-left: 20px;
-        }
-
-        .contact-text {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: #F0F9FF;
-        }
-
-        .copyright-bar {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem 0;
-            margin-top: 3rem;
-        }
-
-        .copyright-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .copyright-bar p {
-            font-size: 0.8rem;
-            color: #F0F9FF;
-            margin-bottom: 1rem;
-        }
-
-        .legal-links {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 1rem;
-        }
-
-        .legal-links a {
-            color: #F0F9FF;
-            font-size: 0.8rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .legal-links a:hover {
-            color: var(--rimuru-blue);
-        }
-
-        .visitor-counter {
-            background: rgba(58, 168, 246, 0.2);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--rimuru-light-blue);
-        }
-
-        .visitor-counter i {
-            color: var(--rimuru-blue);
-        }
-
-        /* Animations */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .main-nav .nav-list {
-                gap: 1rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                padding: 0 1.5rem;
-            }
-
-            .main-nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--rimuru-dark-blue);
-                padding: 1rem;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-                transform: translateY(-150%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-            }
-
-            .main-nav.active {
-                transform: translateY(0);
-            }
-
-            .main-nav .nav-list {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .nav-link {
-                flex-direction: row;
-                justify-content: flex-start;
-                gap: 1rem;
-                padding: 0.8rem 1rem;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .site-title {
-                font-size: 1.5rem;
-            }
-
-            .forum-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .categories-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
-        @media (max-width: 576px) {
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .threads-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .sort-options {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .sort-btn {
-                flex: 1;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .branding {
-                gap: 0.5rem;
-            }
-
-            .site-logo {
-                height: 40px;
-            }
-
-            .utility-nav .login-btn span {
-                display: none;
-            }
-
-            .header-container {
-                padding: 0 1rem;
-            }
-
-            .forum-container {
-                padding: 0 1rem;
-            }
+            color: #ddd;
         }
     </style>
 </head>
@@ -892,8 +731,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/komunitas/komunitas.html" class="
-        nav-link">
+                        <a href="/komunitas/komunitas.html" class="nav-link">
                             <i class="fas fa-users nav-icon"></i>
                             <span class="nav-text">Community</span>
                         </a>
@@ -950,26 +788,27 @@
             <!-- Video Player -->
             <div class="video-player-container">
                 <h2 class="video-title">Episode 1 - Reinkarnasi Sang Slime</h2>
+
+                <!-- Server Switcher -->
+                <div class="server-switcher">
+                    <button class="server-btn active" data-server="server1">
+                        <i class="fas fa-server"></i> Server 1
+                    </button>
+                    <button class="server-btn" data-server="server2">
+                        <i class="fas fa-server"></i> Server 2
+                    </button>
+                    <div class="server-status">
+                        <span class="status-indicator"></span>
+                        <span>Server aktif: Server 1</span>
+                    </div>
+                </div>
+
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/V_-6YvAPzWg?si=SVi4q8lsgCtQub3B"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    <iframe id="video-player" width="560" height="315"
+                        src="https://www.youtube.com/embed/Lys5vkiv0RA?si=e1X_0-ICc2aftavk" frameborder="0"
                         allowfullscreen></iframe>
                 </div>
-                <div class="video-actions">
-                    <button class="action-btn">
-                        <i class="fas fa-thumbs-up"></i> Suka
-                    </button>
-                    <button class="action-btn">
-                        <i class="fas fa-share"></i> Bagikan
-                    </button>
-                    <button class="action-btn">
-                        <i class="fas fa-bookmark"></i> Simpan
-                    </button>
-                    <button class="action-btn">
-                        <i class="fas fa-flag"></i> Laporkan
-                    </button>
-                </div>
+
             </div>
 
             <!-- Episode List Sidebar -->
@@ -978,66 +817,140 @@
                 <div class="season-selector">
                     <button class="season-btn active">Season 1</button>
                     <button class="season-btn">Season 2</button>
-                    <button class="season-btn">OVA</button>
+                    <button class="season-btn">Season 3</button>
                 </div>
                 <div class="episode-list">
                     <!-- Episode 1 -->
                     <div class="episode-item active">
-                        <img src="https://i.ytimg.com/vi/V_-6YvAPzWg/hqdefault.jpg" alt="Episode 1"
+                        <img src="https://i.ytimg.com/vi/Lys5vkiv0RA/hqdefault.jpg" alt="Episode 1"
                             class="episode-thumb">
                         <div class="episode-info">
                             <div class="episode-name">Episode 1 - Reinkarnasi Sang Slime</div>
-                            <div class="episode-duration">23:45</div>
                         </div>
                     </div>
 
                     <!-- Episode 2 -->
                     <div class="episode-item">
-                        <img src="https://i.ytimg.com/vi/8TFAvrCws04/hqdefault.jpg" alt="Episode 2"
-                            class="episode-thumb">
+                        <img src="https://i.ytimg.com/vi/R6JuMf5XkQc/hq720.jpg" alt="Episode 2" class="episode-thumb">
                         <div class="episode-info">
                             <div class="episode-name">Episode 2 - Pertemuan dengan Veldora</div>
-                            <div class="episode-duration">23:30</div>
                         </div>
                     </div>
 
                     <!-- Episode 3 -->
                     <div class="episode-item">
-                        <img src="https://i.ytimg.com/vi/KgT7L_jxmp4/hqdefault.jpg" alt="Episode 3"
+                        <img src="https://i.ytimg.com/vi/LGD1DVe8BAo/hqdefault.jpg" alt="Episode 3"
                             class="episode-thumb">
                         <div class="episode-info">
                             <div class="episode-name">Episode 3 - Goblin dan Sang Pemimpin</div>
-                            <div class="episode-duration">23:15</div>
                         </div>
                     </div>
 
                     <!-- Episode 4 -->
                     <div class="episode-item">
-                        <img src="https://i.ytimg.com/vi/Bx1KbS_jqns/hqdefault.jpg" alt="Episode 4"
+                        <img src="https://i.ytimg.com/vi/KGRK1GE1IG8/hqdefault.jpg" alt="Episode 4"
                             class="episode-thumb">
                         <div class="episode-info">
-                            <div class="episode-name">Episode 4 - Serigala dan Kota Kerdil</div>
-                            <div class="episode-duration">23:20</div>
+                            <div class="episode-name">Episode 4 - Di Kerajaan Dwarf Dwargonl</div>
                         </div>
                     </div>
 
                     <!-- Episode 5 -->
                     <div class="episode-item">
-                        <img src="https://i.ytimg.com/vi/opzl-VEyzko/hqdefault.jpg" alt="Episode 5"
+                        <img src="https://i.ytimg.com/vi/N6Wix6v4oa4/hqdefault.jpg" alt="Episode 5"
                             class="episode-thumb">
                         <div class="episode-info">
-                            <div class="episode-name">Episode 5 - Pahlawan dan Raja Iblis</div>
-                            <div class="episode-duration">23:25</div>
+                            <div class="episode-name">Episode 5 - Pertemuan dengan Raja Dwarf</div>
                         </div>
                     </div>
 
                     <!-- Episode 6 -->
                     <div class="episode-item">
-                        <img src="https://i.ytimg.com/vi/e-yJU5MVedA/hqdefault.jpg" alt="Episode 6"
+                        <img src="https://i.ytimg.com/vi/SrLj-eSbJbo/hqdefault.jpg" alt="Episode 6"
                             class="episode-thumb">
                         <div class="episode-info">
                             <div class="episode-name">Episode 6 - Shizu dan Masa Lalu</div>
-                            <div class="episode-duration">23:40</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 7 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/Kzz9-_b5ebw/hqdefault.jpg" alt="Episode 7"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 7 - Penakluk Api</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 8 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/RvWhoeXXeZg/hqdefault.jpg" alt="Episode 8"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 8 - Warisan Shizu</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 9 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/HZTj6j6Iaqk/hqdefault.jpg" alt="Episode 9"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 9 - Serangan Ras Ogre</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 10 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/QhQl9H9RlPc/hqdefault.jpg" alt="Episode 10"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 10 - Pertempuran Memutuskan Nasib</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 11 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/AgOs5zAli0E/hqdefault.jpg" alt="Episode 11"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 11 - Aliansi Badai Besar</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 12 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/PebLJymSvvU/hqdefault.jpg" alt="Episode 12"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 12 - Pengepungan Badai</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 13 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/4VhKfsaExLg/hqdefault.jpg" alt="Episode 13"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 13 - Pertempuran Tempest</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 14 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/-FF9jQHKwiI/hqdefault.jpg" alt="Episode 14"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 14 - Ancaman Baru Muncul</div>
+                        </div>
+                    </div>
+
+                    <!-- Episode 15 -->
+                    <div class="episode-item">
+                        <img src="https://i.ytimg.com/vi/lEevvSAlpAA/hqdefault.jpg" alt="Episode 15"
+                            class="episode-thumb">
+                        <div class="episode-info">
+                            <div class="episode-name">Episode 15 - Penguasa Badai</div>
                         </div>
                     </div>
                 </div>
@@ -1065,159 +978,343 @@
             </div>
         </div>
 
-        <!-- Recommendations -->
-        <div class="recommendations">
-            <h3 class="section-title">Rekomendasi Untuk Anda</h3>
-            <div class="recommendation-grid">
-                <!-- Recommendation 1 -->
-                <div class="recommendation-card">
-                    <img src="https://i.ytimg.com/vi/9JZqrvX-7Xw/maxresdefault.jpg" alt="Episode 2"
-                        class="recommendation-thumb">
-                    <div class="recommendation-info">
-                        <div class="recommendation-title">Episode 2 - Pertemuan dengan Veldora</div>
-                        <div class="recommendation-meta">23:30 • 980K x ditonton</div>
+        <!-- Comment Section -->
+        <div class="comments-section">
+            <h3 class="section-title">Komentar (1)</h3>
+
+            <form class="comment-form">
+                <textarea class="comment-input" placeholder="Tulis komentar Anda..." required></textarea>
+                <button type="submit" class="comment-submit">
+                    <i class="fas fa-paper-plane"></i> Kirim Komentar
+                </button>
+            </form>
+
+            <div class="comments-list">
+                <!-- Comment 1 -->
+                <div class="comment">
+                    <div class="comment-avatar">R</div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">RimuruFan123</span>
+                            <span class="comment-time">2 jam yang lalu</span>
+                        </div>
+                        <p class="comment-text">
+                            Episode pertama yang sangat memukau! Animasi pertemuan dengan Veldora sangat bagus. Tidak
+                            sabar untuk episode selanjutnya!
+                        </p>
+                        <div class="comment-actions">
+                            <button class="comment-action">
+                                <i class="fas fa-thumbs-up"></i> 24
+                            </button>
+                            <button class="comment-action">
+                                <i class="fas fa-thumbs-down"></i> 2
+                            </button>
+                            <button class="comment-action">
+                                <i class="fas fa-reply"></i> Balas
+                            </button>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Recommendation 2 -->
-                <div class="recommendation-card">
-                    <img src="https://i.ytimg.com/vi/8JZqrvX-7Xw/maxresdefault.jpg" alt="Episode 3"
-                        class="recommendation-thumb">
-                    <div class="recommendation-info">
-                        <div class="recommendation-title">Episode 3 - Goblin dan Sang Pemimpin</div>
-                        <div class="recommendation-meta">23:15 • 850K x ditonton</div>
+            <!-- Recommendations -->
+            <div class="recommendations">
+                <h3 class="section-title">Rekomendasi Untuk Anda</h3>
+                <div class="recommendation-grid">
+                    <!-- Recommendation 1 -->
+                    <div class="recommendation-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1570/135813.jpg" alt=""
+                            class="recommendation-thumb">
+                        <div class="recommendation-info">
+                            <div class="recommendation-title">Tensei shitara Slime Datta Ken: Coleus no Yume</div>
+                            <div class="recommendation-meta">1:13:30</div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Recommendation 3 -->
-                <div class="recommendation-card">
-                    <img src="https://i.ytimg.com/vi/7JZqrvY-7Xw/maxresdefault.jpg" alt="Episode 4"
-                        class="recommendation-thumb">
-                    <div class="recommendation-info">
-                        <div class="recommendation-title">Episode 4 - Serigala dan Kota Kerdil</div>
-                        <div class="recommendation-meta">23:20 • 800K x ditonton</div>
+                    <!-- Recommendation 2 -->
+                    <div class="recommendation-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1458/117607.jpg" alt=""
+                            class="recommendation-thumb">
+                        <div class="recommendation-info">
+                            <div class="recommendation-title">Tensura Nikki: Tensei shitara Slime Datta Ken</div>
+                            <div class="recommendation-meta">12 Episode</div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Recommendation 4 -->
-                <div class="recommendation-card">
-                    <img src="https://i.ytimg.com/vi/7JZqrvZ-7Xw/maxresdefault.jpg" alt="Episode 5"
-                        class="recommendation-thumb">
-                    <div class="recommendation-info">
-                        <div class="recommendation-title">Episode 5 - Pahlawan dan Raja Iblis</div>
-                        <div class="recommendation-meta">23:25 • 750K x ditonton</div>
+                    <!-- Recommendation 3 -->
+                    <div class="recommendation-card">
+                        <img src="https://i.pinimg.com/1200x/0f/7d/72/0f7d724d10ad1fc2a32198023988e59b.jpg" alt=""
+                            class="recommendation-thumb">
+                        <div class="recommendation-info">
+                            <div class="recommendation-title">Tensei Shitara Slime Datta Ken OVA</div>
+                            <div class="recommendation-meta">5 Episode</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Column 1: About Us -->
-            <div class="footer-column">
-                <div class="logo-container">
-                    <span class="slime-icon">🌀</span>
-                    <h3 class="footer-title">Rimuru</h3>
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Column 1: About Us -->
+                <div class="footer-column">
+                    <div class="logo-container">
+                        <span class="slime-icon">🌀</span>
+                        <h3 class="footer-title">Rimuru</h3>
+                    </div>
+                    <p class="footer-description">
+                        Komunitas penggemar Rimuru Tempest untuk berbagi fanart, teori, dan berita terbaru dari dunia
+                        Tensura!
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://github.com/santstyle" class="social-icon" aria-label="Github"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/santstyle.mv" class="social-icon" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.youtube.com/@santstyle_mv" class="social-icon" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <p class="footer-description">
-                    Komunitas penggemar Rimuru Tempest untuk berbagi fanart, teori, dan berita terbaru dari dunia
-                    Tensura!
-                </p>
-                <div class="social-icons">
-                    <a href="https://github.com/santstyle" class="social-icon" aria-label="Github"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/santstyle.mv" class="social-icon" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon" aria-label="Discord"><i class="fab fa-discord"></i></a>
-                    <a href="https://www.youtube.com/@santstyle_mv" class="social-icon" aria-label="YouTube"><i
-                            class="fab fa-youtube"></i></a>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Jelajahi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="/about/about.html">Profil Rimuru</a></li>
+                        <li><a href="/gallery/gallery.html">Galeri Fanart</a></li>
+                        <li><a href="/komunitas/komunitas.html">Forum Diskusi</a></li>
+                        <li><a href="/event/event.html">Event Terbaru</a></li>
+                        <li><a href="/shop/shop.html">Merchandise</a></li>
+                    </ul>
                 </div>
-            </div>
 
-            <!-- Column 2: Quick Links -->
-            <div class="footer-column">
-                <h3 class="footer-title">Jelajahi</h3>
-                <ul class="footer-links">
-                    <li><a href="/rimuru.html">Beranda</a></li>
-                    <li><a href="/about/about.html">Profil Rimuru</a></li>
-                    <li><a href="/gallery/gallery.html">Galeri Fanart</a></li>
-                    <li><a href="/komunitas/komunitas.html">Forum Diskusi</a></li>
-                    <li><a href="/event/event.html">Event Terbaru</a></li>
-                    <li><a href="/shop/shop.html">Merchandise</a></li>
-                </ul>
-            </div>
+                <!-- Column 3: Resources -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Unduhan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Wallpaper HD</a></li>
+                        <li><a href="#">OST Anime</a></li>
+                    </ul>
+                </div>
 
-            <!-- Column 3: Resources -->
-            <div class="footer-column">
-                <h3 class="footer-title">Unduhan</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Wallpaper HD</a></li>
-                    <li><a href="#">OST Anime</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Contact -->
-            <div class="footer-column">
-                <h3 class="footer-title">Butuh Bantuan?</h3>
-                <p class="contact-text">Punya pertanyaan atau saran? Dm instagram gua ya!</p>
-            </div>
-        </div>
-
-        <!-- Copyright Bar -->
-        <div class="copyright-bar">
-            <div class="copyright-container">
-                <p>© <span id="current-year">2024</span> Rimuru Fanbase. Hak Cipta Dilindungi. Tensei Shitara Slime
-                    Datta Ken adalah karya Fuse dan diterbitkan oleh Kodansha.</p>
-                <div class="legal-links">
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Syarat Penggunaan</a>
-                    <a href="#">Donasi</a>
+                <!-- Column 4: Contact -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Butuh Bantuan?</h3>
+                    <p class="contact-text">Punya pertanyaan atau saran? Dm instagram gua ya!</p>
                 </div>
             </div>
-            <div class="visitor-counter">
-                <i class="fas fa-users"></i>
-                <span id="visitor-count">1,245</span> fans sedang online sekarang!
+
+            <!-- Copyright Bar -->
+            <div class="copyright-bar">
+                <div class="copyright-container">
+                    <p>© <span id="current-year">2024</span> Rimuru Fanbase. Hak Cipta Dilindungi. Tensei Shitara Slime
+                        Datta Ken adalah karya Fuse dan diterbitkan oleh Kodansha.</p>
+                    <div class="legal-links">
+                        <a href="#">Kebijakan Privasi</a>
+                        <a href="#">Syarat Penggunaan</a>
+                        <a href="#">Donasi</a>
+                    </div>
+                </div>
+                <div class="visitor-counter">
+                    <i class="fas fa-users"></i>
+                    <span id="visitor-count">1,245</span> fans sedang online sekarang!
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    
+        <!-- Font Awesome -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+        <script>
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.querySelector('.main-nav');
 
-    <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script>
-        
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mainNav = document.querySelector('.main-nav');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-
-        // Fungsi untuk mengubah season
-        const seasonBtns = document.querySelectorAll('.season-btn');
-
-        seasonBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                seasonBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                // Di sini bisa ditambahkan fungsi untuk menampilkan episode sesuai season
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
             });
-        });
-        const episodeItems = document.querySelectorAll('.episode-item');
 
-        episodeItems.forEach(item => {
-            item.addEventListener('click', () => {
-                episodeItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
+            // Search toggle
+            const searchBtn = document.querySelector('.search-btn');
+            const searchContainer = document.querySelector('.search-container');
 
-                // Di sini bisa ditambahkan fungsi untuk mengganti video sesuai episode yang dipilih
-                // Contoh:
-                // const videoUrl = item.getAttribute('data-video-url');
-                // document.querySelector('.video-container iframe').src = videoUrl;
+            searchBtn.addEventListener('click', () => {
+                searchContainer.classList.toggle('active');
             });
-        });
-        
-    </script>
+
+            // Season selector functionality
+            const seasonBtns = document.querySelectorAll('.season-btn');
+            const episodeListContainer = document.querySelector('.episode-list');
+
+            // Episode List Data
+            const episodesData = {
+                'Season 1': [
+                    { title: 'Episode 1 - Reinkarnasi Sang Slime', thumb: 'https://i.ytimg.com/vi/Lys5vkiv0RA/hqdefault.jpg' },
+                    { title: 'Episode 2 - Pertemuan dengan Veldora', thumb: 'https://i.ytimg.com/vi/R6JuMf5XkQc/hq720.jpg' },
+                    { title: 'Episode 3 - Goblin dan Sang Pemimpin', thumb: 'https://i.ytimg.com/vi/LGD1DVe8BAo/hqdefault.jpg' },
+                    { title: 'Episode 4 - Di Kerajaan Dwarf Dwargonl', thumb: 'https://i.ytimg.com/vi/KGRK1GE1IG8/hqdefault.jpg' },
+                    { title: 'Episode 5 - Pertemuan dengan Raja Dwarf', thumb: 'https://i.ytimg.com/vi/N6Wix6v4oa4/hqdefault.jpg' },
+                    { title: 'Episode 6 - Shizu dan Masa Lalu', thumb: 'https://i.ytimg.com/vi/SrLj-eSbJbo/hqdefault.jpg' },
+                    { title: 'Episode 7 - Penakluk Api', thumb: 'https://i.ytimg.com/vi/Kzz9-_b5ebw/hqdefault.jpg' },
+                    { title: 'Episode 8 - Warisan Shizu', thumb: 'https://i.ytimg.com/vi/RvWhoeXXeZg/hqdefault.jpg' },
+                    { title: 'Episode 9 - Serangan Ras Ogre', thumb: 'https://i.ytimg.com/vi/HZTj6j6Iaqk/hqdefault.jpg' },
+                    { title: 'Episode 10 - Pertempuran Memutuskan Nasib', thumb: 'https://i.ytimg.com/vi/QhQl9H9RlPc/hqdefault.jpg' },
+                    { title: 'Episode 11 - Aliansi Badai Besar', thumb: 'https://i.ytimg.com/vi/AgOs5zAli0E/hqdefault.jpg' },
+                    { title: 'Episode 12 - Pengepungan Badai', thumb: 'https://i.ytimg.com/vi/PebLJymSvvU/hqdefault.jpg' },
+                    { title: 'Episode 13 - Pertempuran Tempest', thumb: 'https://i.ytimg.com/vi/4VhKfsaExLg/hqdefault.jpg' },
+                    { title: 'Episode 14 - Ancaman Baru Muncul', thumb: 'https://i.ytimg.com/vi/-FF9jQHKwiI/hqdefault.jpg' },
+                    { title: 'Episode 15 - Penguasa Badai', thumb: 'https://i.ytimg.com/vi/lEevvSAlpAA/hqdefault.jpg' }
+                ],
+                'Season 2': [
+                    { title: 'Episode 1 - ', thumb: '' },
+                    { title: 'Episode 2 - ', thumb: '' }
+                ],
+                'Season 3': [
+                    { title: 'Episode 1 - ', thumb: '' },
+                    { title: 'Episode 2 - ', thumb: '' }
+                ]
+            };
+
+            function renderEpisodes(season) {
+                const episodes = episodesData[season];
+                episodeListContainer.innerHTML = '';
+                episodes.forEach((ep, index) => {
+                    const episodeItem = document.createElement('div');
+                    episodeItem.classList.add('episode-item');
+                    if (index === 0) episodeItem.classList.add('active');
+                    episodeItem.innerHTML = `
+                    <img src="${ep.thumb}" alt="${ep.title}" class="episode-thumb" />
+                    <div class="episode-info">
+                        <div class="episode-name">${ep.title}</div>
+                    </div>
+                `;
+                    episodeListContainer.appendChild(episodeItem);
+
+                    episodeItem.addEventListener('click', () => {
+                        document.querySelectorAll('.episode-item').forEach(i => i.classList.remove('active'));
+                        episodeItem.classList.add('active');
+                        // Here you can add code to change the video src based on episode selected
+                    });
+                });
+            }
+
+            seasonBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    seasonBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderEpisodes(btn.textContent.trim());
+                });
+            });
+            renderEpisodes('Season 1');
+
+            // Server Switching 
+            const serverBtns = document.querySelectorAll('.server-btn');
+            const videoPlayer = document.getElementById('video-player');
+            const serverStatus = document.querySelector('.server-status');
+            const statusIndicator = document.querySelector('.status-indicator');
+
+            // server sources
+            const serverSources = {
+                server1: 'https://www.youtube.com/embed/Lys5vkiv0RA?si=e1X_0-ICc2aftavk',
+                server2: '', 
+            };
+
+            // server status 
+            const serverStatuses = {
+                server1: true,
+                server2: true,
+            };
+
+            serverBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const server = btn.dataset.server;
+
+                    if (serverStatuses[server]) {
+                        serverBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        videoPlayer.src = serverSources[server];
+
+                        serverStatus.querySelector('span:last-child').textContent = `Server aktif: ${btn.textContent.trim()}`;
+                        statusIndicator.classList.remove('error');
+                    } else {
+                        statusIndicator.classList.add('error');
+                        serverStatus.querySelector('span:last-child').textContent = 'Server sedang gangguan';
+                    }
+                });
+            });
+
+            // Comment Form Submission
+            const commentForm = document.querySelector('.comment-form');
+            const commentInput = document.querySelector('.comment-input');
+            const commentsList = document.querySelector('.comments-list');
+
+            commentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const commentText = commentInput.value.trim();
+                if (commentText) {
+                    // Create new comment
+                    const newComment = document.createElement('div');
+                    newComment.className = 'comment';
+                    newComment.innerHTML = `
+                    <div class="comment-avatar">Y</div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">You</span>
+                            <span class="comment-time">Baru saja</span>
+                        </div>
+                        <p class="comment-text">${commentText}</p>
+                        <div class="comment-actions">
+                            <button class="comment-action">
+                                <i class="fas fa-thumbs-up"></i> 0
+                            </button>
+                            <button class="comment-action">
+                                <i class="fas fa-thumbs-down"></i> 0
+                            </button>
+                            <button class="comment-action">
+                                <i class="fas fa-reply"></i> Balas
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                    // Add to top of comments list
+                    commentsList.prepend(newComment);
+
+                    // Clear input
+                    commentInput.value = '';
+
+                    // Update comment count
+                    const commentCount = document.querySelector('.section-title');
+                    const currentCount = parseInt(commentCount.textContent.match(/\d+/)[0]);
+                    commentCount.textContent = commentCount.textContent.replace(/\d+/, currentCount + 1);
+                }
+            });
+
+            // Comment action handlers
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.comment-action')) {
+                    const action = e.target.closest('.comment-action');
+                    const countSpan = action.querySelector('span') || action.nextElementSibling;
+                    let count = parseInt(action.textContent.match(/\d+/) ? action.textContent.match(/\d+/)[0] : 0);
+
+                    // Simple toggle - in real app you'd track user votes
+                    if (action.classList.contains('active')) {
+                        action.classList.remove('active');
+                        action.innerHTML = action.innerHTML.replace(`${count}`, `${count - 1}`);
+                    } else {
+                        action.classList.add('active');
+                        action.innerHTML = action.innerHTML.replace(`${count}`, `${count + 1}`);
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
 </body>
 
 </html>
