@@ -84,7 +84,7 @@ const serverSources = {
         'GurennoKizuna-hen.html': 'https://www.youtube.com/embed/H_QHm39_tJQ?si=gZWrhzDNdB9o_gI-',
     },
     server2: {
-        'GurennoKizuna-hen.html': '/kosong',
+        'GurennoKizuna-hen.html': 'kosong',
     }
 };
 
