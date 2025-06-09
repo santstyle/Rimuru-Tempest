@@ -84,7 +84,7 @@ const serverSources = {
         'cohleusnoyume1.html': 'https://www.youtube.com/embed/6ZiyY7kKdso?si=yWpB9UEay0fSeE6l',
     },
     server2: {
-        'cohleusnoyume1.html': 'kosong',
+        'cohleusnoyume1.html': '/kosong',
     }
 };
 
