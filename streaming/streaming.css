@@ -689,6 +689,33 @@
             flex-shrink: 0;
         }
 
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .image-wrapper img.duplicate-image {
+            transform: translateY(100%);
+            z-index: 2;
+        }
+
+        .featured-card:hover .image-wrapper img.duplicate-image {
+            transform: translateY(0);
+        }
+
         .featured-thumbnail img {
             width: 100%;
             height: 100%;
@@ -711,7 +738,11 @@
 
         .featured-card:hover .featured-thumbnail img {
             transform: scale(1.15);
-        }
+            -webkit-transform: scale(1.15);
+            -moz-transform: scale(1.15);
+            -ms-transform: scale(1.15);
+            -o-transform: scale(1.15);
+}
 
         .featured-badge {
             position: absolute;
