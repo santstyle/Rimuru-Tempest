@@ -701,7 +701,102 @@ body {
     margin-bottom: 0.3rem;
 }
 
+
 .recommendation-meta {
     font-size: 0.9rem;
     color: #ddd;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+
+body.dark-mode .video-player-container,
+body.dark-mode .episode-sidebar,
+body.dark-mode .episode-details,
+body.dark-mode .comments-section {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+}
+
+body.dark-mode .server-switcher {
+    background-color: rgba(30, 58, 138, 0.3);
+}
+
+body.dark-mode .server-btn {
+    background-color: #2d3748;
+    color: #e0e0e0;
+}
+
+body.dark-mode .server-btn.active {
+    background-color: var(--rimuru-blue);
+}
+
+body.dark-mode .season-btn {
+    background-color: #2d3748;
+    color: #e0e0e0;
+    border-color: #4a5568;
+}
+
+body.dark-mode .season-btn.active {
+    background-color: var(--rimuru-blue);
+}
+
+body.dark-mode .episode-item {
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark-mode .episode-item:hover {
+    background-color: #3d3d3d;
+}
+
+body.dark-mode .episode-item.active {
+    background-color: var(--rimuru-blue);
+}
+
+body.dark-mode .comment-input {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .comment {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .recommendation-card {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .details-meta span,
+body.dark-mode .comment-time,
+body.dark-mode .comment-action {
+    color: #aaa;
+}
+
+body.dark-mode .theme-toggle i.fa-moon::before {
+    content: "\f186"; /* Sun icon */
+}
+
+/* Scrollbar styling for dark mode */
+body.dark-mode ::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: var(--rimuru-blue);
 }
