@@ -583,6 +583,7 @@ body.dark-mode .past-event-date {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 5%;
     transition: transform 0.3s ease;
 }
 

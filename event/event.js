@@ -42,6 +42,11 @@ calendarViewBtn.addEventListener('click', () => {
     listViewBtn.classList.remove('active');
     calendarView.style.display = 'block';
     listView.style.display = 'none';
+
+    const categoryFilter = document.querySelector('.event-categories');
+    if (categoryFilter) {
+        categoryFilter.style.display = 'none';
+    }
 });
 
 listViewBtn.addEventListener('click', () => {
@@ -49,6 +54,12 @@ listViewBtn.addEventListener('click', () => {
     calendarViewBtn.classList.remove('active');
     listView.style.display = 'block';
     calendarView.style.display = 'none';
+
+    // Show category filter when list view is active
+    const categoryFilter = document.querySelector('.event-categories');
+    if (categoryFilter) {
+        categoryFilter.style.display = 'block';
+    }
 });
 
 // Category Filters
@@ -97,6 +108,12 @@ nextMonthBtn.addEventListener('click', () => {
 
 // Initialize calendar
 updateCalendar();
+
+// Set default view 
+listViewBtn.classList.add('active');
+calendarViewBtn.classList.remove('active');
+listView.style.display = 'block';
+calendarView.style.display = 'none';
 
 // Add Event Button
 const addEventBtn = document.getElementById('add-event-btn');
