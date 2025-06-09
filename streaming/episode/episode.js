@@ -1,10 +1,10 @@
+// Mobile Menu Toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const mainNav = document.querySelector('.main-nav');
 
 mobileMenuBtn.addEventListener('click', () => {
     mainNav.classList.toggle('active');
 });
-
 
 // Season selector functionality
 const seasonBtns = document.querySelectorAll('.season-btn');
