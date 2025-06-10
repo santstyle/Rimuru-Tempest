@@ -898,7 +898,19 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
+body.dark-mode .video-title {
+    color: white;
+}
+body.dark-mode .sidebar-title{
+    color: white;
+}
 
+body.dark-mode .section-title{
+    color: white;
+}
+body.dark-mode .details-title{
+    color: white;
+}
 body.dark-mode .video-player-container,
 body.dark-mode .episode-sidebar,
 body.dark-mode .episode-details,
@@ -966,10 +978,8 @@ body.dark-mode .comment-action {
 
 body.dark-mode .theme-toggle i.fa-moon::before {
     content: "\f186";
-    /* Sun icon */
 }
 
-/* Scrollbar styling for dark mode */
 body.dark-mode ::-webkit-scrollbar {
     width: 8px;
 }
