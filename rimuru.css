@@ -1301,6 +1301,33 @@ body.dark-mode .theme-toggle {
     .categories-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
+
+    /* Responsive Characters Section */
+    .characters-container {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .character-card {
+        width: 45%;
+    }
+
+    .character-image {
+        height: 250px;
+    }
+
+    .character-name {
+        font-size: 1.1rem;
+    }
+
+    .character-role {
+        font-size: 0.85rem;
+    }
+
+    .character-desc {
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1348,5 +1375,31 @@ body.dark-mode .theme-toggle {
     
     .forum-container {
         padding: 0 1rem;
+    }
+
+    /* Responsive Characters Section for small mobile */
+    .character-card {
+        width: 90%;
+    }
+
+    .character-image {
+        height: 200px;
+    }
+
+    .character-image img {
+        object-position: center 20%;
+    }
+
+    .character-name {
+        font-size: 1rem;
+    }
+
+    .character-role {
+        font-size: 0.8rem;
+    }
+
+    .character-desc {
+        font-size: 0.8rem;
+        padding: 0 0.3rem;
     }
 }
