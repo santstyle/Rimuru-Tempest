@@ -91,11 +91,7 @@ sliderDots.forEach((dot, index) => {
     });
 });
 
-// Auto slide change
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % sliderDots.length;
-    updateSlider();
-}, 5000);
+
 const seasonSelect = document.getElementById('season');
 const episodeCards = document.querySelectorAll('.episode-card');
 
