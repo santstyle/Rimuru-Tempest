@@ -56,13 +56,13 @@
         // Google login/register
         document.querySelectorAll('.btn-google').forEach(btn => {
             btn.addEventListener('click', () => {
-                alert('Anda akan diarahkan ke halaman login Google. Ini adalah simulasi - dalam implementasi nyata, ini akan mengintegrasikan OAuth Google.');
+                alert('Maaf sayangnya halaman ini masih belum berfungsi, jadi kamu bisa kembali ke halaman utama lagi ya');
             });
         });
         
         // Help button
         document.getElementById('help-btn').addEventListener('click', () => {
-            alert('Hai! Saya Rimuru. Ada yang bisa saya bantu?\n\nSilakan hubungi support@tempest-fanbase.com untuk bantuan lebih lanjut.');
+            alert('Hai! Saya SantStyle. Ada yang bisa saya bantu?\n\Silakan hubungi contact untuk bantuan lebih lanjut.');
         });
         
 // FAQ toggle functionality

@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fanbase Rimuru Tempest - Masuk/Daftar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <div class="container">
-        <img src="https://i.pinimg.com/736x/e3/6c/86/e36c867c348f2aff7330b1260493c90b.jpg" alt="Rimuru Tempest Header" class="header-image">
+        <img src="https://i.pinimg.com/736x/e3/6c/86/e36c867c348f2aff7330b1260493c90b.jpg" alt="Rimuru Tempest Header"
+            class="header-image">
         <div class="welcome-section">
             <h1>Selamat Datang di Fanbase Rimuru Tempest</h1>
-            <p>Sekali lagi kita ingatkan untuk saat ini fitur login belum bisa digunakan dan sedang dalam maintenance jadi saya harap pengunjung kembali ke halaman utama 
+            <p>Sekali lagi kita ingatkan untuk saat ini fitur login belum bisa digunakan dan sedang dalam maintenance
+                jadi saya harap pengunjung kembali ke halaman utama
                 <!--Bergabunglah dengan ribuan penggemar lainnya untuk berbagi teori, fanart, dan diskusi seputar dunia Tensei Shitara Slime Datta Ken.-->
             </p>
-            
+
             <div class="features">
                 <div class="feature">
                     <i class="material-icons">forum</i>
@@ -36,53 +42,54 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="form-section">
             <div class="form-container">
                 <div class="form-header">
                     <h2 id="form-title">Masuk ke Dunia Tempest</h2>
-                    <p id="form-subtitle">Bergabunglah dengan komunitas penggemar Rimuru dan nikmati konten eksklusif kami.</p>
+                    <p id="form-subtitle">Bergabunglah dengan komunitas penggemar Rimuru dan nikmati konten eksklusif
+                        kami.</p>
                 </div>
-                
+
                 <div class="form-toggle" id="form-toggle">
                     <button class="toggle-btn active" id="login-toggle">Masuk</button>
                     <button class="toggle-btn" id="register-toggle">Daftar</button>
                 </div>
-                
+
                 <form class="form active" id="login-form">
                     <div class="form-group">
                         <label for="login-email">Email</label>
                         <input type="email" id="login-email" placeholder="Masukkan Email Anda" required>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary glow-effect">
                         <span>Kirim Kode Login</span>
                     </button>
-                    
+
                     <div class="divider">atau</div>
-                    
+
                     <button type="button" class="btn btn-google">
                         <i class="material-icons">account_circle</i>
                         <span>Masuk dengan Google</span>
                     </button>
-                    
+
                     <div class="form-footer">
                         Belum punya akun? <a href="#" id="switch-to-register">Daftar sekarang</a>
                     </div>
                 </form>
-                
+
                 <form class="form" id="register-form">
                     <div class="form-group">
                         <label for="register-name">Nama Lengkap</label>
                         <input type="text" id="register-name" placeholder="Nama Anda" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="register-email">Email</label>
                         <input type="email" id="register-email" placeholder="Email Anda" required>
                     </div>
-                    
-                    <div class="form-group">
+
+                    <!--<div class="form-group">
                         <label for="register-favorite">Karakter Favorit</label>
                         <select id="register-favorite" required>
                             <option value="" disabled selected>Pilih karakter favorit Anda</option>
@@ -94,36 +101,39 @@
                             <option value="diablo">Diablo</option>
                             <option value="veldora">Veldora Tempest</option>
                         </select>
-                    </div>
-                    
+                    </div>-->
+
                     <button type="submit" class="btn btn-primary glow-effect">
                         <span>Daftar Sekarang</span>
                     </button>
-                    
+
                     <div class="divider">atau</div>
-                    
+
                     <button type="button" class="btn btn-google">
                         <i class="material-icons">account_circle</i>
                         <span>Daftar dengan Google</span>
                     </button>
-                    
+
                     <div class="form-footer">
                         Sudah punya akun? <a href="#" id="switch-to-login">Masuk sekarang</a>
                     </div>
                 </form>
-                
+
                 <div class="faq-section">
                     <div class="faq-item">
                         <div class="faq-question">Mengapa saya perlu mendaftar?</div>
-                        <div class="faq-answer">Untuk mengakses forum, event eksklusif, dan galeri khusus anggota fanbase Rimuru Tempest.</div>
+                        <div class="faq-answer">Untuk mengakses forum, event eksklusif, dan galeri khusus anggota
+                            fanbase Rimuru Tempest.</div>
                     </div>
                     <div class="faq-item">
                         <div class="faq-question">Apakah data saya aman?</div>
-                        <div class="faq-answer">Kami menjaga privasi Anda dengan sistem keamanan terkini dan tidak akan membagikan data Anda ke pihak lain.</div>
+                        <div class="faq-answer">Kami menjaga privasi Anda dengan sistem keamanan terkini dan tidak akan
+                            membagikan data Anda ke pihak lain.</div>
                     </div>
                 </div>
                 <div class="return-home-container" style="text-align:center; margin-top: 20px;">
-                    <a href="/index.html" class="btn btn-primary" style="text-decoration: none;">Kembali ke Halaman Utama</a>
+                    <a href="/index.html" class="btn btn-primary" style="text-decoration: none;">Kembali ke Halaman
+                        Utama</a>
                 </div>
             </div>
         </div>
@@ -133,4 +143,5 @@
     </div>
     <script src="login.js"></script>
 </body>
+
 </html>
