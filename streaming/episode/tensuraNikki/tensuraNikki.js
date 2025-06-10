@@ -9,16 +9,29 @@ mobileMenuBtn.addEventListener('click', () => {
 // Season selector functionality
 const seasonBtns = document.querySelectorAll('.season-btn');
 const episodeListContainer = document.querySelector('.episode-list');
+
 // Episode List Data
 const episodesData = {
-    'Episode': [
-        { title: 'Tensei shitara Slime Datta Ken: Coleus no Yume', thumb: 'https://cdn.myanimelist.net/images/anime/1570/135813l.jpg',videoUrl: 'https://www.youtube.com/embed/6ZiyY7kKdso?si=yWpB9UEay0fSeE6l', page: 'cohleusnoyume1.html' }
-    ],
+    'Season 1': [
+        { title: 'Episode 1 – “Hari-Hari Tenang di Tempest”', thumb: '', videoUrl: '', page: 'tensuranikki1.html' },
+        { title: 'Episode 2 – “Musim Semi, Musim Sibuk”', thumb: '', videoUrl: '', page: 'tensuranikki2.html' },
+        { title: 'Episode 3 – “Panen Bahagia”', thumb: '', videoUrl: '', page: 'tensuranikki3.html' },
+        { title: 'Episode 4 – “Petualangan Masak-Memasak”', thumb: '', videoUrl: '', page: 'tensuranikki4.html' },
+        { title: 'Episode 5 – “Persahabatan di Tengah Festival”', thumb: '', videoUrl: '', page: 'tensuranikki5.html' },
+        { title: 'Episode 6 – “Momen Santai Bersama Rimuru”', thumb: '', videoUrl: '', page: 'tensuranikki6.html' },
+        { title: 'Episode 7 – “Hari Hujan dan Rahasia Ramiris”', thumb: '', videoUrl: '', page: 'tensuranikki7.html' },
+        { title: 'Episode 8 – “Persiapan Musim Panas”', thumb: '', videoUrl: '', page: 'tensuranikki8.html' },
+        { title: 'Episode 9 – “Petualangan Ramiris dan Veldora”', thumb: '', videoUrl: '', page: 'tensuranikki9.html' },
+        { title: 'Episode 10 – “Musim Gugur yang Sibuk”', thumb: '', videoUrl: '', page: '1tensuranikki10.html' },
+        { title: 'Episode 11 – “Kejutan Musim Dingin”', thumb: '', videoUrl: '', page: 'tensuranikki11.html' },
+        { title: 'Episode 12 – “Hari Baru, Harapan Baru”i', thumb: '', videoUrl: '', page: 'tensuranikki12.html' },
+    ]
 };
+
 function getCurrentEpisodeFromURL() {
     const path = window.location.pathname;
     const file = path.substring(path.lastIndexOf('/') + 1);
-    return file || 'cohleusnoyume1.html';
+    return file || '1.html';
 }
 
 function renderEpisodes(season) {
@@ -81,10 +94,32 @@ const statusIndicator = document.querySelector('.status-indicator');
 // server sources 
 const serverSources = {
     server1: {
-        'cohleusnoyume1.html': 'https://www.youtube.com/embed/6ZiyY7kKdso?si=yWpB9UEay0fSeE6l',
+        'tensuranikki1.html': '/streaming/server2n.html',
+        'tensuranikki2.html': '/streaming/server2n.html',
+        'tensuranikki3.html': '/streaming/server2n.html',
+        'tensuranikki4.html': '/streaming/server2n.html',
+        'tensuranikki5.html': '/streaming/server2n.html',
+        'tensuranikki6.htmll': '/streaming/server2n.html',
+        'tensuranikki7.html': '/streaming/server2n.html',
+        'tensuranikki8.html': '/streaming/server2n.html',
+        'tensuranikki9.html': '/streaming/server2n.html',
+        'tensuranikki10.html': '/streaming/server2n.html',
+        'tensuranikki11.html': '/streaming/server2n.html',
+        'tensuranikki12.html': '/streaming/server2n.html',
     },
     server2: {
-        'cohleusnoyume1.html': '/streaming/server2n.html',
+    'tensuranikki1.html': '/streaming/server2n.html',
+    'tensuranikki2.html': '/streaming/server2n.html',
+    'tensuranikki3.html': '/streaming/server2n.html',
+    'tensuranikki4.html': '/streaming/server2n.html',
+    'tensuranikki5.html': '/streaming/server2n.html',
+    'tensuranikki6.html': '/streaming/server2n.html',
+    'tensuranikki7.html': '/streaming/server2n.html',
+    'tensuranikki8.html': '/streaming/server2n.html',
+    'tensuranikki9.html': '/streaming/server2n.html',
+    'tensuranikki10.html': '/streaming/server2n.html',
+    'tensuranikki11.html': '/streaming/server2n.html',
+    'tensuranikki12.html': '/streaming/server2n.html',
     }
 };
 

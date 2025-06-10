@@ -242,7 +242,7 @@ const serverSources = {
         's3-72.html': 'https://www.youtube.com/embed/OZhlZBi8RaE?si=ouCsWRca-fpwuCg8'
     },
     server2: {
-'1.html': '/streaming/server2n.html',
+    '1.html': '/streaming/server2n.html',
     '2.html': '/streaming/server2n.html',
     '3.html': '/streaming/server2n.html',
     '4.html': '/streaming/server2n.html',
