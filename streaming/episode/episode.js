@@ -361,8 +361,6 @@ const activeSeasonBtn = Array.from(seasonBtns).find(b => b.textContent.trim() ==
 if (activeSeasonBtn) activeSeasonBtn.classList.add('active');
 
 renderEpisodes(currentSeason);
-
-// Load video for current episode and server
 const initialSrc = serverSources[currentServer][currentEpisode] || '';
 if (initialSrc) {
     videoPlayer.src = initialSrc;
