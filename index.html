@@ -9,164 +9,111 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="rimuru.css">
     <link rel="stylesheet" href="bubble.css">
+</head>
 
 <body>
-        <!-- Popup Bubble -->
-        <div class="popup-bubble" id="popupBubble">
-            <i class="fas fa-info-circle"></i>
+    <!-- Popup Bubble -->
+    <div class="popup-bubble" id="popupBubble">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <!-- Modal for Disclaimer -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Disclaimer & Permintaan Maaf</h2>
+            <p>Selamat datang di Rimuru Tempest Fanbase. Kami sangat mengapresiasi kunjungan Anda ke platform ini dan
+                berharap website ini dapat menjadi ruang yang menyenangkan serta inspiratif bagi para penggemar Tensei
+                Shitara Slime Datta Ken.</p>
+            <p>Namun, demi transparansi dan menghormati berbagai pihak yang terlibat dalam karya ini, kami merasa perlu
+                untuk memberikan penjelasan secara rinci mengenai penggunaan konten, tujuan website, serta permintaan
+                maaf atas kekurangan yang mungkin terjadi.</p>
+
+            <h3>Tujuan Website</h3>
+            <p>Website ini dirancang sebagai bentuk penghormatan dan apresiasi kami terhadap karya luar biasa Tensei
+                Shitara Slime Datta Ken. Tujuan utama kami adalah:</p>
+            <ul>
+                <li>Menyediakan ruang interaksi bagi komunitas penggemar Rimuru dan dunia Tempest.</li>
+                <li>Mendukung kreativitas dengan menampilkan karya seni, diskusi teori, dan informasi terkini terkait
+                    karya ini.</li>
+                <li>Menghubungkan komunitas global melalui berbagai fitur interaktif.</li>
+            </ul>
+            <p>Kami ingin menegaskan bahwa website ini:</p>
+            <ul>
+                <li>Tidak berafiliasi secara resmi dengan pencipta, penerbit, studio produksi, atau pihak lain yang
+                    memiliki hak cipta atas karya ini.</li>
+                <li>Non-komersial dan semata-mata dibuat untuk tujuan hiburan dan komunitas.</li>
+            </ul>
+
+            <h3>Penggunaan Konten Eksternal</h3>
+            <p>Kami menyadari bahwa beberapa elemen di website ini, seperti gambar, fanart, artikel, atau tautan
+                streaming, mungkin berasal dari sumber eksternal. Untuk menjaga integritas platform ini, kami telah
+                melakukan langkah-langkah berikut:</p>
+
+            <h4>Sumber Kredit</h4>
+            <p>Kami selalu berusaha mencantumkan sumber asli untuk setiap konten yang kami gunakan. Sumber ini biasanya
+                dicantumkan dalam bentuk deskripsi, tautan langsung, atau catatan pada konten terkait.</p>
+            <p>Namun, kami mengakui bahwa kemungkinan terjadi kekeliruan atau kelalaian dalam mencantumkan sumber secara
+                lengkap.</p>
+
+            <h4>Hak Cipta dan Lisensi</h4>
+            <p>Semua hak cipta atas konten di website ini tetap dimiliki oleh pencipta atau pemegang lisensi asli. Kami
+                tidak mengklaim kepemilikan atas konten tersebut.</p>
+            <p>Jika Anda adalah pemilik hak cipta atas salah satu konten di website ini dan merasa keberatan atas
+                penggunaannya, kami siap untuk segera menghapus atau memperbaiki penggunaan konten tersebut. Silakan
+                hubungi kami melalui formulir kontak.</p>
+
+            <h4>Tautan Streaming Resmi</h4>
+            <p>Untuk mendukung konsumsi konten secara legal, kami menyertakan tautan ke platform resmi seperti YouTube
+                Muse Indonesia. Kami menghimbau pengunjung untuk selalu mengakses konten melalui saluran resmi.</p>
+
+            <h3>Permintaan Maaf yang Tulus</h3>
+            <p>Kami dengan rendah hati ingin menyampaikan permintaan maaf yang tulus atas:</p>
+            <ul>
+                <li>Segala kekurangan dalam pengelolaan website ini, terutama terkait penggunaan konten eksternal yang
+                    mungkin belum mendapatkan izin langsung.</li>
+                <li>Ketidaksempurnaan dalam menyampaikan sumber asli, yang bukan merupakan niat kami untuk melanggar hak
+                    cipta atau merugikan pihak manapun.</li>
+            </ul>
+            <p>Kami berkomitmen untuk terus belajar, memperbaiki, dan beradaptasi agar dapat mengelola platform ini
+                dengan lebih baik serta menghormati seluruh pihak yang terlibat.</p>
+
+            <h3>Tahap Pengembangan Website</h3>
+            <p>Saat ini, website ini masih berada dalam tahap perbaikan dan pengembangan. Beberapa fitur mungkin belum
+                berfungsi sepenuhnya atau memiliki keterbatasan teknis. Kami memohon pengertian dari pengunjung atas
+                kekurangan ini, dan kami berjanji untuk terus meningkatkan kualitas platform kami di masa mendatang.</p>
+
+            <h3>Komitmen Kami</h3>
+            <p>Kami berkomitmen untuk:</p>
+            <ul>
+                <li>Mengelola website ini sesuai dengan prinsip keterbukaan, penghormatan hak cipta, dan dukungan
+                    terhadap kreator asli.</li>
+                <li>Menjadikan platform ini ruang aman dan ramah untuk komunitas penggemar.</li>
+                <li>Mengutamakan pengalaman pengunjung sambil tetap menghormati semua pihak yang berkontribusi pada
+                    karya Tensei Shitara Slime Datta Ken.</li>
+            </ul>
+
+            <h3>Hubungi Kami</h3>
+            <p>Jika ada hal yang ingin disampaikan terkait pelanggaran hak cipta, saran, kritik, atau masukan lainnya,
+                jangan ragu untuk menghubungi kami melalui:</p>
+            <ul>
+                <li>Formulir kontak yang tersedia di website ini.</li>
+            </ul>
+            <p>Terima kasih atas dukungan, pengertian, dan partisipasi Anda dalam komunitas ini.</p>
+            <p><strong>SantStyle (Developer Website)</strong></p>
         </div>
-    
-        <!-- Modal for Disclaimer -->
-        <div class="modal" id="disclaimerModal">
-            <div class="modal-content">
-                <span class="close-btn" id="closeModal">&times;</span>
-                <h2>Disclaimer & Permintaan Maaf</h2>
-                <p>Selamat datang di Rimuru Tempest Fanbase. Kami sangat mengapresiasi kunjungan Anda ke platform ini dan berharap website ini dapat menjadi ruang yang menyenangkan serta inspiratif bagi para penggemar Tensei Shitara Slime Datta Ken.</p>
-                <p>Namun, demi transparansi dan menghormati berbagai pihak yang terlibat dalam karya ini, kami merasa perlu untuk memberikan penjelasan secara rinci mengenai penggunaan konten, tujuan website, serta permintaan maaf atas kekurangan yang mungkin terjadi.</p>
-                
-                <h3>Tujuan Website</h3>
-                <p>Website ini dirancang sebagai bentuk penghormatan dan apresiasi kami terhadap karya luar biasa Tensei Shitara Slime Datta Ken. Tujuan utama kami adalah:</p>
-                <ul>
-                    <li>Menyediakan ruang interaksi bagi komunitas penggemar Rimuru dan dunia Tempest.</li>
-                    <li>Mendukung kreativitas dengan menampilkan karya seni, diskusi teori, dan informasi terkini terkait karya ini.</li>
-                    <li>Menghubungkan komunitas global melalui berbagai fitur interaktif.</li>
-                </ul>
-                <p>Kami ingin menegaskan bahwa website ini:</p>
-                <ul>
-                    <li>Tidak berafiliasi secara resmi dengan pencipta, penerbit, studio produksi, atau pihak lain yang memiliki hak cipta atas karya ini.</li>
-                    <li>Non-komersial dan semata-mata dibuat untuk tujuan hiburan dan komunitas.</li>
-                </ul>
-    
-                <h3>Penggunaan Konten Eksternal</h3>
-                <p>Kami menyadari bahwa beberapa elemen di website ini, seperti gambar, fanart, artikel, atau tautan streaming, mungkin berasal dari sumber eksternal. Untuk menjaga integritas platform ini, kami telah melakukan langkah-langkah berikut:</p>
-                
-                <h4>Sumber Kredit</h4>
-                <p>Kami selalu berusaha mencantumkan sumber asli untuk setiap konten yang kami gunakan. Sumber ini biasanya dicantumkan dalam bentuk deskripsi, tautan langsung, atau catatan pada konten terkait.</p>
-                <p>Namun, kami mengakui bahwa kemungkinan terjadi kekeliruan atau kelalaian dalam mencantumkan sumber secara lengkap.</p>
-                
-                <h4>Hak Cipta dan Lisensi</h4>
-                <p>Semua hak cipta atas konten di website ini tetap dimiliki oleh pencipta atau pemegang lisensi asli. Kami tidak mengklaim kepemilikan atas konten tersebut.</p>
-                <p>Jika Anda adalah pemilik hak cipta atas salah satu konten di website ini dan merasa keberatan atas penggunaannya, kami siap untuk segera menghapus atau memperbaiki penggunaan konten tersebut. Silakan hubungi kami melalui formulir kontak.</p>
-                
-                <h4>Tautan Streaming Resmi</h4>
-                <p>Untuk mendukung konsumsi konten secara legal, kami menyertakan tautan ke platform resmi seperti YouTube Muse Indonesia. Kami menghimbau pengunjung untuk selalu mengakses konten melalui saluran resmi.</p>
-    
-                <h3>Permintaan Maaf yang Tulus</h3>
-                <p>Kami dengan rendah hati ingin menyampaikan permintaan maaf yang tulus atas:</p>
-                <ul>
-                    <li>Segala kekurangan dalam pengelolaan website ini, terutama terkait penggunaan konten eksternal yang mungkin belum mendapatkan izin langsung.</li>
-                    <li>Ketidaksempurnaan dalam menyampaikan sumber asli, yang bukan merupakan niat kami untuk melanggar hak cipta atau merugikan pihak manapun.</li>
-                </ul>
-                <p>Kami berkomitmen untuk terus belajar, memperbaiki, dan beradaptasi agar dapat mengelola platform ini dengan lebih baik serta menghormati seluruh pihak yang terlibat.</p>
-    
-                <h3>Tahap Pengembangan Website</h3>
-                <p>Saat ini, website ini masih berada dalam tahap perbaikan dan pengembangan. Beberapa fitur mungkin belum berfungsi sepenuhnya atau memiliki keterbatasan teknis. Kami memohon pengertian dari pengunjung atas kekurangan ini, dan kami berjanji untuk terus meningkatkan kualitas platform kami di masa mendatang.</p>
-    
-                <h3>Komitmen Kami</h3>
-                <p>Kami berkomitmen untuk:</p>
-                <ul>
-                    <li>Mengelola website ini sesuai dengan prinsip keterbukaan, penghormatan hak cipta, dan dukungan terhadap kreator asli.</li>
-                    <li>Menjadikan platform ini ruang aman dan ramah untuk komunitas penggemar.</li>
-                    <li>Mengutamakan pengalaman pengunjung sambil tetap menghormati semua pihak yang berkontribusi pada karya Tensei Shitara Slime Datta Ken.</li>
-                </ul>
-    
-                <h3>Hubungi Kami</h3>
-                <p>Jika ada hal yang ingin disampaikan terkait pelanggaran hak cipta, saran, kritik, atau masukan lainnya, jangan ragu untuk menghubungi kami melalui:</p>
-                <ul>
-                    <li>Formulir kontak yang tersedia di website ini.</li>
-                </ul>
-                <p>Terima kasih atas dukungan, pengertian, dan partisipasi Anda dalam komunitas ini.</p>
-                <p><strong>SantStyle (Developer Website)</strong></p>
-            </div>
-        </div>
+    </div>
+
     <!-- Header Section -->
-    <header class="site-header">
-        <div class="header-container">
-            <!-- Logo and Site Title -->
-            <div class="branding">
-                <img src="/asset/icon/rimuru icon.png" alt="Rimuru's Sanctuary Logo" class="site-logo">
-                <h1 class="site-title">Rimuru Fanbase</h1>
-            </div>
-            <!-- Navigation -->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="/index.html" class="nav-link active">
-                            <i class="fas fa-home nav-icon"></i>
-                            <span class="nav-text">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/about/about.html" class="nav-link">
-                            <i class="fas fa-scroll nav-icon"></i>
-                            <span class="nav-text">About Rimuru</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/gallery/gallery.html" class="nav-link">
-                            <i class="fas fa-images nav-icon"></i>
-                            <span class="nav-text">Gallery</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/komunitas/komunitas.html" class="
-            nav-link">
-                            <i class="fas fa-users nav-icon"></i>
-                            <span class="nav-text">Community</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/event/event.html" class="nav-link">
-                            <i class="fas fa-calendar nav-icon"></i>
-                            <span class="nav-text">Events</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/shop/shop.html" class="nav-link">
-                            <i class="fas fa-shopping-bag nav-icon"></i>
-                            <span class="nav-text">Shop</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- Utility Navigation -->
-            <div class="utility-nav">
-                <button class="search-btn" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="/login/login.html" class="login-btn">
-                    <i class="fas fa-user-circle"></i>
-                    <span>Login</span>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Search Bar -->
-        <div class="search-container">
-            <form class="search-form">
-                <input type="text" placeholder="Search in Rimuru Fanbase..." aria-label="Search">
-                <button type="submit" class="search-submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
-    </header>
+    <div class="main-nav-container"></div>
+    <!-- Header Section End -->
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-background">
                 <div class="hero-overlay"></div>
-                <img src="/asset/rimuru hd.png" alt="Rimuru Tempest in Jura Tempest Federation"
-                    class="hero-bg-image">
+                <img src="/asset/rimuru hd.png" alt="Rimuru Tempest in Jura Tempest Federation" class="hero-bg-image">
             </div>
             <div class="hero-content">
                 <div class="hero-text">
@@ -183,7 +130,7 @@
                     </div>
                     <p class="hero-description">
                         Pahlawan slime isekai yang tidak ingin menguasai dunia atau membangun harem,
-tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk semua monster.
+                        tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk semua monster.
                     </p>
                     <div class="hero-buttons">
                         <a href="/gallery/gallery.html" class="btn btn-primary">View Gallery</a>
@@ -261,7 +208,8 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                         <p class="character-desc">
                             Mantan manusia yang bereinkarnasi sebagai slime dengan kemampuan unik Predator.
                         </p>
-                        <a href="/about/about.html" class="btn btn-secondary-character"" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        <a href="/about/about.html" class="btn btn-secondary-character"" style=" padding: 0.5rem 1rem;
+                            font-size: 0.9rem;">
                             Lihat Profil
                         </a>
                     </div>
@@ -280,7 +228,8 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                             Gadis pendiam dengan kekuatan manipulasi waktu yang luar biasa. Pahlawan yang menyegel
                             Veldora dengan Infinity Prison.
                         </p>
-                        <a href="#" class="btn btn-secondary-character" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        <a href="#" class="btn btn-secondary-character"
+                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">
                             Lihat Profil
                         </a>
                     </div>
@@ -299,7 +248,8 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                             Pemimpin yang dingin dan tajam dari Kesatria Suci, dengan kemampuan bertarung yang mematikan
                             dan prinsip keadilan yang kuat.
                         </p>
-                        <a href="#" class="btn btn-secondary-character"" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        <a href="#" class="btn btn-secondary-character"" style=" padding: 0.5rem 1rem; font-size:
+                            0.9rem;">
                             Lihat Profil
                         </a>
                     </div>
@@ -318,7 +268,8 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                             Seorang pengembara dengan Ifrit sebagai roh yang terikat padanya. Mentor Rimuru dan salah
                             satu tokoh paling berkesan di dunia Tensura.
                         </p>
-                        <a href="#" class="btn btn-secondary-character"" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        <a href="#" class="btn btn-secondary-character"" style=" padding: 0.5rem 1rem; font-size:
+                            0.9rem;">
                             Lihat Profil
                         </a>
                     </div>
@@ -349,7 +300,8 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                         <p class="event-desc">
                             Kirim karya fanart terbaikmu tentang Rimuru dan karakter Tempest lainnya disini!
                         </p>
-                        <a href="/gallery/gallery.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        <a href="/gallery/gallery.html" class="btn btn-primary"
+                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">
                             <i class="fas fa-ticket-alt"></i> Lihat Sekarang
                         </a>
                     </div>
@@ -365,15 +317,15 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                             alt="Gathering Komunitas">
                     </div>
                     <div class="event-content">
-                        <h3 class="event-title">Komunitas</h3>
+                        <h3 class="event-title">News</h3>
                         <div class="event-location">
                             <i class="fas fa-globe"></i> Online Website
                         </div>
                         <p class="event-desc">
-                            Bertemu dengan sesama penggemar Rimuru di dunia! Akan ada diskusi, kuis, dan merchandise
-                            eksklusif.
+                            Berita & Pembaruan Rimuru Tempest.
                         </p>
-                        <a href="/komunitas/komunitas.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        <a href="/komunitas/komunitas.html" class="btn btn-primary"
+                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">
                             <i class="fas fa-ticket-alt"></i> Lihat Sekarang
                         </a>
                     </div>
@@ -396,7 +348,8 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                         <p class="event-desc">
                             Nonton bareng episode pertama season baru Tensei Shitara Slime Datta Ken bersama komunitas!
                         </p>
-                        <a href="/streaming/streaming.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                        <a href="/streaming/streaming.html" class="btn btn-primary"
+                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">
                             <i class="fas fa-ticket-alt"></i> Lihat Sekarang
                         </a>
                     </div>
@@ -479,90 +432,6 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
         </div>
     </section>
 
-    <!-- Community Section -->
-    <section class="section community-section">
-        <div class="container">
-            <h2 class="section-title">Komunitas Kami</h2>
-
-            <div class="community-stats">
-                <div class="community-stat">
-                    <div class="community-stat-number">10,245</div>
-                    <div class="community-stat-label">Anggota Komunitas</div>
-                </div>
-                <div class="community-stat">
-                    <div class="community-stat-number">1,543</div>
-                    <div class="community-stat-label">Diskusi Aktif</div>
-                </div>
-                <div class="community-stat">
-                    <div class="community-stat-number">756</div>
-                    <div class="community-stat-label">Fanart Unggulan</div>
-                </div>
-                <div class="community-stat">
-                    <div class="community-stat-number">128</div>
-                    <div class="community-stat-label">Event Diselenggarakan</div>
-                </div>
-            </div>
-
-            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--rimuru-dark-blue);">Apa Kata Mereka?</h3>
-
-            <div class="testimonials">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Website ini membuatku lebih paham dunia Tempest! Komunitasnya sangat ramah dan selalu ada
-                        diskusi menarik setiap hari.
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.pinimg.com/736x/41/95/41/4195415335315cda0653bc6cbf08490b.jpg"
-                            alt="User Avatar" class="author-avatar">
-                        <div class="author-info">
-                            <div class="author-name">SlimeFan01</div>
-                            <div class="author-role">Anggota baru</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Saya menemukan banyak teman yang memiliki minat sama di sini. Event-event yang diadakan
-                        komunitas juga selalu seru!
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.pinimg.com/736x/2e/ca/3c/2eca3c6b410359c2ea31e24af1b93f13.jpg"
-                            alt="User Avatar" class="author-avatar">
-                        <div class="author-info">
-                            <div class="author-name">TempestExplorer</div>
-                            <div class="author-role">Kontributor Fanart</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Sebagai penggemar baru Rimuru, website ini sangat membantu untuk memahami karakter dan
-                        ceritanya. Terima kasih!
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.pinimg.com/736x/2c/ea/38/2cea38883f369f017b53d6de3db35838.jpg"
-                            alt="User Avatar" class="author-avatar">
-                        <div class="author-info">
-                            <div class="author-name">NewSlimeFan</div>
-                            <div class="author-role">Anggota baru</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="/komunitas/komunitas.html" class="btn btn-primary">
-                    <i class="fas fa-users"></i> Gabung Komunitas
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Newsletter Section -->
     <section class="newsletter-section">
         <div class="container">
@@ -612,7 +481,7 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                     <li><a href="/index.html">Beranda</a></li>
                     <li><a href="/about/about.html">Profil Rimuru</a></li>
                     <li><a href="/gallery/gallery.html">Galeri Fanart</a></li>
-                    <li><a href="/komunitas/komunitas.html">Forum Diskusi</a></li>
+                    <li><a href="/news/news.html">News</a></li>
                     <li><a href="/event/event.html">Event Terbaru</a></li>
                     <li><a href="/shop/shop.html">Merchandise</a></li>
                 </ul>
@@ -623,7 +492,7 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
                 <h3 class="footer-title">Unduhan</h3>
                 <ul class="footer-links">
                     <li><a href="#">Wallpaper HD</a></li>
-                    <li><a href="#">OST Anime</a></li>
+                    <li><a href="/ost anime/ost.html">OST Anime</a></li>
                 </ul>
             </div>
 
@@ -651,6 +520,26 @@ tetapi ingin mendirikan negara baru yang penuh toleransi dan kedamaian untuk sem
             </div>
         </div>
     </footer>
+    <script>
+        async function loadNavigation() {
+            try {
+                const response = await fetch('/navigation.html');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const navHTML = await response.text();
+                document.querySelector('.main-nav-container').innerHTML = navHTML;
+
+                // Panggil kembali inisialisasi setelah navigasi dimuat
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+            }
+        }
+
+        // Panggil fungsi setelah DOM dimuat
+        document.addEventListener('DOMContentLoaded', loadNavigation);
+    </script>
     <script src="rimuru.js"></script>
     <script src="rimuruTogglern.js"></script>
 </body>

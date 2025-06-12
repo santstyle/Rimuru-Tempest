@@ -104,14 +104,7 @@ body.dark-mode .visitor-counter {
     color: var(--rimuru-light-blue);
 }
 
-body.dark-mode .search-form input {
-    background-color: var(--surface-dark);
-    color: var(--text-dark);
-}
 
-body.dark-mode .theme-toggle {
-    color: var(--rimuru-light-blue);
-}
 
 /* Header Styles */
 .site-header {

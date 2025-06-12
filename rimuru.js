@@ -1,3 +1,4 @@
+
 // Set current year in footer
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -7,20 +8,6 @@ setInterval(() => {
     const randomFactor = Math.floor(Math.random() * 50);
     document.getElementById('visitor-count').textContent = (baseCount + randomFactor).toLocaleString();
 }, 3000);
-
-// Dark mode toggle
-const themeToggle = document.querySelector('.theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    if (document.body.classList.contains('dark-mode')) {
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        localStorage.setItem('theme', 'light');
-    }
-});
 
 
 if (localStorage.getItem('theme') === 'dark') {
