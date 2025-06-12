@@ -783,7 +783,8 @@ body.dark-mode .visitor-counter {
 
 .event-card {
     background: white;
-    border-radius: 15px;
+    height: 600px;
+
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
@@ -803,7 +804,7 @@ body.dark-mode .visitor-counter {
 }
 
 .event-image {
-    height: 180px;
+    height: 280px;
     overflow: hidden;
 }
 
