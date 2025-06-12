@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 
                 // Dapatkan info video (gunakan data attributes untuk URL sebenarnya)
-                const videoSrc = card.dataset.video || "https://www.youtube.com/embed/IikTjpZoM6Y";
+                const videoSrc = card.dataset.video || "https://www.youtube.com/embed/Xf73IT2cnGE";
                 const videoTitle = card.querySelector('.video-info h3').textContent;
                 
                 // Sembunyikan konten utama
@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const videoFullscreen = document.createElement('div');
                 videoFullscreen.className = 'video-fullscreen';
                 
-                // Buat elemen video
-                const videoElement = document.createElement('video');
-                videoElement.src = videoSrc;
-                videoElement.autoplay = true;
-                videoElement.controls = true;
-                videoElement.className = 'fullscreen-video';
+                // Buat iframe untuk video YouTube
+                const iframe = document.createElement('iframe');
+                iframe.src = videoSrc + "?autoplay=1";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                iframe.className = 'fullscreen-video';
                 
                 // Buat header video
                 const videoHeader = document.createElement('div');
@@ -48,18 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Susun elemen
                 videoFullscreen.appendChild(videoHeader);
-                videoFullscreen.appendChild(videoElement);
+                videoFullscreen.appendChild(iframe);
                 document.body.appendChild(videoFullscreen);
-                
-                // Fokus ke video untuk autoplay
-                videoElement.focus();
                 
                 // Event listener untuk tombol kembali
                 backButton.addEventListener('click', function() {
                     videoFullscreen.remove();
                     document.body.style.overflow = '';
                     if (mainContent) mainContent.style.display = '';
-                    videoElement.pause();
                 });
                 
                 // Event listener untuk tombol escape
@@ -68,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         videoFullscreen.remove();
                         document.body.style.overflow = '';
                         if (mainContent) mainContent.style.display = '';
-                        videoElement.pause();
                         document.removeEventListener('keydown', closeOnEscape);
                     }
                 });
