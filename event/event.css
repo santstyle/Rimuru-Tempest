@@ -264,7 +264,7 @@ body.dark-mode .events-title {
 }
 
 body.dark-mode .view-btn {
-    color: var(--rimuru-blue);
+    color: white;
 }
 
 .view-btn.active {
