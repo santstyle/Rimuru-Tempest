@@ -26,7 +26,7 @@ body.dark-mode {
     color: var(--text-dark);
 }
 
-/* Header Styles - Matches your navigation exactly */
+/* Header Styles */
 .site-header {
     background: linear-gradient(135deg, #1E3A8A 0%, #3AA8F6 100%);
     color: white;
