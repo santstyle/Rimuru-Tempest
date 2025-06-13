@@ -1,10 +1,3 @@
-// Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mainNav = document.querySelector('.main-nav');
-
-mobileMenuBtn.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-});
 
 // Season selector functionality
 const seasonBtns = document.querySelectorAll('.season-btn');
@@ -24,7 +17,7 @@ const episodesData = {
         { title: 'Episode 9 – “Petualangan Ramiris dan Veldora”', thumb: '', videoUrl: '', page: 'tensuranikki9.html' },
         { title: 'Episode 10 – “Musim Gugur yang Sibuk”', thumb: '', videoUrl: '', page: '1tensuranikki10.html' },
         { title: 'Episode 11 – “Kejutan Musim Dingin”', thumb: '', videoUrl: '', page: 'tensuranikki11.html' },
-        { title: 'Episode 12 – “Hari Baru, Harapan Baru”i', thumb: '', videoUrl: '', page: 'tensuranikki12.html' },
+        { title: 'Episode 12 – “Hari Baru, Harapan Baru”', thumb: '', videoUrl: '', page: 'tensuranikki12.html' },
     ]
 };
 

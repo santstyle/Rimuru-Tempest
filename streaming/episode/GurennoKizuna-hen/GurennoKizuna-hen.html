@@ -11,68 +11,8 @@
 
 <body>
     <!-- Header Section -->
-    <header class="site-header">
-        <div class="header-container">
-            <!-- Logo and Site Title -->
-            <div class="branding">
-                <img src="/asset/icon/rimuru icon.png" alt="Rimuru's Sanctuary Logo" class="site-logo">
-                <h1 class="site-title">Rimuru Fanbase</h1>
-            </div>
-            <!-- Navigation -->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="/index.html" class="nav-link">
-                            <i class="fas fa-home nav-icon"></i>
-                            <span class="nav-text">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/about/about.html" class="nav-link">
-                            <i class="fas fa-scroll nav-icon"></i>
-                            <span class="nav-text">About Rimuru</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/gallery/gallery.html" class="nav-link">
-                            <i class="fas fa-images nav-icon"></i>
-                            <span class="nav-text">Gallery</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/komunitas/komunitas.html" class="nav-link">
-                            <i class="fas fa-users nav-icon"></i>
-                            <span class="nav-text">Community</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/event/event.html" class="nav-link">
-                            <i class="fas fa-calendar nav-icon"></i>
-                            <span class="nav-text">Events</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/shop/shop.html" class="nav-link">
-                            <i class="fas fa-shopping-bag nav-icon"></i>
-                            <span class="nav-text">Shop</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- Utility Navigation -->
-            <div class="utility-nav">
-                <button class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
+    <div class="main-nav-container"></div>
+    <!-- Header Section End -->
 
     <!-- Main Content -->
     <div class="episode-container">
@@ -227,6 +167,26 @@
             </div>
         </div>
     </div>
+    <script>
+        async function loadNavigation() {
+            try {
+                const response = await fetch('/navigation.html');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const navHTML = await response.text();
+                document.querySelector('.main-nav-container').innerHTML = navHTML;
+
+                // Panggil kembali inisialisasi setelah navigasi dimuat
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+            }
+        }
+        // Panggil fungsi setelah DOM dimuat
+        document.addEventListener('DOMContentLoaded', loadNavigation);
+    </script>
+    <script src="/rimuruTogglern.js"></script>
     <script src="/streaming/episode/GurennoKizuna-hen/GurennoKizuna-hen.js"></script>
 </body>
 
