@@ -380,9 +380,14 @@ body.dark-mode .calendar-day {
     background-color: var(--rimuru-dark-blue);
 }
 
-/* List View (hidden by default) */
+/* List View */
 .list-view {
     display: none;
+}
+
+.event-card {
+    display: block; 
+    transition: all 0.3s ease;
 }
 
 .events-list {
@@ -390,7 +395,6 @@ body.dark-mode .calendar-day {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
 }
-
 .event-card {
     background-color: var(--card-bg);
     border-radius: 10px;
@@ -398,6 +402,18 @@ body.dark-mode .calendar-day {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+/* tampilan mobile */
+@media (max-width: 768px) {
+    .events-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-card {
+        width: 100%;
+    }
 }
 
 body.dark-mode .event-card {

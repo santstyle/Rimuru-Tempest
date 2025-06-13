@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             eventCards.forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'flex'; // Ubah ke flex untuk tampilan yang lebih baik
+                    card.style.display = 'block'; // Ubah dari flex ke block
                 } else {
                     card.style.display = 'none';
                 }
@@ -64,6 +64,4 @@ document.addEventListener('DOMContentLoaded', function() {
         listViewBtn.classList.add('active');
         listView.style.display = 'block';
     }
-
-    // Pastikan file CSS event.css ada di folder /event/
 });
