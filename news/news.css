@@ -457,7 +457,6 @@ body.dark-mode .slime-decoration {
     border: 1px solid var(--border-color);
 }
 
-
 .featured-news:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
@@ -491,7 +490,7 @@ body.dark-mode .slime-decoration {
     font-weight: 600;
     font-size: 0.9rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 0;
+    z-index: 1;
 }
 
 .featured-news .featured-content {
@@ -539,15 +538,20 @@ body.dark-mode .slime-decoration {
 .featured-news p {
     margin-bottom: 25px;
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: white;
 }
 
 .featured-news .highlight {
-    background-color: var(--rimuru-light-blue);
+    background: linear-gradient(45deg, rgba(64, 150, 255, 1) 12%, rgba(0, 75, 189, 1) 84%);
+    background-blend-mode: normal;
     padding: 20px;
     border-left: 4px solid var(--rimuru-blue);
     margin: 25px 0;
-    border-radius: 0 8px 8px 0;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .btn {
@@ -563,6 +567,10 @@ body.dark-mode .slime-decoration {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(58, 168, 246, 0.3);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .btn:hover {
@@ -731,6 +739,15 @@ body.dark-mode .slime-decoration {
     margin-bottom: 60px;
 }
 
+.featured-content p {
+    color: #585858;
+}
+
+body.dark-mode .featured-content p {
+    color: #FFFFFF;
+    /* white */
+}
+
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -805,6 +822,71 @@ body.dark-mode .slime-decoration {
     font-size: 0.8rem;
 }
 
+/* Video Modal Styles */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    max-width: 1200px;
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #ccc;
+}
+
+/* Video Card Styles */
+.video-card {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.video-card:hover {
+    transform: scale(1.03);
+}
+
+.video-thumbnail {
+    position: relative;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.video-card:hover .play-button {
+    opacity: 1;
+}
+
 /* Slime Decoration */
 .slime-decoration {
     position: absolute;
@@ -847,97 +929,25 @@ body.dark-mode .slime-decoration {
 .floating {
     animation: float 4s ease-in-out infinite;
 }
-/* Video Fullscreen Styles */
-.video-fullscreen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-}
 
-.video-header {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    z-index: 1001;
-}
 
-.video-fullscreen-title {
-    color: white;
-    margin: 0 auto;
-    font-size: 1.5rem;
-}
 
-.back-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-container {
+        width: 95%;
+    }
 
-.back-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
+    .video-title {
+        font-size: 1rem;
+        padding: 15px;
+    }
 
-.fullscreen-video {
-    width: 100%;
-    height: calc(100% - 60px);
-    object-fit: contain;
-    background-color: #000;
-}
-
-/* Video Card Styles */
-.video-thumbnail {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.video-thumbnail img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.video-thumbnail:hover img {
-    transform: scale(1.05);
-}
-
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    background-color: rgba(58, 168, 246, 0.9);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.play-button:hover {
-    background-color: rgba(58, 168, 246, 1);
-    transform: translate(-50%, -50%) scale(1.1);
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
 }
 
 /* Responsive Design */
