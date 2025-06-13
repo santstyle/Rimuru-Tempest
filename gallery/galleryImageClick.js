@@ -11,6 +11,7 @@ const closeModal = document.getElementById('close-modal');
 const modalWorkDescription = document.getElementById('modal-work-description');
 
 const imageData = {
+    // Fanart Pilihan
     1: {
         src: 'https://i.pinimg.com/736x/e8/e0/ea/e8e0ea742995275bf3dfea7ad0faa7d0.jpg',
         artistAvatar: 'https://i.pinimg.com/736x/a6/98/d0/a698d0785a66b287597a05b72822ca77.jpg',
@@ -60,6 +61,24 @@ const imageData = {
         description: 'Karya seni resmi dari merchandise yang menampilkan Rimuru dalam pose yang elegan.'
     },
     7: {
+        src: 'https://i.pinimg.com/736x/c7/52/f7/c752f78c8fec0cd7a4ac8bd3ec751e81.jpg',
+        artistAvatar: 'https://i.pinimg.com/736x/23/5b/54/235b545c67873be05c35721b659941cc.jpg',
+        artistName: 'Garou',
+        title: 'Rimuru & Benimaru',
+        likes: 689,
+        description: 'Fanart yang menampilkan Rimuru bersama Benimaru dalam pose yang keren, menunjukkan persahabatan mereka di Jura Tempest Federation.'
+    },
+    8: {
+        src: 'https://i.pinimg.com/736x/43/9b/b3/439bb397233f4f6a783da425e27d64be.jpg',
+        artistAvatar: 'https://i.pinimg.com/736x/6b/9a/c5/6b9ac5cbe047f9070ba2ab5ce7946d0d.jpg',
+        artistName: 'KAIN',
+        title: 'Rimuru',
+        likes: 276,
+        description: 'Karya seni digital yang menampilkan Rimuru dengan gaya yang unik dan detail yang mengagumkan.'
+    },
+    
+    // Wallpaper HD
+    9: {
         src: 'https://i.pinimg.com/736x/cd/0f/ee/cd0fee32068849f5f1dd8db03116f667.jpg',
         artistAvatar: 'https://i.pinimg.com/736x/23/5b/54/235b545c67873be05c35721b659941cc.jpg',
         artistName: 'El Mieruko (Pinterest)',
@@ -67,7 +86,7 @@ const imageData = {
         likes: 421,
         description: 'Wallpaper HD yang menampilkan Rimuru bersama teman-temannya dari Jura Tempest Federation.'
     },
-    8: {
+    10: {
         src: 'https://images4.alphacoders.com/135/thumbbig-1357925.webp',
         artistAvatar: 'https://i.pinimg.com/736x/6b/9a/c5/6b9ac5cbe047f9070ba2ab5ce7946d0d.jpg',
         artistName: 'alphacoders.com',
@@ -75,7 +94,7 @@ const imageData = {
         likes: 387,
         description: 'Wallpaper resmi dengan resolusi tinggi menampilkan Rimuru dalam pose epik.'
     },
-    9: {
+    11: {
         src: 'https://images6.alphacoders.com/991/thumbbig-991880.webp',
         artistAvatar: 'https://i.pinimg.com/736x/79/d0/7f/79d07f3e2a931b8abb946f3b81e774c8.jpg',
         artistName: 'alphacoders.com',
@@ -83,7 +102,7 @@ const imageData = {
         likes: 354,
         description: 'Wallpaper emosional yang menampilkan Rimuru bersama Shizue dalam momen yang mengharukan.'
     },
-    10: {
+    12: {
         src: 'https://www.ixpap.com/images/2021/08/Rimuru-Tempest-HD-Wallpaper.jpg',
         artistAvatar: 'https://i.pinimg.com/736x/32/c0/99/32c0995516a2a0ef176677df1fc775eb.jpg',
         artistName: 'ixpap.com',
@@ -91,7 +110,9 @@ const imageData = {
         likes: 512,
         description: 'Wallpaper HD Rimuru dalam bentuk Demon Lord dengan kualitas gambar yang sangat tajam.'
     },
-    11: {
+    
+    // Karakter Lain
+    13: {
         src: 'https://i.pinimg.com/736x/a9/84/6b/a9846bad58b55f943a2e05b4a803a050.jpg',
         artistAvatar: 'https://i.pinimg.com/736x/ef/32/eb/ef32eb5ab074b32c7a192439d1fa2131.jpg',
         artistName: 'Fanny',
@@ -99,7 +120,7 @@ const imageData = {
         likes: 298,
         description: 'Fanart Luminous Valentine, salah satu karakter penting dalam cerita Tensei Shitara Slime Datta Ken.'
     },
-    12: {
+    14: {
         src: 'https://i.pinimg.com/736x/67/a5/1c/67a51c527f554a55c227b7a60726881f.jpg',
         artistAvatar: 'https://i.pinimg.com/736x/68/5b/3f/685b3ff5b54143448b53eacc02a76517.jpg',
         artistName: '𝕄𝕒ℕ𝔾𝕒☆•°°𝕍ℕ',
@@ -107,7 +128,7 @@ const imageData = {
         likes: 267,
         description: 'Karya seni yang menampilkan Myulan, karakter pendukung dalam cerita dengan detail yang indah.'
     },
-    13: {
+    15: {
         src: 'https://i.pinimg.com/736x/5f/31/e5/5f31e5d948db1d3158c9db6015cf31a8.jpg',
         artistAvatar: 'https://i.pinimg.com/736x/92/ac/c2/92acc2c9047808052d94e614fd053647.jpg',
         artistName: 'Vinicius Almeida',
@@ -115,7 +136,7 @@ const imageData = {
         likes: 189,
         description: 'Fanart Testarossa, salah satu Primordial Demon yang mengabdi pada Rimuru.'
     },
-    14: {
+    16: {
         src: 'https://i.pinimg.com/736x/ee/50/8e/ee508ecee5000d08173ffa064fc83065.jpg',
         artistAvatar: 'https://i.pinimg.com/736x/7a/eb/52/7aeb526f6958b6fe856c944585bc9b3c.jpg',
         artistName: 'July Vejo',
