@@ -1,69 +1,3 @@
-
-// Star rating functionality
-const stars = document.querySelectorAll('.rating-stars i');
-stars.forEach(star => {
-    star.addEventListener('click', function () {
-        const rating = this.getAttribute('data-rating');
-        stars.forEach((s, index) => {
-            if (index < rating) {
-                s.classList.add('active');
-                s.classList.remove('far');
-                s.classList.add('fas');
-            } else {
-                s.classList.remove('active');
-                s.classList.add('far');
-                s.classList.remove('fas');
-            }
-        });
-    });
-
-    star.addEventListener('mouseover', function () {
-        const rating = this.getAttribute('data-rating');
-        stars.forEach((s, index) => {
-            if (index < rating) {
-                s.classList.add('hover');
-            } else {
-                s.classList.remove('hover');
-            }
-        });
-    });
-
-    star.addEventListener('mouseout', function () {
-        stars.forEach(s => {
-            s.classList.remove('hover');
-        });
-    });
-});
-
-// Slider functionality
-const sliderContainer = document.querySelector('.slider-container');
-const sliderDots = document.querySelectorAll('.slider-dot');
-let currentSlide = 0;
-
-function updateSlider() {
-    const slideWidth = document.querySelector('.featured-card').offsetWidth + 32; // card width + gap
-    sliderContainer.scrollTo({
-        left: currentSlide * slideWidth,
-        behavior: 'smooth'
-    });
-
-    sliderDots.forEach((dot, index) => {
-        if (index === currentSlide) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
-    });
-}
-
-sliderDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        updateSlider();
-    });
-});
-
-
 const seasonSelect = document.getElementById('season');
 const episodeCards = document.querySelectorAll('.episode-card');
 
@@ -99,3 +33,36 @@ seasonSelect.addEventListener('change', () => {
         }
     });
 });
+
+// Mouse drag scroll for featured slider
+const slider = document.querySelector('.slider-container');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+if (slider) {
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+    });
+}
