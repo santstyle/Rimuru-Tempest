@@ -97,8 +97,6 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const navHTML = await response.text();
                 document.querySelector('.main-nav-container').innerHTML = navHTML;
-
-                // Panggil kembali inisialisasi setelah navigasi dimuat
                 if (typeof initNavigation === 'function') {
                     initNavigation();
                 }
@@ -106,7 +104,7 @@
                 console.error('Error loading navigation:', error);
             }
         }
-        // Panggil fungsi setelah DOM dimuat
+
         document.addEventListener('DOMContentLoaded', loadNavigation);
     </script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
