@@ -10,11 +10,6 @@ setInterval(() => {
 }, 3000);
 
 
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-}
-
 
 // Animate stats on scroll
 const animateStats = () => {
