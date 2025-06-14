@@ -233,8 +233,7 @@
             createMusicCards();
             await loadSong(currentSongIndex);
 
-            // Removed automatic playback to comply with browser policies
-            // Only play if explicitly requested by user interaction
+
             if (sessionStorage.getItem('isPlaying') === 'true' && userInteracted) {
                 playSong();
             }
