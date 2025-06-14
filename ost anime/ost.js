@@ -343,7 +343,7 @@
                             audioPlayer.currentTime = 10;
                             audioPlayer.volume = 0.3;
                             audioPlayer.play().catch(() => {
-                                // Silently handle preview playback errors
+                                // handle preview playback errors
                             });
                             audioPlayer.addEventListener('ended', () => {
                                 audioPlayer.currentTime = 10;
@@ -407,15 +407,12 @@
                 if (durationSeconds < 10) {
                     durationSeconds = `0${durationSeconds}`;
                 }
-
                 if (duration) {
                     durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
                 }
             }, { once: true });
-
             // Disable hover preview while playing
             hoverPreviewEnabled = false;
-
             // Save state
             savePlayerState();
         }
@@ -426,7 +423,6 @@
                 showError('Sabar sayang kalau belum bisa tolong tekan lagi yah.');
                 return;
             }
-
             isPlaying = true;
             playIcon.classList.remove('fa-play');
             playIcon.classList.add('fa-pause');
@@ -434,14 +430,12 @@
                 isPlaying = false;
                 playIcon.classList.remove('fa-pause');
                 playIcon.classList.add('fa-play');
-                showError('Playback failed. Please check the audio file or try another song.');
+                showError('Gagal memutar. Coba lagi atau pilih lagu lain.');
                 console.error('Playback failed:', error);
             });
             showNowPlaying();
-
             // Disable hover preview while playing
             hoverPreviewEnabled = false;
-
             // Save state
             savePlayerState();
         }
@@ -452,10 +446,8 @@
             playIcon.classList.remove('fa-pause');
             playIcon.classList.add('fa-play');
             audioPlayer.pause();
-
             // Enable hover preview when not playing
             hoverPreviewEnabled = true;
-
             // Save state
             savePlayerState();
         }
@@ -681,9 +673,7 @@
                 const response = await fetch('/navigation.html');
                 if (!response.ok) throw new Error('Network response was not ok');
                 const navHTML = await response.text();
-                document.querySelector('.main-nav-container').innerHTML = navHTML;
-
-                // Initialize navigation if function exists
+                document.querySelector('.main-nav-container').innerHTML = navHTML;s
                 if (typeof initNavigation === 'function') {
                     initNavigation();
                 }
