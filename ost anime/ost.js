@@ -78,7 +78,7 @@
                 audio: "/asset/Ost/MAD轉生史萊姆日記 ED2おやすみオレンジ利姆露 (CV.岡咲美保)完整版.mp3",
                 rating: 4,
                 featured: false,
-                popular: true,
+                popular: true
             },
             {
                 title: "STORYSEEKER",
@@ -137,6 +137,7 @@
         const playerThumbnail = document.getElementById('player-thumbnail');
         const playerSongTitle = document.getElementById('player-song-title');
         const playerSongArtist = document.getElementById('player-song-artist');
+        const errorMessage = document.getElementById('error-message');
 
         // Player state
         let currentSongIndex = 0;
@@ -144,34 +145,50 @@
         let isShuffle = false;
         let isRepeat = false;
         let originalMusicData = [...musicData];
-        let filteredMusicData = [...musicData];
         let hoverPreviewEnabled = true;
-   // Toggle theme
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const isLightMode = document.body.classList.contains('light-mode');
-            
-            // Update icon
-            themeToggle.innerHTML = isLightMode 
-                ? '<i class="fas fa-sun"></i>' 
-                : '<i class="fas fa-moon"></i>';
-            
-            // Save theme preference
-            sessionStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+        let userInteracted = false;
+
+        // Show error message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 3000);
+        }
+
+        // Check if audio source is valid
+        async function isValidAudioSource(url) {
+            try {
+                const response = await fetch(url, { method: 'HEAD' });
+                return response.ok && response.headers.get('content-type').includes('audio');
+            } catch {
+                return false;
+            }
         }
 
         // Initialize the page
-        function init() {
+        async function init() {
             loadPlayerState();
             createMusicCards();
-            loadSong(currentSongIndex);
+            await loadSong(currentSongIndex);
 
-            if (sessionStorage.getItem('isPlaying') === 'true') {
+            // Removed automatic playback to comply with browser policies
+            // Only play if explicitly requested by user interaction
+            if (sessionStorage.getItem('isPlaying') === 'true' && userInteracted) {
                 playSong();
             }
 
             // Event listeners
             setupEventListeners();
+
+            // Mark user interaction after first click/touch
+            document.addEventListener('click', () => {
+                userInteracted = true;
+            }, { once: true });
+            document.addEventListener('touchstart', () => {
+                userInteracted = true;
+            }, { once: true });
         }
 
         function loadPlayerState() {
@@ -251,25 +268,29 @@
                 </div>
             `;
 
-            musicCard.addEventListener('click', () => {
+            musicCard.addEventListener('click', async () => {
                 const actualIndex = originalMusicData.findIndex(s => s.title === song.title);
-                loadSong(actualIndex);
+                await loadSong(actualIndex);
                 playSong();
                 showNowPlaying();
             });
 
-            musicCard.addEventListener('mouseenter', () => {
+            musicCard.addEventListener('mouseenter', async () => {
                 if (hoverPreviewEnabled && window.innerWidth > 768 && !isPlaying) {
                     const actualIndex = originalMusicData.findIndex(s => s.title === song.title);
                     if (actualIndex !== currentSongIndex) {
-                        audioPlayer.src = song.audio;
-                        audioPlayer.currentTime = 10;
-                        audioPlayer.play();
-                        audioPlayer.volume = 0.3;
-                        audioPlayer.addEventListener('ended', () => {
+                        if (await isValidAudioSource(song.audio)) {
+                            audioPlayer.src = song.audio;
                             audioPlayer.currentTime = 10;
-                            audioPlayer.play();
-                        }, { once: true });
+                            audioPlayer.volume = 0.3;
+                            audioPlayer.play().catch(() => {
+                                // Silently handle preview playback errors
+                            });
+                            audioPlayer.addEventListener('ended', () => {
+                                audioPlayer.currentTime = 10;
+                                audioPlayer.play().catch(() => {});
+                            }, { once: true });
+                        }
                     }
                 }
             });
@@ -288,9 +309,15 @@
         }
 
         // Load song
-        function loadSong(index) {
+        async function loadSong(index) {
             currentSongIndex = index;
             const song = originalMusicData[index];
+
+            // Check if audio source is valid
+            if (!(await isValidAudioSource(song.audio))) {
+                showError(`Cannot load audio for "${song.title}". Please check the file path.`);
+                return;
+            }
 
             // Update active card
             document.querySelectorAll('.music-card').forEach(card => {
@@ -344,10 +371,21 @@
 
         // Play song
         function playSong() {
+            if (!userInteracted) {
+                showError('Please interact with the page to enable audio playback.');
+                return;
+            }
+
             isPlaying = true;
             playIcon.classList.remove('fa-play');
             playIcon.classList.add('fa-pause');
-            audioPlayer.play();
+            audioPlayer.play().catch(error => {
+                isPlaying = false;
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+                showError('Playback failed. Please check the audio file or try another song.');
+                console.error('Playback failed:', error);
+            });
             showNowPlaying();
 
             // Disable hover preview while playing
@@ -382,7 +420,7 @@
         }
 
         // Play next song
-        function nextSong() {
+        async function nextSong() {
             if (isShuffle) {
                 let newIndex;
                 do {
@@ -392,14 +430,14 @@
             } else {
                 currentSongIndex = (currentSongIndex + 1) % originalMusicData.length;
             }
-            loadSong(currentSongIndex);
+            await loadSong(currentSongIndex);
             if (isPlaying) {
                 playSong();
             }
         }
 
         // Play previous song
-        function prevSong() {
+        async function prevSong() {
             if (isShuffle) {
                 let newIndex;
                 do {
@@ -409,7 +447,7 @@
             } else {
                 currentSongIndex = (currentSongIndex - 1 + originalMusicData.length) % originalMusicData.length;
             }
-            loadSong(currentSongIndex);
+            await loadSong(currentSongIndex);
             if (isPlaying) {
                 playSong();
             }
@@ -432,7 +470,7 @@
         // Update progress bar
         function updateProgress(e) {
             const { duration, currentTime } = e.srcElement;
-            const progressPercent = (currentTime / duration) * 100;
+            const progressPercent = duration ? (currentTime / duration) * 100 : 0;
             progress.style.width = `${progressPercent}%`;
 
             // Update time display
@@ -464,7 +502,7 @@
             const width = this.clientWidth;
             const clickX = e.offsetX;
             const duration = audioPlayer.duration;
-            audioPlayer.currentTime = (clickX / width) * duration;
+            audioPlayer.currentTime = duration ? (clickX / width) * duration : 0;
         }
 
         // Setup event listeners
@@ -474,10 +512,20 @@
             audioPlayer.addEventListener('ended', () => {
                 if (isRepeat) {
                     audioPlayer.currentTime = 0;
-                    audioPlayer.play();
+                    audioPlayer.play().catch(error => {
+                        showError('Playback failed after repeat.');
+                        console.error('Playback failed:', error);
+                    });
                 } else {
                     nextSong();
                 }
+            });
+
+            audioPlayer.addEventListener('error', () => {
+                showError('Error loading audio. Please try another song.');
+                isPlaying = false;
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
             });
 
             progressContainer.addEventListener('click', setProgress);
@@ -508,7 +556,6 @@
                 audioPlayer.volume = volumeSlider.value;
                 savePlayerState();
             });
-
 
             // Now playing controls
             closeNowPlaying.addEventListener('click', hideNowPlaying);
@@ -555,7 +602,7 @@
                 const clickX = touch.clientX - rect.left;
                 const width = rect.width;
                 const duration = audioPlayer.duration;
-                audioPlayer.currentTime = (clickX / width) * duration;
+                audioPlayer.currentTime = duration ? (clickX / width) * duration : 0;
             });
 
             progressContainer.addEventListener('touchmove', (e) => {
@@ -565,7 +612,7 @@
                     const clickX = touch.clientX - rect.left;
                     const width = rect.width;
                     const duration = audioPlayer.duration;
-                    audioPlayer.currentTime = (clickX / width) * duration;
+                    audioPlayer.currentTime = duration ? (clickX / width) * duration : 0;
                 }
             });
 
@@ -577,5 +624,34 @@
             window.addEventListener('beforeunload', savePlayerState);
         }
 
+        // Load navigation
+        async function loadNavigation() {
+            try {
+                const response = await fetch('/navigation.html');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const navHTML = await response.text();
+                document.querySelector('.main-nav-container').innerHTML = navHTML;
+
+                // Initialize navigation if function exists
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+
+                // Setup mobile menu toggle
+                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                const mainNav = document.querySelector('.main-nav');
+                if (mobileMenuBtn && mainNav) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        mainNav.classList.toggle('active');
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+            }
+        }
+
         // Initialize the page
-        init();
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNavigation();
+            init();
+        });
