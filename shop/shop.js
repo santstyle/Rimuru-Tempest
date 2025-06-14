@@ -112,11 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Pastikan navigasi berfungsi
+
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
-            // Biarkan link berfungsi normal
-            // Tidak perlu e.preventDefault() kecuali untuk link khusus
         });
     });
 });
