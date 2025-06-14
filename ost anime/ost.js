@@ -324,15 +324,7 @@
                 card.classList.remove('active');
             });
 
-            // Find and activate the card in both grids
-            const allCards = document.querySelectorAll('.music-card');
-            allCards.forEach(card => {
-                const cardTitle = card.querySelector('.music-title').textContent;
-                if (cardTitle === song.title) {
-                    card.classList.add('active');
-                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
+
 
             // Update audio player
             audioPlayer.src = song.audio;
@@ -637,14 +629,6 @@
                     initNavigation();
                 }
 
-                // Setup mobile menu toggle
-                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-                const mainNav = document.querySelector('.main-nav');
-                if (mobileMenuBtn && mainNav) {
-                    mobileMenuBtn.addEventListener('click', () => {
-                        mainNav.classList.toggle('active');
-                    });
-                }
             } catch (error) {
                 console.error('Error loading navigation:', error);
             }
