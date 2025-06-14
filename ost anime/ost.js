@@ -160,6 +160,16 @@
                 featured: true,
                 popular: true
             },
+            {
+                title: "Miracle soup",
+                artist: "MindaRyn",
+                duration: "3:29",
+                thumbnail: "https://i.pinimg.com/736x/ac/ad/16/acad1679f9f1f5d2a226ed09bed9a414.jpg",
+                audio: "/asset/Ost/MindaRyn - Miracle soup (That Time I Got Reincarnated as a Slime Season 3 2nd ED)  Music Video.mp3",
+                rating: 5,
+                featured: true,
+                popular: true
+            }
         ];
 
         // DOM elements
