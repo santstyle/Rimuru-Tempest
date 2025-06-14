@@ -109,7 +109,27 @@
                 rating: 4,
                 featured: false,
                 popular: true
-            }
+            },
+            {
+                title: "Boku no Naka no Kimi e",
+                artist: "TRUE",
+                duration: "4:22",
+                thumbnail: "https://i.pinimg.com/736x/a7/0a/c3/a70ac37e19a687e4eb272b126647440a.jpg",
+                audio: "/asset/Ost/Tensei Shitara Slime Datta Ken ORIGINAL OST (Boku no Naka no Kimi e).mp3",
+                rating: 4,
+                featured: false,
+                popular: true
+            },
+            {
+                title: "Reimei",
+                artist: "TRUE",
+                duration: "4:42",
+                thumbnail: "https://i.pinimg.com/736x/dd/54/b9/dd54b95bc294e367cbbc995768c02160.jpg",
+                audio: "/asset/Ost/Reimei.mp3",
+                rating: 4,
+                featured: false,
+                popular: true
+            },
         ];
 
         // DOM elements
@@ -255,7 +275,7 @@
                 <div class="thumbnail">
                     <img src="${song.thumbnail}" alt="${song.title}">
                     <div class="play-overlay">
-                        <i class="fas fa-play"></i>
+                        <i></i>
                     </div>
                 </div>
                 <div class="music-info">
@@ -364,7 +384,7 @@
         // Play song
         function playSong() {
             if (!userInteracted) {
-                showError('Please interact with the page to enable audio playback.');
+                showError('Sabar sayang kalau belum bisa tolong tekan lagi yah.');
                 return;
             }
 
