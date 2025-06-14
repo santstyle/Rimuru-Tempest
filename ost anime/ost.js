@@ -5,7 +5,7 @@
                 artist: "TRUE",
                 duration: "4:31",
                 thumbnail: "https://i.pinimg.com/736x/9b/5e/84/9b5e84e9e4d298d9085dc06696d11edb.jpg",
-                audio: "/asset/Ost/【TRUE】「Storyteller」Music Video（TVアニメ『転生したらスライムだった件 第2期』オープニング主題歌）.mp3",
+                audio: "https://www.dropbox.com/scl/fi/swtrjjwplt8dh7n79ghtb/TRUE-Storyteller-Music-Video-TV-2.mp3?rlkey=hhgtsqeroavlwcmwt1yjhrxmy&st=ufiy93p7&dl=0",
                 rating: 5,
                 featured: true,
                 popular: true
@@ -189,7 +189,7 @@
         const playerSongArtist = document.getElementById('player-song-artist');
         const errorMessage = document.getElementById('error-message');
 
-        // Player state
+        // Player state 
         let currentSongIndex = 0;
         let isPlaying = false;
         let isShuffle = false;
@@ -208,14 +208,18 @@
         }
 
 
-        async function isValidAudioSource(url) {
-            try {
-                const response = await fetch(url, { method: 'HEAD' });
-                return response.ok && response.headers.get('content-type').includes('audio');
-            } catch {
-                return false;
-            }
-        }
+async function isValidAudioSource(url) {
+    // For external URLs, skip HEAD request due to CORS and streaming issues
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        return true;
+    }
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok && response.headers.get('content-type').includes('audio');
+    } catch {
+        return false;
+    }
+}
 
         // Initialize the page
         async function init() {
