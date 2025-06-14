@@ -1,4 +1,4 @@
-// Fungsi untuk mendapatkan konfigurasi partikel
+
 function getParticlesConfig(theme) {
     return {
         "particles": {
@@ -102,11 +102,11 @@ function initParticles() {
     }
 }
 
-// Event listener untuk DOMContentLoaded
+
 document.addEventListener('DOMContentLoaded', function() {
     initParticles();
     
-    // Tambahkan event listener untuk theme toggle
+
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const newTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
                     particlesJS('particles-js', getParticlesConfig(newTheme));
                 }
-            }, 100); // Beri sedikit delay untuk memastikan theme sudah berubah
+            }, 100); 
         });
     }
 });
