@@ -51,11 +51,23 @@ if (statsSection) {
     observer.observe(statsSection);
 }
 
-// Popup 
 document.addEventListener('DOMContentLoaded', function() {
     const popupBubble = document.getElementById('popupBubble');
     const disclaimerModal = document.getElementById('disclaimerModal');
     const closeModal = document.getElementById('closeModal');
+
+    if (!popupBubble) {
+        console.error('Popup bubble element not found');
+        return;
+    }
+    if (!disclaimerModal) {
+        console.error('Disclaimer modal element not found');
+        return;
+    }
+    if (!closeModal) {
+        console.error('Close modal button element not found');
+        return;
+    }
 
     popupBubble.style.display = 'flex';
 
@@ -68,10 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close
     closeModal.addEventListener('click', function() {
         disclaimerModal.style.display = 'none';
+        popupBubble.style.display = 'flex';
     });
     disclaimerModal.addEventListener('click', function(event) {
         if (event.target === disclaimerModal) {
             disclaimerModal.style.display = 'none';
+            popupBubble.style.display = 'flex';
         }
     });
 });
