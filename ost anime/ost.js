@@ -130,6 +130,36 @@
                 featured: false,
                 popular: true
             },
+            {
+                title: "PEACEKEEPER",
+                artist: "STEREO DIVE FOUNDATION",
+                duration: "3:28",
+                thumbnail: "https://i.pinimg.com/736x/a9/dc/64/a9dc6489ad7665f2fd25df679728be79.jpg",
+                audio: "/asset/Ost/PEACEKEEPER.mp3",
+                rating: 5,
+                featured: true,
+                popular: true
+            },
+            {
+                title: "Believer",
+                artist: "Rin Kurusu",
+                duration: "3:16",
+                thumbnail: "https://i.pinimg.com/736x/67/a8/e2/67a8e2bd434e59837538d21136780368.jpg",
+                audio: "/asset/Ost/Believer.mp3",
+                rating: 4,
+                featured: false,
+                popular: true
+            },
+            {
+                title: "Renacer Serenade",
+                artist: "Momoiro Clover Z",
+                duration: "4:12",
+                thumbnail: "https://image.myanimelist.net/ui/5LYzTBVoS196gvYvw3zjwAnW-0W7PGdzfDYmeUdjdDz35SBiKlUN2GBaqsDdJJuH",
+                audio: "/asset/Ost/Renacer Serenade.mp3",
+                rating: 5,
+                featured: true,
+                popular: true
+            },
         ];
 
         // DOM elements
@@ -177,7 +207,7 @@
             }, 3000);
         }
 
-        // Check if audio source is valid
+
         async function isValidAudioSource(url) {
             try {
                 const response = await fetch(url, { method: 'HEAD' });
