@@ -15,7 +15,7 @@
                 artist: "Takuma Terashima",
                 duration: "4:07",
                 thumbnail: "https://i.pinimg.com/736x/ac/f1/c9/acf1c92b618c43de04f99150bb5444d2.jpg",
-                audio: "/asset/Ost/Takuma Terashima  Nameless Story Music Clip (That Time I Got Reincarnated as a Slime OP).mp3",
+                audio: "https://www.dropbox.com/scl/fi/8c9bnueoaeu3pk2lmlbc4/Takuma-Terashima-Nameless-Story-Music-Clip-That-Time-I-Got-Reincarnated-as-a-Slime-OP.mp3?rlkey=cuugq9amalzzqay7zqtitauei&st=240f5dhs&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -25,7 +25,7 @@
                 artist: "Takuma Terashima",
                 duration: "5:07",
                 thumbnail: "https://i.pinimg.com/736x/ce/0e/bd/ce0ebd0865f5a96ba32900a4854a77f9.jpg",
-                audio: "/asset/Ost/Takuma Terashima  Megurumono Music Clip (That Time I Got Reincarnated as a Slime OP Part2).mp3",
+                audio: "https://www.dropbox.com/scl/fi/r8mmi47bo57ords9z9el5/Takuma-Terashima-Megurumono-Music-Clip-That-Time-I-Got-Reincarnated-as-a-Slime-OP-Part2.mp3?rlkey=beh2hfd47c5tsyb7jzrthhi9o&st=e1347mcz&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -35,7 +35,7 @@
                 artist: "TRUE",
                 duration: "4:07",
                 thumbnail: "https://i.pinimg.com/736x/b0/d8/32/b0d8323e661a5859a6caedb55cd61c6f.jpg",
-                audio: "/asset/Ost/TRUEAnother colonyMusic VideoTVアニメ転生したらスライムだった件エンディング主題歌.mp3",
+                audio: "https://www.dropbox.com/scl/fi/oop5r7tucqpwjcdwvtq7h/TRUEAnother-colonyMusic-VideoTV.mp3?rlkey=e1q4q98szpnw0t87kttasnrdu&st=rslzg88v&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -45,7 +45,7 @@
                 artist: "熊田茜音",
                 duration: "4:11",
                 thumbnail: "https://i.pinimg.com/736x/25/e7/ac/25e7acc682dcf760983538ea82ed4dc9.jpg",
-                audio: "/asset/Ost/Brand new diary (TVアニメ転生したらスライムだった件 転スラ日記オープニング主題歌)  熊田茜音Official Music Video].mp3",
+                audio: "https://www.dropbox.com/scl/fi/ou9xmkdf98hhcelhdvd8l/Brand-new-diary-TV-Official-Music-Video.mp3?rlkey=1qoqtfly9rxftawyfa9vdvjyg&st=f4vsmadx&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -55,7 +55,7 @@
                 artist: "MindaRyn",
                 duration: "4:21",
                 thumbnail: "https://i.pinimg.com/736x/22/8e/37/228e37f50986260386e20dac27997446.jpg",
-                audio: "/asset/Ost/MindaRyn - Like Flames (That Time I Got Reincarnated as a Slime Opening Theme Song)  Music Video.mp3",
+                audio: "https://www.dropbox.com/scl/fi/ec2t452n0shwhjcn8wc76/MindaRyn-Like-Flames-That-Time-I-Got-Reincarnated-as-a-Slime-Opening-Theme-Song-Music-Video.mp3?rlkey=vvfnbgh2ncjzpvrqbryx88q0a&st=uzk2skwk&dl=0",
                 rating: 5,
                 featured: true,
                 popular: true
@@ -65,7 +65,7 @@
                 artist: "Miho Okasaki",
                 duration: "3:49",
                 thumbnail: "https://i.pinimg.com/736x/72/2e/4e/722e4ebf9e0014e5d59f3e075b9c6ffd.jpg",
-                audio: "/asset/Ost/Tensura Nikki_ Tensura Ending Season 1 [Tensura Nikki CAST - Kamona Tempest] Lirik & Terjemahan.mp3",
+                audio: "https://www.dropbox.com/scl/fi/6lmzahqdy2v682l6y2zh9/Tensura-Nikki_-Tensura-Ending-Season-1-Tensura-Nikki-CAST-Kamona-Tempest-Lirik-Terjemahan.mp3?rlkey=wbdmym8zk08ixx2sakse00137&st=thq5d25o&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -75,7 +75,7 @@
                 artist: "Miho Okasaki",
                 duration: "4:50",
                 thumbnail: "https://i.pinimg.com/736x/6f/32/c8/6f32c8f1c546dca18104127165cd2a76.jpg",
-                audio: "/asset/Ost/MAD轉生史萊姆日記 ED2おやすみオレンジ利姆露 (CV.岡咲美保)完整版.mp3",
+                audio: "https://www.dropbox.com/scl/fi/i5xz481w0yf8n4jlc9iqd/MAD-ED2-CV..mp3?rlkey=c0xgymgsmqtnaxfsfbaa1a0b8&st=corsba0x&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -85,7 +85,7 @@
                 artist: "STEREO DIVE FOUNDATION",
                 duration: "3:59",
                 thumbnail: "https://i.pinimg.com/736x/4d/ee/00/4dee00ad2a72dafe7376914ab3e0b85c.jpg",
-                audio: "/asset/Ost/STORYSEEKERTVアニメ転生したらスライムだった件 第2期エンディング主題歌- STEREO DIVE FOUNDATION - [Official Video].mp3",
+                audio: "https://www.dropbox.com/scl/fi/qfj7rganjmq3x0meyxchx/STORYSEEKERTV-2-STEREO-DIVE-FOUNDATION-Official-Video.mp3?rlkey=rc99k6pxnahpmp06z2prx6845&st=zlbh1eo5&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -95,7 +95,7 @@
                 artist: "Takuma Terashima",
                 duration: "4:08",
                 thumbnail: "https://i.pinimg.com/736x/3b/0d/14/3b0d1420a4555ad823735b3c99c41be5.jpg",
-                audio: "/asset/Ost/Takuma Terashima   Reincarnate Music Clip (That Time I Got Reincarnated As a Slime ED).mp3",
+                audio: "https://www.dropbox.com/scl/fi/x11g2htl4rqdl7hmaq1ln/Takuma-Terashima-Reincarnate-Music-Clip-That-Time-I-Got-Reincarnated-As-a-Slime-ED.mp3?rlkey=z4l0rox5xlbsx5y3w38tv8v6x&st=js9mxnkz&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -105,7 +105,7 @@
                 artist: "Azusa Tadokoro",
                 duration: "3:57",
                 thumbnail: "https://i.pinimg.com/736x/7c/1a/5e/7c1a5ea7f050ae6d348b3fafcba758ca.jpg",
-                audio: "/asset/Ost/田所あずさ  リトルソルジャー -Music Video-.mp3",
+                audio: "https://www.dropbox.com/scl/fi/l0atj1dodl5yxfadlxho9/Music-Video.mp3?rlkey=exba1hkrelvd06vf94n4f3frp&st=r7rrhqx3&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -115,7 +115,7 @@
                 artist: "TRUE",
                 duration: "4:22",
                 thumbnail: "https://i.pinimg.com/736x/a7/0a/c3/a70ac37e19a687e4eb272b126647440a.jpg",
-                audio: "/asset/Ost/Tensei Shitara Slime Datta Ken ORIGINAL OST (Boku no Naka no Kimi e).mp3",
+                audio: "https://www.dropbox.com/scl/fi/6fmhxai74368vbpkw6lzv/Tensei-Shitara-Slime-Datta-Ken-ORIGINAL-OST-Boku-no-Naka-no-Kimi-e.mp3?rlkey=hznfyl61rnyeqsr51y8wuc3ww&st=tzpe6w49&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -125,7 +125,7 @@
                 artist: "TRUE",
                 duration: "4:42",
                 thumbnail: "https://i.pinimg.com/736x/dd/54/b9/dd54b95bc294e367cbbc995768c02160.jpg",
-                audio: "/asset/Ost/Reimei.mp3",
+                audio: "https://www.dropbox.com/scl/fi/hd8ywkknyg0y6ovm4nax3/Reimei.mp3?rlkey=cypx1rlf73dw4zgrm2ecdzw5u&st=g5l5x2v9&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -135,7 +135,7 @@
                 artist: "STEREO DIVE FOUNDATION",
                 duration: "3:28",
                 thumbnail: "https://i.pinimg.com/736x/a9/dc/64/a9dc6489ad7665f2fd25df679728be79.jpg",
-                audio: "/asset/Ost/PEACEKEEPER.mp3",
+                audio: "https://www.dropbox.com/scl/fi/jekqzxid0hll4c1jbm93v/PEACEKEEPER.mp3?rlkey=faq93jng27apokv2oo6zll1c5&st=vskwyucx&dl=0",
                 rating: 5,
                 featured: true,
                 popular: true
@@ -145,7 +145,7 @@
                 artist: "Rin Kurusu",
                 duration: "3:16",
                 thumbnail: "https://i.pinimg.com/736x/67/a8/e2/67a8e2bd434e59837538d21136780368.jpg",
-                audio: "/asset/Ost/Believer.mp3",
+                audio: "https://www.dropbox.com/scl/fi/02rxf30ki7sbxoxnys1a9/Believer.mp3?rlkey=7vi79xmg2jdr433ani037oxqv&st=6ixcp76o&dl=0",
                 rating: 4,
                 featured: false,
                 popular: true
@@ -155,7 +155,7 @@
                 artist: "Momoiro Clover Z",
                 duration: "4:12",
                 thumbnail: "https://image.myanimelist.net/ui/5LYzTBVoS196gvYvw3zjwAnW-0W7PGdzfDYmeUdjdDz35SBiKlUN2GBaqsDdJJuH",
-                audio: "/asset/Ost/Renacer Serenade.mp3",
+                audio: "https://www.dropbox.com/scl/fi/iwx8sq8zev6hjs10uq6cq/Renacer-Serenade.mp3?rlkey=t8nkqeygwrhq87sre51akttaf&st=ih7qiiw1&dl=0",
                 rating: 5,
                 featured: true,
                 popular: true
