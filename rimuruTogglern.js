@@ -67,22 +67,30 @@ document.addEventListener('DOMContentLoaded', function() {
             // Terapkan tema awal
             if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
                 document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
                 const icon = themeToggle.querySelector('i');
                 if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                const icon = themeToggle.querySelector('i');
+                if (icon) icon.classList.replace('fa-sun', 'fa-moon');
             }
             
             themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
                 const isDark = document.body.classList.contains('dark-mode');
                 const icon = this.querySelector('i');
                 
-                // Update icon dan simpan preferensi
                 if (isDark) {
-                    if (icon) icon.classList.replace('fa-moon', 'fa-sun');
-                    localStorage.setItem('theme', 'dark');
-                } else {
+                    document.body.classList.remove('dark-mode');
+                    document.body.classList.add('light-mode');
                     if (icon) icon.classList.replace('fa-sun', 'fa-moon');
                     localStorage.setItem('theme', 'light');
+                } else {
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark-mode');
+                    if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+                    localStorage.setItem('theme', 'dark');
                 }
             });
         }
