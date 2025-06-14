@@ -189,7 +189,7 @@
         const playerSongArtist = document.getElementById('player-song-artist');
         const errorMessage = document.getElementById('error-message');
 
-        // Player state 
+        // Player state
         let currentSongIndex = 0;
         let isPlaying = false;
         let isShuffle = false;
@@ -209,20 +209,13 @@
 
 
         async function isValidAudioSource(url) {
-            // For external URLs, transform Dropbox links to direct download links
-            if (url.startsWith('https://www.dropbox.com')) {
-                url = url.replace('?dl=0', '?raw=1').replace('?dl=1', '?raw=1');
-                return true;
-            }
-            if (url.startsWith('http://') || url.startsWith('https://')) {
-                return true;
-            }
             try {
                 const response = await fetch(url, { method: 'HEAD' });
                 return response.ok && response.headers.get('content-type').includes('audio');
             } catch {
                 return false;
             }
+        }
 
         // Initialize the page
         async function init() {
