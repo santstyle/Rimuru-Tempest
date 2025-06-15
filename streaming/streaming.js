@@ -34,7 +34,7 @@ seasonSelect.addEventListener('change', () => {
     });
 });
 
-// Mouse drag scroll for featured slider
+// Mouse drag scroll 
 const slider = document.querySelector('.slider-container');
 let isDown = false;
 let startX;
