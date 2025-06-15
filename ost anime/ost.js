@@ -238,10 +238,7 @@
                 playSong();
             }
 
-            // Event listeners
             setupEventListeners();
-
-            // Mark user interaction after first click/touch
             document.addEventListener('click', () => {
                 userInteracted = true;
             }, { once: true });
@@ -282,13 +279,13 @@
             musicGrid.innerHTML = '';
             popularGrid.innerHTML = '';
 
-            // Featured tracks
+            // Featured 
             const featuredTracks = originalMusicData.filter(song => song.featured);
             featuredTracks.forEach((song, index) => {
                 createMusicCard(song, index, musicGrid);
             });
 
-            // Popular tracks
+            // Popular
             const popularTracks = originalMusicData.filter(song => song.popular);
             popularTracks.forEach((song, index) => {
                 createMusicCard(song, index, popularGrid);
@@ -299,8 +296,6 @@
             const musicCard = document.createElement('div');
             musicCard.className = 'music-card';
             musicCard.dataset.index = index;
-
-            // Create rating stars
             let stars = '';
             for (let i = 0; i < 5; i++) {
                 if (i < song.rating) {
@@ -371,34 +366,24 @@
         async function loadSong(index) {
             currentSongIndex = index;
             const song = originalMusicData[index];
-
-            // Check if audio source is valid
             if (!(await isValidAudioSource(song.audio))) {
                 showError(`Cannot load audio for "${song.title}". Please check the file path.`);
                 return;
             }
-
-            // Update active card
             document.querySelectorAll('.music-card').forEach(card => {
                 card.classList.remove('active');
             });
-
-
-
             // Update audio player
             audioPlayer.src = song.audio;
             audioPlayer.volume = volumeSlider.value;
-
             // Update now playing info
             nowPlayingImg.src = song.thumbnail;
             nowPlayingTitle.textContent = song.title;
             nowPlayingArtist.textContent = song.artist;
-
             // Update player info
             playerThumbnail.src = song.thumbnail;
             playerSongTitle.textContent = song.title;
             playerSongArtist.textContent = song.artist;
-
             // Update duration display
             audioPlayer.addEventListener('loadedmetadata', () => {
                 const duration = audioPlayer.duration;
@@ -411,9 +396,7 @@
                     durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
                 }
             }, { once: true });
-            // Disable hover preview while playing
             hoverPreviewEnabled = false;
-            // Save state
             savePlayerState();
         }
 
@@ -434,9 +417,7 @@
                 console.error('Playback failed:', error);
             });
             showNowPlaying();
-            // Disable hover preview while playing
             hoverPreviewEnabled = false;
-            // Save state
             savePlayerState();
         }
 
@@ -446,9 +427,7 @@
             playIcon.classList.remove('fa-pause');
             playIcon.classList.add('fa-play');
             audioPlayer.pause();
-            // Enable hover preview when not playing
             hoverPreviewEnabled = true;
-            // Save state
             savePlayerState();
         }
 
@@ -515,26 +494,20 @@
             const { duration, currentTime } = e.srcElement;
             const progressPercent = duration ? (currentTime / duration) * 100 : 0;
             progress.style.width = `${progressPercent}%`;
-
-            // Update time display
             const durationMinutes = Math.floor(duration / 60);
             let durationSeconds = Math.floor(duration % 60);
             if (durationSeconds < 10) {
                 durationSeconds = `0${durationSeconds}`;
             }
-
             if (duration) {
                 durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
             }
-
             const currentMinutes = Math.floor(currentTime / 60);
             let currentSeconds = Math.floor(currentTime % 60);
             if (currentSeconds < 10) {
                 currentSeconds = `0${currentSeconds}`;
             }
             currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
-
-            // Save current time periodically
             if (currentTime % 5 < 0.1) {
                 savePlayerState();
             }
@@ -548,7 +521,6 @@
             audioPlayer.currentTime = duration ? (clickX / width) * duration : 0;
         }
 
-        // Setup event listeners
         function setupEventListeners() {
             // Player controls
             audioPlayer.addEventListener('timeupdate', updateProgress);
@@ -634,8 +606,7 @@
                         break;
                 }
             });
-
-            // Mobile touch events for progress bar
+            
             let isDragging = false;
 
             progressContainer.addEventListener('touchstart', (e) => {
