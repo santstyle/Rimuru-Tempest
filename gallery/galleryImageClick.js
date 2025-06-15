@@ -146,7 +146,7 @@ const imageData = {
     }
 };
 
-// Add click event to each gallery item
+// Add click gallery item
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
         const imageId = item.getAttribute('data-id');
@@ -160,7 +160,6 @@ galleryItems.forEach(item => {
             modalLikeCount.textContent = data.likes + ' suka';
             modalWorkDescription.textContent = data.description;
             
-            // Check if like button is already clicked (from localStorage)
             const isLiked = localStorage.getItem(`image_${imageId}_liked`) === 'true';
             if (isLiked) {
                 modalLikeBtn.innerHTML = '<i class="fas fa-heart"></i><span>Disukai</span>';
@@ -170,7 +169,6 @@ galleryItems.forEach(item => {
                 modalLikeBtn.classList.remove('liked');
             }
             
-            // Update like button click event
             modalLikeBtn.onclick = function() {
                 if (isLiked) {
                     data.likes--;
@@ -185,7 +183,6 @@ galleryItems.forEach(item => {
                 }
                 modalLikeCount.textContent = data.likes + ' suka';
                 
-                // Update the like count in the gallery item
                 const likeCountElement = item.querySelector('.like-count');
                 if (likeCountElement) {
                     likeCountElement.textContent = data.likes;
@@ -198,13 +195,11 @@ galleryItems.forEach(item => {
     });
 });
 
-// Close modal when clicking X button
 closeModal.addEventListener('click', () => {
     imageModal.style.display = 'none';
     document.body.style.overflow = 'auto';
 });
 
-// Close modal when clicking outside the modal content
 imageModal.addEventListener('click', (e) => {
     if (e.target === imageModal) {
         imageModal.style.display = 'none';
@@ -212,7 +207,6 @@ imageModal.addEventListener('click', (e) => {
     }
 });
 
-// Close modal with ESC key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && imageModal.style.display === 'block') {
         imageModal.style.display = 'none';

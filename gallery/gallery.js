@@ -43,8 +43,7 @@ galleryItems.forEach(item => {
         modalArtistName.textContent = data.artistName;
         modalWorkTitle.textContent = data.title;
         modalLikeCount.textContent = `${data.likes} likes`;
-
-        // Check if already liked
+        
         const likeBtn = item.querySelector('.like-btn');
         if (likeBtn.querySelector('i').classList.contains('fas')) {
             modalLikeBtn.innerHTML = '<i class="fas fa-heart"></i><span>Liked</span>';
@@ -118,7 +117,6 @@ submitWorkBtn.addEventListener('click', () => {
     alert('Submission form would open here! In a real implementation, this would show a form to upload artwork or cosplay photos.');
 });
 
-// Prevent download buttons from triggering gallery item click
 const downloadBtns = document.querySelectorAll('.download-btn');
 
 downloadBtns.forEach(btn => {
