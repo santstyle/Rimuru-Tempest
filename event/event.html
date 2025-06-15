@@ -4,7 +4,7 @@
 <link>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
+<link rel="icon" type="image/png" href="/asset/icon/Logo RimuruFanbase.png" />
 <link rel="stylesheet" href="/event/event.css">
 </link>
 <title>Acara & Kegiatan - Fanbase Rimuru</title>
@@ -192,8 +192,6 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const navHTML = await response.text();
                 document.querySelector('.main-nav-container').innerHTML = navHTML;
-
-                // Panggil kembali inisialisasi setelah navigasi dimuat
                 if (typeof initNavigation === 'function') {
                     initNavigation();
                 }
@@ -201,7 +199,6 @@
                 console.error('Error loading navigation:', error);
             }
         }
-        // Panggil fungsi setelah DOM dimuat
         document.addEventListener('DOMContentLoaded', loadNavigation);
     </script>
     <script src="/rimuruTogglern.js"></script>
