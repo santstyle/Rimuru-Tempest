@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tensura Episode 1 - Rimuru Fanbase</title>
-    <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
+    <link rel="icon" type="image/png" href="/asset/icon/Logo RimuruFanbase.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/streaming/episode/episode.css">
 
@@ -240,7 +240,7 @@
                             <div class="recommendation-meta">12 Episode</div>
                         </div>
                     </a>
-                    <!-- Recommendation 5 -->
+                    <!-- Recommendation 4 -->
                     <a href="/streaming/episode/1.html" class="recommendation-card">
                         <img src="https://cdn.myanimelist.net/images/anime/1069/123309.jpg" alt=""
                             class="recommendation-thumb">
@@ -260,8 +260,6 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const navHTML = await response.text();
                 document.querySelector('.main-nav-container').innerHTML = navHTML;
-
-                // Panggil kembali inisialisasi setelah navigasi dimuat
                 if (typeof initNavigation === 'function') {
                     initNavigation();
                 }
@@ -269,7 +267,6 @@
                 console.error('Error loading navigation:', error);
             }
         }
-        // Panggil fungsi setelah DOM dimuat
         document.addEventListener('DOMContentLoaded', loadNavigation);
     </script>
     <script src="/rimuruTogglern.js"></script>

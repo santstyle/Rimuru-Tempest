@@ -1,6 +1,4 @@
 
-
-// Season selector functionality
 const seasonBtns = document.querySelectorAll('.season-btn');
 const episodeListContainer = document.querySelector('.episode-list');
 // Episode List Data
@@ -122,7 +120,7 @@ if (activeSeasonBtn) activeSeasonBtn.classList.add('active');
 
 renderEpisodes(currentSeason);
 
-// Load video for current episode and server
+// Load episode and server
 const initialSrc = serverSources[currentServer][currentEpisode] || '';
 if (initialSrc) {
     videoPlayer.src = initialSrc;

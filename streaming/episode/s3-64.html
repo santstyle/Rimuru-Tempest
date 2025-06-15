@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tensura Episode 1 - Rimuru Fanbase</title>
-    <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
+    <link rel="icon" type="image/png" href="/asset/icon/Logo RimuruFanbase.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="episode.css">
 
@@ -173,8 +173,6 @@
                             <div class="episode-name">Episode 15 - Penguasa Badai</div>
                         </div>
                     </div>
-
-                    <!-- Season 1 Episodes 16-24 -->
                     <!-- Episode 16 -->
                     <div class="episode-item">
                         <img src="https://i.ytimg.com/vi/bIlh8qr-zks/hqdefault.jpg" alt="Episode 16"
@@ -726,7 +724,7 @@
                         </p>
                         <div class="comment-actions">
                             <button class="comment-action">
-                                <i class="fas fa-thumbs-up"></i> 24
+                                <i class="fas fa-thumbs-up"></i> 240
                             </button>
                             <button class="comment-action">
                                 <i class="fas fa-thumbs-down"></i> 0
@@ -774,6 +772,15 @@
                         </div>
                     </a>
 
+                    <!-- Recommendation 4 -->
+                    <a href="/streaming/episode/1.html" class="recommendation-card">
+                        <img src="https://cdn.myanimelist.net/images/anime/1069/123309.jpg" alt=""
+                            class="recommendation-thumb">
+                        <div class="recommendation-info">
+                            <div class="recommendation-title">Tensei Shitara Slime Datta Ken</div>
+                            <div class="recommendation-meta">72+ Episode</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -785,8 +792,6 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const navHTML = await response.text();
                 document.querySelector('.main-nav-container').innerHTML = navHTML;
-
-                // Panggil kembali inisialisasi setelah navigasi dimuat
                 if (typeof initNavigation === 'function') {
                     initNavigation();
                 }
@@ -794,7 +799,6 @@
                 console.error('Error loading navigation:', error);
             }
         }
-        // Panggil fungsi setelah DOM dimuat
         document.addEventListener('DOMContentLoaded', loadNavigation);
     </script>
     <script src="/rimuruTogglern.js"></script>

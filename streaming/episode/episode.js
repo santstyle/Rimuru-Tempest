@@ -1,6 +1,4 @@
 
-
-// Season selector functionality
 const seasonBtns = document.querySelectorAll('.season-btn');
 const episodeListContainer = document.querySelector('.episode-list');
 
