@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita & Pembaruan Rimuru Tempest</title>
-    <link rel="icon" type="image/png" href="/asset/icon/rimuru icon.png" />
+    <link rel="icon" type="image/png" href="/asset/icon/Logo RimuruFanbase.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="news.css">
@@ -160,7 +160,6 @@
                             class="fab fa-github"></i></a>
                     <a href="https://www.instagram.com/santstyle.mv" class="social-icon" aria-label="Instagram"><i
                             class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon" aria-label="Discord"><i class="fab fa-discord"></i></a>
                     <a href="https://www.youtube.com/@santstyle_mv" class="social-icon" aria-label="YouTube"><i
                             class="fab fa-youtube"></i></a>
                 </div>
@@ -219,7 +218,6 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const navHTML = await response.text();
                 document.querySelector('.main-nav-container').innerHTML = navHTML;
-
                 if (typeof initNavigation === 'function') {
                     initNavigation();
                 }
