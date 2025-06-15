@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fungsi untuk menginisialisasi toggle navigasi
     function initNavigation() {
         // Mobile Menu Toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Tutup menu saat klik di luar
             document.addEventListener('click', function(e) {
                 if (!mainNav.contains(e.target) && e.target !== mobileMenuBtn) {
                     mainNav.classList.remove('active');
@@ -40,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 searchContainer.classList.toggle('active');
                 
-                // Tutup menu mobile jika terbuka
                 if (mainNav && mainNav.classList.contains('active')) {
                     mainNav.classList.remove('active');
                     const icon = mobileMenuBtn.querySelector('i');
@@ -48,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Tutup search saat klik di luar
+
             document.addEventListener('click', function(e) {
                 if (!searchContainer.contains(e.target) && e.target !== searchBtn) {
                     searchContainer.classList.remove('active');
@@ -60,11 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const themeToggle = document.querySelector('.theme-toggle');
         
         if (themeToggle) {
-            // Cek preferensi dark mode
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const currentTheme = localStorage.getItem('theme');
             
-            // Terapkan tema awal
             if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
                 document.body.classList.add('dark-mode');
                 document.body.classList.remove('light-mode');
