@@ -405,10 +405,6 @@ body.dark-mode .about-card {
     background: var(--card-dark);
 }
 
-.about-card:hover {
-    transform: translateY(-5px);
-}
-
 .about-image {
     height: 700px;
     overflow: hidden;
@@ -1177,6 +1173,10 @@ body.dark-mode .event-info p {
         object-fit: cover;
         object-position: 85% center;
     }
+    .news-thumbnail{
+        height: 200px;
+    }
+
 }
 
 @media (max-width: 768px) {
