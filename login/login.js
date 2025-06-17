@@ -1,4 +1,4 @@
-        // Toggle between login and register forms
+
         const loginToggle = document.getElementById('login-toggle');
         const registerToggle = document.getElementById('register-toggle');
         const loginForm = document.getElementById('login-form');
@@ -65,7 +65,7 @@
             alert('Hai! Saya SantStyle. Ada yang bisa saya bantu?\n\Silakan hubungi contact untuk bantuan lebih lanjut.');
         });
         
-// FAQ toggle functionality
+// FAQ toggle 
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const faqItem = question.parentElement;
@@ -73,6 +73,3 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    alert('Maaf sayangnya halaman ini masih belum berfungsi, jadi kamu bisa kembali ke halaman utama lagi ya');
-});
