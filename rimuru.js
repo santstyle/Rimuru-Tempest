@@ -1,7 +1,7 @@
 
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
-// Random visitor 
+
 setInterval(() => {
     const baseCount = 1245;
     const randomFactor = Math.floor(Math.random() * 50);
@@ -10,7 +10,6 @@ setInterval(() => {
 
 
 
-// Animate stats on scroll
 const animateStats = () => {
     const statNumbers = document.querySelectorAll('.stat-number');
     statNumbers.forEach(stat => {
@@ -30,7 +29,7 @@ const animateStats = () => {
     });
 };
 
-// Check stats view
+
 const statsSection = document.querySelector('.stats-grid');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -65,13 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     popupBubble.style.display = 'flex';
 
-    // Open bubble 
+
     popupBubble.addEventListener('click', function() {
         disclaimerModal.style.display = 'flex';
         popupBubble.style.display = 'none';
     });
 
-    // Close
+
     closeModal.addEventListener('click', function() {
         disclaimerModal.style.display = 'none';
         popupBubble.style.display = 'flex';
