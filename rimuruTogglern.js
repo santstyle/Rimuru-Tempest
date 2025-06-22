@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     function initNavigation() {
-        // Mobile Menu Toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mainNav = document.querySelector('.main-nav');
         
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 mainNav.classList.toggle('active');
                 
-                // Toggle icon
                 const icon = this.querySelector('i');
                 if (mainNav.classList.contains('active')) {
                     icon.classList.replace('fa-bars', 'fa-times');
@@ -28,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Search Toggle
         const searchBtn = document.querySelector('.search-btn');
         const searchContainer = document.querySelector('.search-container');
         
@@ -53,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Dark Mode Toggle
         const themeToggle = document.querySelector('.theme-toggle');
         
         if (themeToggle) {
@@ -90,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Highlight Link Aktif
         const navLinks = document.querySelectorAll('.nav-link');
         const currentPage = location.pathname.split('/').pop() || 'index.html';
         
