@@ -1,4 +1,4 @@
-// Mobile Menu Toggle
+
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const mainNav = document.querySelector('.main-nav');
 
@@ -6,7 +6,6 @@ mobileMenuBtn.addEventListener('click', () => {
     mainNav.classList.toggle('active');
 });
 
-// Search Toggle
 const searchBtn = document.querySelector('.search-btn');
 const searchContainer = document.querySelector('.search-container');
 
@@ -14,13 +13,11 @@ searchBtn.addEventListener('click', () => {
     searchContainer.classList.toggle('active');
 });
 
-// Dark Mode Toggle
 const themeToggle = document.querySelector('.theme-toggle');
 
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 
-    // Change icon
     const icon = themeToggle.querySelector('i');
     if (document.body.classList.contains('dark-mode')) {
         icon.classList.remove('fa-moon');
@@ -58,13 +55,11 @@ galleryItems.forEach(item => {
     });
 });
 
-// Close Modal
 closeModal.addEventListener('click', () => {
     imageModal.style.display = 'none';
     document.body.style.overflow = 'auto';
 });
 
-// Close modal when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target === imageModal) {
         imageModal.style.display = 'none';
@@ -72,7 +67,6 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Like Button in Modal
 modalLikeBtn.addEventListener('click', () => {
     const isActive = modalLikeBtn.classList.contains('active');
     const likeCount = parseInt(modalLikeCount.textContent);
@@ -88,7 +82,6 @@ modalLikeBtn.addEventListener('click', () => {
     }
 });
 
-// Like Button in Gallery
 const likeBtns = document.querySelectorAll('.like-btn');
 
 likeBtns.forEach(btn => {
@@ -110,7 +103,6 @@ likeBtns.forEach(btn => {
     });
 });
 
-// Submit Work Button
 const submitWorkBtn = document.getElementById('submit-work-btn');
 
 submitWorkBtn.addEventListener('click', () => {
