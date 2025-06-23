@@ -52,20 +52,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 count++;
                 cartCount.textContent = count;
                 
-                // Animation effect
                 cartCount.style.transform = 'scale(1.5)';
                 setTimeout(() => {
                     cartCount.style.transform = 'scale(1)';
                 }, 300);
                 
-                // Show added notification
                 const productTitle = btn.closest('.product-card').querySelector('.product-title').textContent;
                 alert(`Added to cart: ${productTitle}`);
             });
         });
     }
 
-    // Cart Button
+    // Cart 
     const cartBtn = document.querySelector('.cart-btn');
     
     if (cartBtn) {
