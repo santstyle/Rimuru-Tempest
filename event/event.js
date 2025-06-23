@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
     
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Search Toggle
     const searchBtn = document.querySelector('.search-btn');
     const searchContainer = document.querySelector('.search-container');
     
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dark Mode Toggle
     const themeToggle = document.querySelector('.theme-toggle');
     
     if (themeToggle) {
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Category Filters
     const categoryFilters = document.querySelectorAll('.category-filter');
     
     categoryFilters.forEach(filter => {
@@ -55,12 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // View Toggle
     const listViewBtn = document.getElementById('list-view-btn');
     const listView = document.getElementById('list-view');
     
     if (listViewBtn && listView) {
-        // Set default view
+
         listViewBtn.classList.add('active');
         listView.style.display = 'block';
     }
