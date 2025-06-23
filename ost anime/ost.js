@@ -227,7 +227,6 @@
             }
         }
 
-        // Initialize the page
         async function init() {
             loadPlayerState();
             createMusicCards();
@@ -274,7 +273,6 @@
             sessionStorage.setItem('volume', audioPlayer.volume);
         }
 
-        // Create music cards
         function createMusicCards() {
             musicGrid.innerHTML = '';
             popularGrid.innerHTML = '';
@@ -338,7 +336,6 @@
                             audioPlayer.currentTime = 10;
                             audioPlayer.volume = 0.3;
                             audioPlayer.play().catch(() => {
-                                // handle preview playback errors
                             });
                             audioPlayer.addEventListener('ended', () => {
                                 audioPlayer.currentTime = 10;
@@ -362,7 +359,6 @@
             container.appendChild(musicCard);
         }
 
-        // Load song
         async function loadSong(index) {
             currentSongIndex = index;
             const song = originalMusicData[index];
@@ -400,7 +396,6 @@
             savePlayerState();
         }
 
-        // Play song
         function playSong() {
             if (!userInteracted) {
                 showError('Sabar sayang kalau belum bisa tolong tekan lagi yah.');
@@ -420,8 +415,6 @@
             hoverPreviewEnabled = false;
             savePlayerState();
         }
-
-        // Pause song
         function pauseSong() {
             isPlaying = false;
             playIcon.classList.remove('fa-pause');
@@ -431,17 +424,14 @@
             savePlayerState();
         }
 
-        // Show now playing info
         function showNowPlaying() {
             nowPlaying.classList.add('show');
         }
 
-        // Hide now playing info
         function hideNowPlaying() {
             nowPlaying.classList.remove('show');
         }
 
-        // Play next song
         async function nextSong() {
             if (isShuffle) {
                 let newIndex;
@@ -458,7 +448,6 @@
             }
         }
 
-        // Play previous song
         async function prevSong() {
             if (isShuffle) {
                 let newIndex;
@@ -475,21 +464,18 @@
             }
         }
 
-        // Toggle shuffle
         function toggleShuffle() {
             isShuffle = !isShuffle;
             shuffleBtn.classList.toggle('active', isShuffle);
             savePlayerState();
         }
 
-        // Toggle repeat
         function toggleRepeat() {
             isRepeat = !isRepeat;
             repeatBtn.classList.toggle('active', isRepeat);
             savePlayerState();
         }
 
-        // Update progress bar
         function updateProgress(e) {
             const { duration, currentTime } = e.srcElement;
             const progressPercent = duration ? (currentTime / duration) * 100 : 0;
@@ -513,7 +499,6 @@
             }
         }
 
-        // Set progress bar
         function setProgress(e) {
             const width = this.clientWidth;
             const clickX = e.offsetX;
@@ -522,7 +507,6 @@
         }
 
         function setupEventListeners() {
-            // Player controls
             audioPlayer.addEventListener('timeupdate', updateProgress);
             audioPlayer.addEventListener('ended', () => {
                 if (isRepeat) {
@@ -554,7 +538,6 @@
             shuffleBtn.addEventListener('click', toggleShuffle);
             repeatBtn.addEventListener('click', toggleRepeat);
 
-            // Volume controls
             volumeDownBtn.addEventListener('click', () => {
                 audioPlayer.volume = Math.max(0, audioPlayer.volume - 0.1);
                 volumeSlider.value = audioPlayer.volume;
@@ -572,10 +555,8 @@
                 savePlayerState();
             });
 
-            // Now playing controls
             closeNowPlaying.addEventListener('click', hideNowPlaying);
 
-            // Keyboard shortcuts
             document.addEventListener('keydown', (e) => {
                 switch(e.code) {
                     case 'Space':
@@ -634,11 +615,9 @@
                 isDragging = false;
             });
 
-            // Save state when leaving page
             window.addEventListener('beforeunload', savePlayerState);
         }
 
-        // Load navigation
         async function loadNavigation() {
             try {
                 const response = await fetch('/navigation.html');
@@ -654,7 +633,6 @@
             }
         }
 
-        // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             loadNavigation();
             init();
