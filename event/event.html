@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/asset/icon/Logo RimuruFanbase.png" />
+<link rel="stylesheet" href="/event/event.css">
+</link>
+<title>Acara & Kegiatan - Fanbase Rimuru</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="main-nav-container"></div>
+    <!-- Header Section End -->
+
+    <main class="events-container">
+        <div class="events-header">
+            <h1 class="events-title">Acara & Kegiatan</h1>
+            <div class="view-toggle">
+                <button class="view-btn" id="list-view-btn">
+                    <i class="fas fa-list"></i> Daftar
+                </button>
+            </div>
+        </div>
+
+        <!-- Event Categories Filter -->
+        <div class="event-categories">
+            <h2 class="section-title">Filter Berdasarkan Kategori</h2>
+            <div class="category-filters">
+                <button class="category-filter active" data-category="all">Semua Acara</button>
+                <button class="category-filter" data-category="fanart">Fanart</button>
+                <button class="category-filter" data-category="cosplay">Acara</button>
+                <button class="category-filter" data-category="giveaway">Giveaway</button>
+                <button class="category-filter" data-category="watch">Nonton Tensura</button>
+                <button class="category-filter" data-category="game">Game</button>
+            </div>
+        </div>
+
+
+        <!-- List View -->
+        <div class="list-view" id="list-view">
+            <div class="events-list">
+                <!-- Event 1 -->
+                <div class="event-card" data-category="fanart">
+                    <img src="https://i.pinimg.com/1200x/7d/2e/77/7d2e775e5f74346ef831e301a24d8a0f.jpg"
+                        alt="Pameran Seni Slime" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">7 Juni 2025</div>
+                        <h3 class="event-title">Pameran Seni Slime</h3>
+                        <span class="event-type">Fanart Poupler</span>
+                        <p class="event-description">
+                            Tunjukkan bakat senimu dengan membuat fanart Rimuru atau karakter apa pun dari Tempest.
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> Segera hadir
+                            </div>
+                            <button class="event-btn">Ikuti Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="event-card" data-category="watch">
+                    <img src="https://i.pinimg.com/1200x/6f/06/1d/6f061d08d9a3fea9e64e7df352e07502.jpg"
+                        alt="Nonton Bareng Tempest" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">7 Juni 2025</div>
+                        <h3 class="event-title">Nonton Bareng Tensura</h3>
+                        <span class="event-type">Nonton Bareng</span>
+                        <p class="event-description">
+                            Bergabunglah dengan kami untuk nonton Anime Tensura!
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> Segera hadir
+                            </div>
+                            <button class="event-btn">Ikuti Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card" data-category="giveaway">
+                    <img src="https://i.pinimg.com/1200x/70/76/7c/70767cb9d200c3c574bca84db13ad912.jpg"
+                        alt="Perburuan Harta Rimuru" class="event-image">
+                    <div class="event-content">
+                        <div class="event-date">7 Juni 2025</div>
+                        <h3 class="event-title">Giveaway Perburuan Harta Rimuru</h3>
+                        <span class="event-type">Giveaway</span>
+                        <p class="event-description">
+                            Ikuti kuis perburuan harta kami untuk kesempatan memenangkan reward menarik!
+                        </p>
+                        <div class="event-actions">
+                            <div class="event-countdown">
+                                <i class="fas fa-clock"></i> Segera hadir
+                            </div>
+                            <button class="event-btn">Ikuti Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Events Section -->
+            <div class="past-events">
+                <!-- Past Event 2 -->
+                <div class="past-event-card">
+                    <div class="past-event-header">
+                        <h3 class="past-event-title">Nonton Anime Tensei shitara Slime Datta Ken</h3>
+                        <div class="past-event-date"></div>
+                    </div>
+                    <p>Di sini, bukan hanya tempat berkumpulnya para penggemar Tensura, tetapi kamu juga bisa menikmati
+                        streaming anime That Time I Got Reincarnated as a Slime langsung melalui tautan ke YouTube Muse
+                        Indonesia</p>
+                    <div class="event-button-container">
+                        <a href="/streaming/streaming.html" class="streaming-button">Tonton Tensura Sekarang</a>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <script>
+        async function loadNavigation() {
+            try {
+                const response = await fetch('/navigation.html');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const navHTML = await response.text();
+                document.querySelector('.main-nav-container').innerHTML = navHTML;
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadNavigation);
+    </script>
+    <script src="/rimuruTogglern.js"></script>
+    <script src="/event/event.js"></script>
+</body>
+
+</html>

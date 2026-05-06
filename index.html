@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimuru Fanbase - Portal Penggemar Rimuru Tempest</title>
+    <link rel="icon" type="image/png" href="/asset/icon/Logo RimuruFanbase.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="rimuru.css">
+    <link rel="stylesheet" href="bubble.css">
+    <link rel="stylesheet" href="footer.css"> 
+</head>
+
+<body>
+    <!-- Popup Bubble -->
+    <div class="popup-bubble" id="popupBubble">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Disclaimer & Permintaan Maaf</h2>
+            <p>Selamat datang di Rimuru Tempest Fanbase. Kami sangat mengapresiasi kunjungan Anda ke platform ini dan
+                berharap website ini dapat menjadi ruang yang menyenangkan serta inspiratif bagi para penggemar Tensei
+                Shitara Slime Datta Ken.</p>
+            <p>Namun, demi transparansi dan menghormati berbagai pihak yang terlibat dalam karya ini, kami merasa perlu
+                untuk memberikan penjelasan secara rinci mengenai penggunaan konten, tujuan website, serta permintaan
+                maaf atas kekurangan yang mungkin terjadi.</p>
+
+            <h3>Tujuan Website</h3>
+            <p>Website ini dirancang sebagai bentuk penghormatan dan apresiasi kami terhadap karya luar biasa Tensei
+                Shitara Slime Datta Ken. Tujuan utama kami adalah:</p>
+            <ul>
+                <li>Menyediakan ruang interaksi bagi komunitas penggemar Rimuru dan dunia Tempest.</li>
+                <li>Mendukung kreativitas dengan menampilkan karya seni, diskusi teori, dan informasi terkini terkait
+                    karya ini.</li>
+                <li>Menghubungkan komunitas global melalui berbagai fitur interaktif.</li>
+            </ul>
+            <p>Kami ingin menegaskan bahwa website ini:</p>
+            <ul>
+                <li>Tidak berafiliasi secara resmi dengan pencipta, penerbit, studio produksi, atau pihak lain yang
+                    memiliki hak cipta atas karya ini.</li>
+                <li>Non-komersial dan semata-mata dibuat untuk tujuan hiburan dan komunitas.</li>
+            </ul>
+
+            <h3>Penggunaan Konten Eksternal</h3>
+            <p>Kami menyadari bahwa beberapa elemen di website ini, seperti gambar, fanart, artikel, atau tautan
+                streaming, mungkin berasal dari sumber eksternal. Untuk menjaga integritas platform ini, kami telah
+                melakukan langkah-langkah berikut:</p>
+
+            <h4>Sumber Kredit</h4>
+            <p>Kami selalu berusaha mencantumkan sumber asli untuk setiap konten yang kami gunakan. Sumber ini biasanya
+                dicantumkan dalam bentuk deskripsi, tautan langsung, atau catatan pada konten terkait.</p>
+            <p>Namun, kami mengakui bahwa kemungkinan terjadi kekeliruan atau kelalaian dalam mencantumkan sumber secara
+                lengkap.</p>
+
+            <h4>Hak Cipta dan Lisensi</h4>
+            <p>Semua hak cipta atas konten di website ini tetap dimiliki oleh pencipta atau pemegang lisensi asli. Kami
+                tidak mengklaim kepemilikan atas konten tersebut.</p>
+            <p>Jika Anda adalah pemilik hak cipta atas salah satu konten di website ini dan merasa keberatan atas
+                penggunaannya, kami siap untuk segera menghapus atau memperbaiki penggunaan konten tersebut. Silakan
+                hubungi kami melalui formulir kontak.</p>
+
+            <h4>Tautan Streaming Resmi</h4>
+            <p>Untuk mendukung konsumsi konten secara legal, kami menyertakan tautan ke platform resmi seperti YouTube
+                Muse Indonesia. Kami menghimbau pengunjung untuk selalu mengakses konten melalui saluran resmi.</p>
+
+            <h3>Permintaan Maaf yang Tulus</h3>
+            <p>Kami dengan rendah hati ingin menyampaikan permintaan maaf yang tulus atas:</p>
+            <ul>
+                <li>Segala kekurangan dalam pengelolaan website ini, terutama terkait penggunaan konten eksternal yang
+                    mungkin belum mendapatkan izin langsung.</li>
+                <li>Ketidaksempurnaan dalam menyampaikan sumber asli, yang bukan merupakan niat kami untuk melanggar hak
+                    cipta atau merugikan pihak manapun.</li>
+            </ul>
+            <p>Kami berkomitmen untuk terus belajar, memperbaiki, dan beradaptasi agar dapat mengelola platform ini
+                dengan lebih baik serta menghormati seluruh pihak yang terlibat.</p>
+
+            <h3>Tahap Pengembangan Website</h3>
+            <p>Saat ini, website ini masih berada dalam tahap perbaikan dan pengembangan. Beberapa fitur mungkin belum
+                berfungsi sepenuhnya atau memiliki keterbatasan teknis. Kami memohon pengertian dari pengunjung atas
+                kekurangan ini, dan kami berjanji untuk terus meningkatkan kualitas platform kami di masa mendatang.</p>
+
+            <h3>Komitmen Kami</h3>
+            <p>Kami berkomitmen untuk:</p>
+            <ul>
+                <li>Mengelola website ini sesuai dengan prinsip keterbukaan, penghormatan hak cipta, dan dukungan
+                    terhadap kreator asli.</li>
+                <li>Menjadikan platform ini ruang aman dan ramah untuk komunitas penggemar.</li>
+                <li>Mengutamakan pengalaman pengunjung sambil tetap menghormati semua pihak yang berkontribusi pada
+                    karya Tensei Shitara Slime Datta Ken.</li>
+            </ul>
+
+            <h3>Hubungi Kami</h3>
+            <p>Jika ada hal yang ingin disampaikan terkait pelanggaran hak cipta, saran, kritik, atau masukan lainnya,
+                jangan ragu untuk menghubungi kami melalui:</p>
+            <ul>
+                <li>Formulir kontak yang tersedia di website ini.</li>
+            </ul>
+            <p>Terima kasih atas dukungan, pengertian, dan partisipasi Anda dalam komunitas ini.</p>
+            <p><strong>SantStyle (Developer Website)</strong></p>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <div class="main-nav-container"></div>
+    <!-- Header Section End -->
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles"></div>
+            <img src="/asset/Tears of the Blue Sea.png" alt="Rimuru Tempest in Jura Tempest Federation" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Selamat Datang di Dunia Tempest!</h1>
+                <p class="hero-description">
+                    Jelajahi dunia Rimuru Tempest melalui streaming anime, OST, galeri fanart, dan berita terbaru di sini.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/streaming/streaming.html" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Tonton Sekarang
+                    </a>
+                    <a href="/ost anime/ost.html" class="btn btn-secondary">
+                        <i class="fas fa-music"></i> Dengarkan OST
+                    </a>
+                    <a href="/gallery/gallery.html" class="btn btn-secondary">
+                        <i class="fas fa-images"></i> Jelajahi Fanart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Rimuru Section -->
+<section class="section about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-image">
+                    <img src="/asset/rimuru game.png" alt="Rimuru Tempest">
+                </div>
+                <div class="about-info">
+                    <h3>Slime yang Menjadi Raja</h3>
+                    <p>Rimuru Tempest, slime yang bereinkarnasi dan menjadi Raja Tempest, adalah salah satu karakter paling kuat di dunia anime. Temukan perjalanan epiknya membangun kerajaan dan mengalahkan musuh-musuh besar.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Skill Utama</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">50+</div>
+                            <div class="stat-label">Pengikut Setia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Gelar Raja Iblis</div>
+                        </div>
+                    </div>
+                    <a href="/about/about.html" class="btn btn-primary">
+                        <i class="fas fa-book-open"></i> Baca Selengkapnya
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section-header">
+            <h2 class="section-title">Rimuru Tempest</h2>
+            <p class="section-subtitle">King of Tempest Federation</p>
+        </div>
+    </div>
+</section>
+
+<!-- Streaming Section -->
+<section class="section streaming-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Streaming Anime</h2>
+            <p class="section-subtitle">Tonton petualangan Rimuru sekarang</p>
+        </div>
+        <div class="streaming-grid">
+            <div class="featured-episode">
+                <div class="episode-thumbnail">
+                    <img src="https://i.pinimg.com/736x/71/82/1b/71821b0d2e6c883e57c548044bf5b705.jpg" alt="Episode Terbaru">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="episode-info">
+                    <h3>Anime Season 3 Telah Rilis </h3>
+                    <p>Rimuru menghadapi tantangan terbesar dalam mempertahankan Tempest dari invasi kerajaan tetangga.</p>
+                    <a href="/streaming/streaming.html" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Tonton Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="episode-carousel">
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/Hhr8iqbazf0/hqdefault.jpg" alt="">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 49</h4>
+                        <p>Rencana Tersembunyi</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/8HQnsKhY0eA/hqdefault.jpg" alt=""">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 50</h4>
+                        <p>Pertemuan Suci</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/gMTbHergFrw/hqdefault.jpg" alt="">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 51</h4>
+                        <p>Perpecahan yang Muncul</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/2Lb_o3YWpIg/hqdefault.jpg" alt="">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 52</h4>
+                        <p>Pusaran Konspirasi</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/YCkrzyvIp6w/hqdefault.jpg" alt="">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 53</h4>
+                        <p>Jalan Para Raja</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/bLuqBrG_Knk/hqdefault.jpg" alt="">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 54</h4>
+                        <p>Sang Raja Pedang</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/XPd-2JjypGg/hqdefault.jpg" alt="">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 55</h4>
+                        <p>Cahaya dalam Kegelapan</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <div class="episode-thumbnail">
+                        <img src="https://i.ytimg.com/vi/BsjJN7dkdEM/hqdefault.jpg" alt="">
+                    </div>
+                    <div class="episode-details">
+                        <h4>Episode 56</h4>
+                        <p>Pilar Keadilan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OST Section -->
+<section class="section ost-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">OST Anime</h2>
+            <p class="section-subtitle">Musik yang mengiringi petualangan Rimuru</p>
+        </div>
+        <div class="ost-grid">
+            <div class="ost-category">
+                <h3><i class="fas fa-headphones"></i> Opening Songs</h3>
+                <div class="ost-list">
+                    <div class="ost-item">
+                        <div class="ost-cover">
+                            <img src="https://i.pinimg.com/736x/9b/5e/84/9b5e84e9e4d298d9085dc06696d11edb.jpg" alt="Storyteller">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="ost-info">
+                            <h4>Storyteller</h4>
+                            <p>TRUE - Season 2 Opening</p>
+                        </div>
+                    </div>
+                    <div class="ost-item">
+                        <div class="ost-cover">
+                            <img src="https://i.pinimg.com/736x/22/8e/37/228e37f50986260386e20dac27997446.jpg" alt="Like Flames">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="ost-info">
+                            <h4>Like Flames</h4>
+                            <p>MindaRyn - Season 2 Part 2 Opening</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ost-category">
+                <h3><i class="fas fa-music"></i> Ending Songs</h3>
+                <div class="ost-list">
+                    <div class="ost-item">
+                        <div class="ost-cover">
+                            <img src="https://i.pinimg.com/736x/b0/d8/32/b0d8323e661a5859a6caedb55cd61c6f.jpg" alt="Another colony">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="ost-info">
+                            <h4>Another colony</h4>
+                            <p>TRUE - Season 1 Ending</p>
+                        </div>
+                    </div>
+                    <div class="ost-item">
+                        <div class="ost-cover">
+                            <img src="https://i.pinimg.com/736x/7c/1a/5e/7c1a5ea7f050ae6d348b3fafcba758ca.jpg" alt="Little Soldier">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="ost-info">
+                            <h4>Little Soldier</h4>
+                            <p>Azusa Tadokoro - Season 1 Part 2 Ending</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-footer">
+            <a href="/ost anime/ost.html" class="btn btn-primary">
+                <i class="fas fa-list"></i> Lihat Semua Lagu
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="section gallery-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Galeri Fanart</h2>
+            <p class="section-subtitle">Karya terbaik dari komunitas penggemar</p>
+        </div>
+        <div class="gallery-slider">
+            <div class="gallery-item featured">
+                <img src="https://pbs.twimg.com/media/GcBUTtLbEAAmDMA?format=jpg&name=large" alt="Fanart Rimuru">
+                <div class="gallery-caption">
+                    <h3>Carrera & Ultima</h3>
+                    <p>Karya: @konayuru</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/ea/24/cc/ea24cc6845d535ca8262c9430dc335a5.jpg" alt="Fanart Rimuru">
+                <div class="gallery-caption">
+                    <h3>Rimuru Human Form</h3>
+                    <p>Karya: @Nerufox</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/93/9a/e9/939ae9d4b75251f36a4397cad286c41d.jpg" alt="Fanart Tempest">
+                <div class="gallery-caption">
+                    <h3>Kota Tempest</h3>
+                    <p>Karya: @Zhigang</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/c7/27/9d/c7279dcf48d35b49f735bd10a33efb98.jpg" alt="Cosplay Rimuru">
+                <div class="gallery-caption">
+                    <h3>Rimuru & Milim</h3>
+                    <p>Oleh: @Samueldunstanv</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://pbs.twimg.com/media/GoNjhwdbYAIttbF?format=jpg&name=large" alt="Cosplay Rimuru">
+                <div class="gallery-caption">
+                    <h3>Shizue</h3>
+                    <p>Oleh: @konayuru</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="section-footer">
+            <a href="/gallery/gallery.html" class="btn btn-primary">
+                <i class="fas fa-images"></i> Lihat Galeri Lengkap
+            </a>
+            <a href="" class="btn btn-secondary">
+                <i class="fas fa-upload"></i> Unggah Karyamu
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section class="section news-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Berita & Update</h2>
+            <p class="section-subtitle">Informasi terbaru tentang dunia Tensura</p>
+        </div>
+        <div class="news-grid">
+            <div class="featured-news">
+                <div class="news-thumbnail">
+                    <img src="https://i.ytimg.com/vi/IikTjpZoM6Y/hq720.jpg" alt="Berita Utama">
+                </div>
+                <div class="news-content">
+                    <div class="news-category">Pengumuman</div>
+                    <h3>Film ke-2 "That Time I Got Reincarnated as a Slime"
+                        dan musim ke-4 anime TV sedang dalam tahap produksi!</h3>
+                    <p>Film kedua "That Time I Got Reincarnated as a Slime" dan musim ke-4 anime TV kini dalam tahap
+                        produksi! Nantikan kisah baru Rimuru yang semakin seru dan mendebarkan!</p>
+                    <div class="news-meta">
+                        <span><i class="far fa-calendar"></i> 27 September 2024</span>
+                        <span><i class="far fa-eye"></i> 1.2k dilihat</span>
+                    </div>
+                    <a href="/news/news.html" class="btn btn-primary">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <div class="news-sidebar">
+                <div class="awards">
+                    <h3><i class="fas fa-trophy"></i> Penghargaan Terbaru</h3>
+                    <ul>
+                        <li>Anime Terbaik 2024 - Crunchyroll Awards</li>
+                        <li>Karakter Terfavorit (Rimuru) - Anime Trending</li>
+                        <li>OST Terbaik (Storyteller) - Japan Expo</li>
+                    </ul>
+                </div>
+                <div class="other-news">
+                    <div class="news-item">
+                        <h4>Film ke-2 "That Time I Got Reincarnated as a Slime"
+                            dan musim ke-4 anime TV sedang dalam tahap produksi!</h4>
+                        <p></p>
+                    </div>
+                    <div class="news-item">
+                        <h4>That Time I Got Reincarnated as a Slime The Movie: Tears of the Blue Sea" dijadwalkan rilis
+                            pada Februari 2026!</h4>
+                        <p></p>
+                    </div>
+                    <div class="news-item">
+                        <h4>Adaptasi permainan video rumahan pertama dari "TenSura</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Community Section 
+<section class="section community-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Komunitas Tempest</h2>
+            <p class="section-subtitle">Bergabunglah dengan ribuan penggemar lainnya</p>
+        </div>
+        <div class="community-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number" id="member-count">10,245</div>
+                <div class="stat-label">Anggota Komunitas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="stat-number" id="fanart-count">3,892</div>
+                <div class="stat-label">Fanart Diunggah</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <div class="stat-number" id="stream-count">1.2M</div>
+                <div class="stat-label">Total Streaming</div>
+            </div>
+        </div>
+        <div class="community-events">
+            <h3><i class="fas fa-calendar-alt"></i> Event Mendatang</h3>
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">25</span>
+                        <span class="month">Jun</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Tidak ada event</h4>
+                        <p></p>
+                    </div>
+                    <button class="btn btn-secondary">Daftar</button>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">10</span>
+                        <span class="month">Jul</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Tidak ada event</h4>
+                        <p></p>
+                    </div>
+                    <button class="btn btn-secondary">Daftar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: About Us -->
+            <div class="footer-column">
+                <div class="logo-container">
+                    <span class="slime-icon">🌀</span>
+                    <h3 class="footer-title">Rimuru</h3>
+                </div>
+                <p class="footer-description">
+                    Komunitas penggemar Rimuru Tempest untuk berbagi fanart, teori, dan berita terbaru dari dunia
+                    Tensura!
+                </p>
+                <div class="social-icons">
+                    <a href="https://github.com/santstyle" class="social-icon" aria-label="Github"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/santstyle.mv" class="social-icon" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@santstyle_mv" class="social-icon" aria-label="YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column">
+                <h3 class="footer-title">Jelajahi</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Beranda</a></li>
+                    <li><a href="/about/about.html">Profil Rimuru</a></li>
+                    <li><a href="/gallery/gallery.html">Galeri Fanart</a></li>
+                    <li><a href="/news/news.html">News</a></li>
+                    <li><a href="/event/event.html">Event Terbaru</a></li>
+                    <li><a href="/shop/shop.html">Merchandise</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Resources -->
+            <div class="footer-column">
+                <h3 class="footer-title">Unduhan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Wallpaper HD</a></li>
+                    <li><a href="/ost anime/ost.html">OST Anime</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="footer-column">
+                <h3 class="footer-title">Butuh Bantuan?</h3>
+                <p class="contact-text">Punya pertanyaan atau saran? Dm instagram gua ya!</p>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="copyright-bar">
+            <div class="copyright-container">
+                <p>© <span id="current-year">2024</span> Rimuru Fanbase. Hak Cipta Dilindungi. Tensei Shitara Slime
+                    Datta Ken adalah karya Fuse dan diterbitkan oleh Kodansha.</p>
+                <div class="legal-links">
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat Penggunaan</a>
+                    <a href="#">Donasi</a>
+                </div>
+            </div>
+            <div class="visitor-counter">
+                <i class="fas fa-users"></i>
+                <span id="visitor-count">1,245</span> fans sedang online sekarang!
+            </div>
+        </div>
+    </footer>
+    <script>
+        async function loadNavigation() {
+            try {
+                const response = await fetch('/navigation.html');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const navHTML = await response.text();
+                document.querySelector('.main-nav-container').innerHTML = navHTML;
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadNavigation);
+    </script>
+    <script src="rimuru.js"></script>
+    <script src="rimuruTogglern.js"></script>
+</body>
+
+</html>
